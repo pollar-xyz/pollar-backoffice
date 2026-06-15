@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# pollar-backoffice
 
-## Getting Started
+A [Pollar](https://docs.pollar.xyz) wallet built with Next.js. Users log in with their Pollar wallet (Google, GitHub, email OTP, external wallets and passkey) and, once inside, can view their balance, send and receive money on Stellar.
 
-First, run the development server:
+Repo: https://github.com/pollar-xyz/pollar-backoffice
+
+## Requirements
+
+- Node.js 18+
+- A Pollar **publishable key** — generate it at [dashboard.pollar.xyz](https://dashboard.pollar.xyz) → Configuration → API Keys → Generate.
+
+## Environment variables
+
+Copy `.env.example` to `.env.local` and fill it in:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `NEXT_PUBLIC_POLLAR_PUBLISHABLE_KEY` | Yes | Pollar publishable key (`pub_testnet_...` or `pub_mainnet_...`). Safe to expose on the client. |
+| `NEXT_PUBLIC_POLLAR_NETWORK` | No | Stellar network: `testnet` (default) or `mainnet`. |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> The **secret** key (`sec_...`) is NOT used: this app is fully client-side. Never put it in a `NEXT_PUBLIC_` variable.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Run locally
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev     # development server
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [`@pollar/react`](https://www.npmjs.com/package/@pollar/react) / [`@pollar/core`](https://www.npmjs.com/package/@pollar/core) — Pollar SDK
+- `qrcode.react` — QR code for receiving payments
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Structure
+
+```
+app/
+  providers.tsx              # PollarProvider + config (key, network, login options)
+  page.tsx                   # login or dashboard depending on the session
+  components/
+    LoginScreen.tsx          # login screen
+    WalletDashboard.tsx      # header + tabs
+    BalanceTab.tsx           # balance
+    SendTab.tsx              # send
+    ReceiveTab.tsx           # receive (address + QR)
+```
