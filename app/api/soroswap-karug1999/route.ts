@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SupportedNetworks } from "@soroswap/sdk";
-import { buildSoroswapSwapXdr, NETWORK } from "../../soroswap-aleregex/lib/buildSwapXdr";
+import { buildSoroswapSwapXdr, NETWORK } from "../../soroswap-karug1999/lib/buildSwapXdr";
 
 // Static fallback: verified Soroswap testnet contract addresses.
 // Source: github.com/soroswap/core/public/tokens.json (network: testnet)
@@ -121,7 +121,7 @@ function parseAmount(raw: string, decimals: number): bigint {
   return BigInt(int + frac.padEnd(decimals, "0").slice(0, decimals));
 }
 
-// GET /api/soroswap-aleregex — testnet token list (static, verified contracts)
+// GET /api/soroswap-karug1999 — testnet token list (static, verified contracts)
 export async function GET() {
   return NextResponse.json({
     ok: true,
@@ -137,7 +137,7 @@ type SwapBody = {
   from: string;
 };
 
-// POST /api/soroswap-aleregex — quote + unsigned XDR
+// POST /api/soroswap-karug1999 — quote + unsigned XDR
 export async function POST(req: NextRequest) {
   let body: SwapBody;
   try {

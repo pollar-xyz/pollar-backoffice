@@ -1,4 +1,4 @@
-# soroswap-aleregex
+# soroswap-karug1999
 
 In-app token swap via Soroswap Aggregator + Pollar signing.
 
@@ -19,16 +19,16 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Página disponible en: `http://localhost:3000/soroswap-aleregex`
-API route en: `GET/POST http://localhost:3000/api/soroswap-aleregex`
+Página disponible en: `http://localhost:3000/soroswap-karug1999`
+API route en: `GET/POST http://localhost:3000/api/soroswap-karug1999`
 
 ## Endpoints
 
-### `GET /api/soroswap-aleregex`
+### `GET /api/soroswap-karug1999`
 Lista estática de 5 tokens en Testnet (XLM, USDC, EURC, AQUA, BTC) con sus contract addresses verificados.
 `SupportedAssetLists` no está disponible en la versión de SDK fijada; el listado se mantiene como constante en `route.ts` con los contratos confirmados de `soroswap/core`.
 
-### `POST /api/soroswap-aleregex`
+### `POST /api/soroswap-karug1999`
 ```jsonc
 // Request
 {

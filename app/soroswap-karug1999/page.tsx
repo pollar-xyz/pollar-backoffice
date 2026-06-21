@@ -98,7 +98,7 @@ export default function SoroswapPage() {
 
   // Fetch token list once on mount.
   useEffect(() => {
-    fetch("/api/soroswap-aleregex")
+    fetch("/api/soroswap-karug1999")
       .then((r) => r.json())
       .then((res: { ok: boolean; data?: { assets?: unknown[] } }) => {
         if (!res.ok || !Array.isArray(res.data?.assets)) return;
@@ -145,7 +145,7 @@ export default function SoroswapPage() {
       const results = await Promise.all(
         targetTokens.map(async (tokenOut) => {
           try {
-            const res = await fetch("/api/soroswap-aleregex", {
+            const res = await fetch("/api/soroswap-karug1999", {
               method: "POST",
               signal: ctrl.signal,
               headers: { "Content-Type": "application/json" },
