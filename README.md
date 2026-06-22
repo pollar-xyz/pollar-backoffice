@@ -4,6 +4,10 @@ A [Pollar](https://docs.pollar.xyz) wallet built with Next.js. Users log in with
 
 Repo: https://github.com/pollar-xyz/pollar-backoffice
 
+## React Native
+
+Mobile app? Use [@pollar/react-native](https://github.com/d3vobed/pollar-react-native-d3vobed) — the same Pollar wallet flow in an Expo / React Native app, with email login and transaction signing.
+
 ## Requirements
 
 - Node.js 18+
