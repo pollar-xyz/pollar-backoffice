@@ -74,16 +74,16 @@ No backend and no secret keys — client-side only.
 - [x] Pins Next 16, React 19, `@pollar/core@^0.9.0`, `@pollar/react@^0.9.0`
 - [x] No unnecessary dependencies beyond the SDK stack
 - [x] README with 3-step setup and Deploy to Vercel button
-- [x] Demo videos attached — [release `demo-videos`](https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/tag/demo-videos)
+- [x] Demo videos attached — [demos/](https://github.com/PatrickKish1/create-pollar-app-patrickkish/tree/main/demos) (playable MP4 on GitHub)
 
 ## Demo videos
 
-| Demo | Description | Link |
-|------|-------------|------|
-| **pollar-demo-1.mov** | Scaffold with `npx`, set API key, run dev server (~11 MB) | [Download](https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/download/demo-videos/pollar-demo-1.mov) |
-| **pollar-demo-2.mov** | Sign in (Google / email) + testnet USDC send (~24 MB) | [Download](https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/download/demo-videos/pollar-demo-2.mov) |
+| Demo | What it shows | Watch on GitHub |
+|------|----------------|-----------------|
+| **pollar-demo-1.mp4** | Scaffold with `npx`, set API key, run dev server | [Open](https://github.com/PatrickKish1/create-pollar-app-patrickkish/blob/main/demos/pollar-demo-1.mp4) |
+| **pollar-demo-2.mp4** | Sign in (Google / email) + testnet USDC send | [Open](https://github.com/PatrickKish1/create-pollar-app-patrickkish/blob/main/demos/pollar-demo-2.mp4) |
 
-Release page: https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/tag/demo-videos
+Folder: https://github.com/PatrickKish1/create-pollar-app-patrickkish/tree/main/demos
 
 ## Develop the CLI locally
 
