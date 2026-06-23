@@ -74,12 +74,16 @@ No backend and no secret keys — client-side only.
 - [x] Pins Next 16, React 19, `@pollar/core@^0.9.0`, `@pollar/react@^0.9.0`
 - [x] No unnecessary dependencies beyond the SDK stack
 - [x] README with 3-step setup and Deploy to Vercel button
-- [ ] Demo video attached to this PR *(add your recording link below)*
+- [x] Demo videos attached — [release `demo-videos`](https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/tag/demo-videos)
 
-## Demo video
+## Demo videos
 
-<!-- Replace with your screen recording URL before merge -->
-_Add a link to your screen recording here (login + testnet USDC send)._
+| Demo | Description | Link |
+|------|-------------|------|
+| **pollar-demo-1.mov** | Scaffold with `npx`, set API key, run dev server (~11 MB) | [Download](https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/download/demo-videos/pollar-demo-1.mov) |
+| **pollar-demo-2.mov** | Sign in (Google / email) + testnet USDC send (~24 MB) | [Download](https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/download/demo-videos/pollar-demo-2.mov) |
+
+Release page: https://github.com/PatrickKish1/create-pollar-app-patrickkish/releases/tag/demo-videos
 
 ## Develop the CLI locally
 
