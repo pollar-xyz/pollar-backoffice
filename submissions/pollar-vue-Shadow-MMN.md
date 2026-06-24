@@ -17,11 +17,7 @@
 
 ```json
 {
-  "hash": "2c6e8e24c728f4f951ca3ef9f91b784f9ece947ddb6b5660e295719205bb0f46",
-  "status": "SUCCESS"
+  "status": "success",
+  "hash": "99e98196d2c731e7f763a1f3f3ab5d81b9936eb96395ed87058453483e6ee1d8"
 }
 ```
-
-## Demo Video
-
-*[Video to be added by submitter]*
