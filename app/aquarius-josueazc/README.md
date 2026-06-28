@@ -58,8 +58,8 @@ end-to-end on testnet, both directions:
 
 | Direction | Tx hash | Explorer |
 | --------- | ------- | -------- |
-| XLM → USDC | `515283e3fe415681c41df9edd45c9676523a2ffc4e171018872a04f148bdfc24` | [stellar.expert](https://stellar.expert/explorer/testnet/tx/515283e3fe415681c41df9edd45c9676523a2ffc4e171018872a04f148bdfc24) |
-| USDC → XLM | `ae57263c533b1cf3c7c1aa5981da63e5a60b15dc8aa99c32048edfca7d8935fb` | [stellar.expert](https://stellar.expert/explorer/testnet/tx/ae57263c533b1cf3c7c1aa5981da63e5a60b15dc8aa99c32048edfca7d8935fb) |
+| XLM → USDC | `7440361c09c3e16df1d8ecd295bd193138429c6f6b8ca5db0f6cdb07fe9a9a51` | [stellar.expert](https://stellar.expert/explorer/testnet/tx/7440361c09c3e16df1d8ecd295bd193138429c6f6b8ca5db0f6cdb07fe9a9a51) |
+| USDC → XLM | `c75b8622f9dfc98c6d071105fa7bc7a1a9719888c66a0c617019518fe08c3e1e` | [stellar.expert](https://stellar.expert/explorer/testnet/tx/c75b8622f9dfc98c6d071105fa7bc7a1a9719888c66a0c617019518fe08c3e1e) |
 
 ### What I learned wiring it up
 
