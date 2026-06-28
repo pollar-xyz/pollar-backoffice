@@ -78,13 +78,20 @@ El XDR generado por `build()` se pasa directamente a `signAndSubmitTx`.
 Validar que `signAndSubmitTx` de Pollar firma correctamente el `TransactionEnvelope` que devuelve `sdk.build()` de Soroswap, incluyendo las entradas de auth Soroban simuladas en el footprint.
 
 ### Resultado
-`sdk.build({ quote, from })` devuelve un XDR con el footprint Soroban ya simulado e incrustado en la transacción. `signAndSubmitTx` de Pollar lo recibe como un `TransactionEnvelope` completo y lo firma correctamente como cualquier transacción Soroban estándar — no requiere manejo especial del lado del cliente.
 
-**Hash de referencia (testnet):**
+El aggregator de Soroswap (`sdk.quote()`) devuelve `{"error":"Quote Failed","detail":"No path found"}` para el par XLM/USDC en Testnet. El mismo error se reproduce en la UI oficial de Soroswap Testnet, confirmando que la causa es ausencia de liquidez indexada en el router — no un error de configuración en este repositorio.
+
+En su lugar se ejecutó el path de fallback `buildSorobanAuthFallback()`: una invocación directa de `approve(from, spender, amount, expiration_ledger)` sobre el contrato USDCoin SAC (`CB3TLW74NBIOT3BUWOZ3TUM6RFDF6A4GVIRUQRQZABG5KPOUL4JJOV2F`). El expiration ledger se calcula dinámicamente en tiempo de ejecución como `getLatestLedger().sequence + 120`, eliminando el panic `UnreachableCodeReached` que causaba la secuencia hardcodeada anterior.
+
+La simulación RPC produjo un `TransactionEnvelope` con un `SorobanAuthorizationEntry` real. `signAndSubmitTx` de Pollar (vía Google Embedded Wallet) firmó y emitió la transacción on-chain sin requerir extensión de browser.
+
+**Hash on-chain (testnet — approve vía fallback, no swap):**
 ```
-7d4f2a1b8c9e3f0a5d2b6e9c1f4a7d0b3e6c9f2a5d8b1e4c7a0d3f6b9e2c5a8
+db3eb7e5e7aab46ba90d1fdb410deed62c0cb5e7a62eebe9a487e88588fe12f2
 ```
-_(Placeholder — reemplazar con el hash real de la transacción al ejecutar el spike con fondos reales en testnet)_
+- Ledger de ejecución: `3333072`
+- `expiration_ledger` dinámico: `3333184` (`getLatestLedger()` → `3333064` + `120`)
+- Verificación: https://stellar.expert/explorer/testnet/tx/db3eb7e5e7aab46ba90d1fdb410deed62c0cb5e7a62eebe9a487e88588fe12f2
 
 ### Caso especial: Split Auth
 Si el XDR exige que el usuario firme `SorobanAuthorizationEntry` de forma independiente (split auth — habitual en rutas multi-contrato), el flujo custodial de Pollar puede fallar porque `signAndSubmitTx` no extrae ni re-firma esas entradas por separado.

@@ -42,7 +42,12 @@ function getSoroswapClient(): SoroswapSDK {
 // Exported so the spike validation route branch can call it directly.
 export async function buildSorobanAuthFallback(from: string, amount: bigint): Promise<string> {
   const stellarRpc = new rpc.Server(SOROBAN_RPC_TESTNET);
-  const account = await stellarRpc.getAccount(from);
+  const [account, latestLedger] = await Promise.all([
+    stellarRpc.getAccount(from),
+    stellarRpc.getLatestLedger(),
+  ]);
+  // +120 ledgers ≈ 10 minutes of margin; keeps the approve valid through simulation.
+  const expirationLedger = latestLedger.sequence + 120;
 
   const contract = new Contract(TESTNET_USDC_CONTRACT);
 
@@ -53,7 +58,7 @@ export async function buildSorobanAuthFallback(from: string, amount: bigint): Pr
     new Address(from).toScVal(),
     new Address(FALLBACK_SPENDER).toScVal(),
     nativeToScVal(amount, { type: "i128" }),
-    nativeToScVal(100000, { type: "u32" }),
+    nativeToScVal(expirationLedger, { type: "u32" }),
   );
 
   const transaction = new TransactionBuilder(account, {
