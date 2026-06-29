@@ -13,6 +13,7 @@
     "@defindex/sdk": "^0.3.0",
     "@pollar/core": "^0.9.0",
     "@pollar/react": "^0.9.0",
+    "@soroswap/sdk": "^0.4.0",
     "@stellar/stellar-sdk": "^16.0.0",
     "next": "16.2.9",
     "qrcode.react": "^4.2.0",
