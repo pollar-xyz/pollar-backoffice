@@ -49,6 +49,13 @@ npm run lint    # eslint
 - [`@pollar/react`](https://www.npmjs.com/package/@pollar/react) / [`@pollar/core`](https://www.npmjs.com/package/@pollar/core) — Pollar SDK
 - `qrcode.react` — QR code for receiving payments
 
+## React Native Package
+
+The mobile counterpart lives in a separate repo:
+[**d3vobed/pollar-react-native-d3vobed**](https://github.com/d3vobed/pollar-react-native-d3vobed)
+
+It provides `PollarProvider`, `usePollar()`, and `EmailLogin` for React Native (Expo and bare RN), built on `@pollar/core`'s NobleKeyManager and storage adapters. See the repo for usage and an Expo demo app.
+
 ## Structure
 
 ```
