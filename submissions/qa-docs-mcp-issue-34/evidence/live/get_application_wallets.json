@@ -1,0 +1,138 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"items\\\": [\\n    {\\n      \\\"id\\\": \\\"cmrwd5wah000e0imw0fw9lkgw\\\",\\n      \\\"public_key\\\": \\\"G…REDACTED\\\",\\n      \\\"network\\\": \\\"STELLAR\\\",\\n      \\\"created_at\\\": \\\"2026-07-22T17:36:00.953Z\\\",\\n      \\\"type\\\": \\\"application\\\",\\n      \\\"role\\\": \\\"DISTRIBUTION\\\",\\n      \\\"api_key_name\\\": null,\\n      \\\"api_key_id\\\": null,\\n      \\\"auth_type\\\": null,\\n      \\\"last_login_at\\\": null,\\n      \\\"source\\\": \\\"INTERNAL\\\",\\n      \\\"walletInfo\\\": {\\n        \\\"existsOnStellar\\\": true\\n      },\\n      \\\"nativeInfo\\\": null\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrwd5w9p000d0imwnd11cjnx\\\",\\n      \\\"public_key\\\": \\\"G…REDACTED\\\",\\n      \\\"network\\\": \\\"STELLAR\\\",\\n      \\\"created_at\\\": \\\"2026-07-22T17:36:00.925Z\\\",\\n      \\\"type\\\": \\\"application\\\",\\n      \\\"role\\\": \\\"GAS\\\",\\n      \\\"api_key_name\\\": null,\\n      \\\"api_key_id\\\": null,\\n      \\\"auth_type\\\": null,\\n      \\\"last_login_at\\\": null,\\n      \\\"source\\\": \\\"INTERNAL\\\",\\n      \\\"walletInfo\\\": {\\n        \\\"existsOnStellar\\\": true\\n      },\\n      \\\"nativeInfo\\\": null\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrvjgocu00040imwfkscte27\\\",\\n      \\\"public_key\\\": \\\"G…REDACTED\\\",\\n      \\\"network\\\": \\\"STELLAR\\\",\\n      \\\"created_at\\\": \\\"2026-07-22T03:44:35.406Z\\\",\\n      \\\"type\\\": \\\"application\\\",\\n      \\\"role\\\": \\\"FUNDING\\\",\\n      \\\"api_key_name\\\": null,\\n      \\\"api_key_id\\\": null,\\n      \\\"auth_type\\\": null,\\n      \\\"last_login_at\\\": null,\\n      \\\"source\\\": \\\"INTERNAL\\\",\\n      \\\"walletInfo\\\": {\\n        \\\"existsOnStellar\\\": true\\n      },\\n      \\\"nativeInfo\\\": null\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrw9sz2400180ip0leo7elu2\\\",\\n      \\\"public_key\\\": \\\"G…REDACTED\\\",\\n      \\\"network\\\": \\\"STELLAR\\\",\\n      \\\"created_at\\\": \\\"2026-07-22T16:01:59.164Z\\\",\\n      \\\"type\\\": \\\"sdk_user\\\",\\n      \\\"role\\\": null,\\n      \\\"api_key_name\\\": \\\"Telegram Bot Test\\\",\\n      \\\"api_key_id\\\": \\\"cmrvjh****d3v0\\\",\\n      \\\"auth_type\\\": \\\"GOOGLE\\\",\\n      \\\"last_login_at\\\": \\\"2026-07-22T16:01:59.119Z\\\",\\n      \\\"source\\\": \\\"INTERNAL\\\",\\n      \\\"walletInfo\\\": {\\n        \\\"existsOnStellar\\\": true\\n      },\\n      \\\"nativeInfo\\\": null\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrw8f1nq00140immlp56ym1s\\\",\\n      \\\"public_key\\\": \\\"G…REDACTED\\\",\\n      \\\"network\\\": \\\"STELLAR\\\",\\n      \\\"created_at\\\": \\\"2026-07-22T15:23:09.734Z\\\",\\n      \\\"type\\\": \\\"sdk_user\\\",\\n      \\\"role\\\": null,\\n      \\\"api_key_name\\\": \\\"Telegram Bot Test\\\",\\n      \\\"api_key_id\\\": \\\"cmrvjh****d3v0\\\",\\n      \\\"auth_type\\\": \\\"GOOGLE\\\",\\n      \\\"last_login_at\\\": \\\"2026-07-23T14:27:31.007Z\\\",\\n      \\\"source\\\": \\\"INTERNAL\\\",\\n      \\\"walletInfo\\\": {\\n        \\\"existsOnStellar\\\": true\\n      },\\n      \\\"nativeInfo\\\": null\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrvjyhrz000p0ip0560r8qkx\\\",\\n      \\\"public_key\\\": \\\"G…REDACTED\\\",\\n      \\\"network\\\": \\\"STELLAR\\\",\\n      \\\"created_at\\\": \\\"2026-07-22T03:58:26.688Z\\\",\\n      \\\"type\\\": \\\"sdk_user\\\",\\n      \\\"role\\\": null,\\n      \\\"api_key_name\\\": \\\"Telegram Bot Test\\\",\\n      \\\"api_key_id\\\": \\\"cmrvjh****d3v0\\\",\\n      \\\"auth_type\\\": \\\"EMAIL\\\",\\n      \\\"last_login_at\\\": \\\"2026-07-22T15:31:11.376Z\\\",\\n      \\\"source\\\": \\\"INTERNAL\\\",\\n      \\\"walletInfo\\\": {\\n        \\\"existsOnStellar\\\": true\\n      },\\n      \\\"nativeInfo\\\": null\\n    }\\n  ],\\n  \\\"total\\\": 6,\\n  \\\"page\\\": 1,\\n  \\\"limit\\\": 6,\\n  \\\"totalPages\\\": 1,\\n  \\\"stats\\\": {\\n    \\\"total\\\": 6,\\n    \\\"existsOnStellar\\\": 6,\\n    \\\"networkCounts\\\": {\\n      \\\"STELLAR\\\": 6\\n    },\\n    \\\"coverage\\\": {\\n      \\\"active\\\": 7,\\n      \\\"expected\\\": 12\\n    }\\n  }\\n}\"}],\"structuredContent\":{\"items\":[{\"id\":\"cmrwd5wah000e0imw0fw9lkgw\",\"public_key\":\"G…REDACTED\",\"network\":\"STELLAR\",\"created_at\":\"2026-07-22T17:36:00.953Z\",\"type\":\"application\",\"role\":\"DISTRIBUTION\",\"api_key_name\":null,\"api_key_id\":null,\"auth_type\":null,\"last_login_at\":null,\"source\":\"INTERNAL\",\"walletInfo\":{\"existsOnStellar\":true},\"nativeInfo\":null},{\"id\":\"cmrwd5w9p000d0imwnd11cjnx\",\"public_key\":\"G…REDACTED\",\"network\":\"STELLAR\",\"created_at\":\"2026-07-22T17:36:00.925Z\",\"type\":\"application\",\"role\":\"GAS\",\"api_key_name\":null,\"api_key_id\":null,\"auth_type\":null,\"last_login_at\":null,\"source\":\"INTERNAL\",\"walletInfo\":{\"existsOnStellar\":true},\"nativeInfo\":null},{\"id\":\"cmrvjgocu00040imwfkscte27\",\"public_key\":\"G…REDACTED\",\"network\":\"STELLAR\",\"created_at\":\"2026-07-22T03:44:35.406Z\",\"type\":\"application\",\"role\":\"FUNDING\",\"api_key_name\":null,\"api_key_id\":null,\"auth_type\":null,\"last_login_at\":null,\"source\":\"INTERNAL\",\"walletInfo\":{\"existsOnStellar\":true},\"nativeInfo\":null},{\"id\":\"cmrw9sz2400180ip0leo7elu2\",\"public_key\":\"G…REDACTED\",\"network\":\"STELLAR\",\"created_at\":\"2026-07-22T16:01:59.164Z\",\"type\":\"sdk_user\",\"role\":null,\"api_key_name\":\"Telegram Bot Test\",\"api_key_id\":\"cmrvjh****d3v0\",\"auth_type\":\"GOOGLE\",\"last_login_at\":\"2026-07-22T16:01:59.119Z\",\"source\":\"INTERNAL\",\"walletInfo\":{\"existsOnStellar\":true},\"nativeInfo\":null},{\"id\":\"cmrw8f1nq00140immlp56ym1s\",\"public_key\":\"G…REDACTED\",\"network\":\"STELLAR\",\"created_at\":\"2026-07-22T15:23:09.734Z\",\"type\":\"sdk_user\",\"role\":null,\"api_key_name\":\"Telegram Bot Test\",\"api_key_id\":\"cmrvjh****d3v0\",\"auth_type\":\"GOOGLE\",\"last_login_at\":\"2026-07-23T14:27:31.007Z\",\"source\":\"INTERNAL\",\"walletInfo\":{\"existsOnStellar\":true},\"nativeInfo\":null},{\"id\":\"cmrvjyhrz000p0ip0560r8qkx\",\"public_key\":\"G…REDACTED\",\"network\":\"STELLAR\",\"created_at\":\"2026-07-22T03:58:26.688Z\",\"type\":\"sdk_user\",\"role\":null,\"api_key_name\":\"Telegram Bot Test\",\"api_key_id\":\"cmrvjh****d3v0\",\"auth_type\":\"EMAIL\",\"last_login_at\":\"2026-07-22T15:31:11.376Z\",\"source\":\"INTERNAL\",\"walletInfo\":{\"existsOnStellar\":true},\"nativeInfo\":null}],\"total\":6,\"page\":1,\"limit\":6,\"totalPages\":1,\"stats\":{\"total\":6,\"existsOnStellar\":6,\"networkCounts\":{\"STELLAR\":6},\"coverage\":{\"active\":7,\"expected\":12}}}},\"jsonrpc\":\"2.0\",\"id\":7}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"items\": [\n    {\n      \"id\": \"cmrwd5wah000e0imw0fw9lkgw\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T17:36:00.953Z\",\n      \"type\": \"application\",\n      \"role\": \"DISTRIBUTION\",\n      \"api_key_name\": null,\n      \"api_key_id\": null,\n      \"auth_type\": null,\n      \"last_login_at\": null,\n      \"source\": \"INTERNAL\",\n      \"walletInfo\": {\n        \"existsOnStellar\": true\n      },\n      \"nativeInfo\": null\n    },\n    {\n      \"id\": \"cmrwd5w9p000d0imwnd11cjnx\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T17:36:00.925Z\",\n      \"type\": \"application\",\n      \"role\": \"GAS\",\n      \"api_key_name\": null,\n      \"api_key_id\": null,\n      \"auth_type\": null,\n      \"last_login_at\": null,\n      \"source\": \"INTERNAL\",\n      \"walletInfo\": {\n        \"existsOnStellar\": true\n      },\n      \"nativeInfo\": null\n    },\n    {\n      \"id\": \"cmrvjgocu00040imwfkscte27\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T03:44:35.406Z\",\n      \"type\": \"application\",\n      \"role\": \"FUNDING\",\n      \"api_key_name\": null,\n      \"api_key_id\": null,\n      \"auth_type\": null,\n      \"last_login_at\": null,\n      \"source\": \"INTERNAL\",\n      \"walletInfo\": {\n        \"existsOnStellar\": true\n      },\n      \"nativeInfo\": null\n    },\n    {\n      \"id\": \"cmrw9sz2400180ip0leo7elu2\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T16:01:59.164Z\",\n      \"type\": \"sdk_user\",\n      \"role\": null,\n      \"api_key_name\": \"Telegram Bot Test\",\n      \"api_key_id\": \"cmrvjh****d3v0\",\n      \"auth_type\": \"GOOGLE\",\n      \"last_login_at\": \"2026-07-22T16:01:59.119Z\",\n      \"source\": \"INTERNAL\",\n      \"walletInfo\": {\n        \"existsOnStellar\": true\n      },\n      \"nativeInfo\": null\n    },\n    {\n      \"id\": \"cmrw8f1nq00140immlp56ym1s\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T15:23:09.734Z\",\n      \"type\": \"sdk_user\",\n      \"role\": null,\n      \"api_key_name\": \"Telegram Bot Test\",\n      \"api_key_id\": \"cmrvjh****d3v0\",\n      \"auth_type\": \"GOOGLE\",\n      \"last_login_at\": \"2026-07-23T14:27:31.007Z\",\n      \"source\": \"INTERNAL\",\n      \"walletInfo\": {\n        \"existsOnStellar\": true\n      },\n      \"nativeInfo\": null\n    },\n    {\n      \"id\": \"cmrvjyhrz000p0ip0560r8qkx\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T03:58:26.688Z\",\n      \"type\": \"sdk_user\",\n      \"role\": null,\n      \"api_key_name\": \"Telegram Bot Test\",\n      \"api_key_id\": \"cmrvjh****d3v0\",\n      \"auth_type\": \"EMAIL\",\n      \"last_login_at\": \"2026-07-22T15:31:11.376Z\",\n      \"source\": \"INTERNAL\",\n      \"walletInfo\": {\n        \"existsOnStellar\": true\n      },\n      \"nativeInfo\": null\n    }\n  ],\n  \"total\": 6,\n  \"page\": 1,\n  \"limit\": 6,\n  \"totalPages\": 1,\n  \"stats\": {\n    \"total\": 6,\n    \"existsOnStellar\": 6,\n    \"networkCounts\": {\n      \"STELLAR\": 6\n    },\n    \"coverage\": {\n      \"active\": 7,\n      \"expected\": 12\n    }\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "items": [
+          {
+            "id": "cmrwd5wah000e0imw0fw9lkgw",
+            "public_key": "G…REDACTED",
+            "network": "STELLAR",
+            "created_at": "2026-07-22T17:36:00.953Z",
+            "type": "application",
+            "role": "DISTRIBUTION",
+            "api_key_name": null,
+            "api_key_id": null,
+            "auth_type": null,
+            "last_login_at": null,
+            "source": "INTERNAL",
+            "walletInfo": {
+              "existsOnStellar": true
+            },
+            "nativeInfo": null
+          },
+          {
+            "id": "cmrwd5w9p000d0imwnd11cjnx",
+            "public_key": "G…REDACTED",
+            "network": "STELLAR",
+            "created_at": "2026-07-22T17:36:00.925Z",
+            "type": "application",
+            "role": "GAS",
+            "api_key_name": null,
+            "api_key_id": null,
+            "auth_type": null,
+            "last_login_at": null,
+            "source": "INTERNAL",
+            "walletInfo": {
+              "existsOnStellar": true
+            },
+            "nativeInfo": null
+          },
+          {
+            "id": "cmrvjgocu00040imwfkscte27",
+            "public_key": "G…REDACTED",
+            "network": "STELLAR",
+            "created_at": "2026-07-22T03:44:35.406Z",
+            "type": "application",
+            "role": "FUNDING",
+            "api_key_name": null,
+            "api_key_id": null,
+            "auth_type": null,
+            "last_login_at": null,
+            "source": "INTERNAL",
+            "walletInfo": {
+              "existsOnStellar": true
+            },
+            "nativeInfo": null
+          },
+          {
+            "id": "cmrw9sz2400180ip0leo7elu2",
+            "public_key": "G…REDACTED",
+            "network": "STELLAR",
+            "created_at": "2026-07-22T16:01:59.164Z",
+            "type": "sdk_user",
+            "role": null,
+            "api_key_name": "Telegram Bot Test",
+            "api_key_id": "cmrvjh****d3v0",
+            "auth_type": "GOOGLE",
+            "last_login_at": "2026-07-22T16:01:59.119Z",
+            "source": "INTERNAL",
+            "walletInfo": {
+              "existsOnStellar": true
+            },
+            "nativeInfo": null
+          },
+          {
+            "id": "cmrw8f1nq00140immlp56ym1s",
+            "public_key": "G…REDACTED",
+            "network": "STELLAR",
+            "created_at": "2026-07-22T15:23:09.734Z",
+            "type": "sdk_user",
+            "role": null,
+            "api_key_name": "Telegram Bot Test",
+            "api_key_id": "cmrvjh****d3v0",
+            "auth_type": "GOOGLE",
+            "last_login_at": "2026-07-23T14:27:31.007Z",
+            "source": "INTERNAL",
+            "walletInfo": {
+              "existsOnStellar": true
+            },
+            "nativeInfo": null
+          },
+          {
+            "id": "cmrvjyhrz000p0ip0560r8qkx",
+            "public_key": "G…REDACTED",
+            "network": "STELLAR",
+            "created_at": "2026-07-22T03:58:26.688Z",
+            "type": "sdk_user",
+            "role": null,
+            "api_key_name": "Telegram Bot Test",
+            "api_key_id": "cmrvjh****d3v0",
+            "auth_type": "EMAIL",
+            "last_login_at": "2026-07-22T15:31:11.376Z",
+            "source": "INTERNAL",
+            "walletInfo": {
+              "existsOnStellar": true
+            },
+            "nativeInfo": null
+          }
+        ],
+        "total": 6,
+        "page": 1,
+        "limit": 6,
+        "totalPages": 1,
+        "stats": {
+          "total": 6,
+          "existsOnStellar": 6,
+          "networkCounts": {
+            "STELLAR": 6
+          },
+          "coverage": {
+            "active": 7,
+            "expected": 12
+          }
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 7
+  }
+}

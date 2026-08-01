@@ -1,0 +1,23 @@
+[
+  "whoami",
+  "list_applications",
+  "get_application",
+  "get_application_wallets",
+  "get_wallet_balances",
+  "get_application_transactions",
+  "get_application_users",
+  "get_application_metrics",
+  "list_api_keys",
+  "list_distribution_rules",
+  "list_application_assets",
+  "create_application",
+  "create_api_key",
+  "enable_asset",
+  "create_distribution_rule",
+  "fund_testnet_wallet",
+  "update_application_domains",
+  "revoke_api_key",
+  "get_application_wallet_by_role",
+  "ensure_wallet_funded",
+  "check_application_readiness"
+]

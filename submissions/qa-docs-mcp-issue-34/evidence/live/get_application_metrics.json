@@ -1,0 +1,166 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"range\\\": \\\"14d\\\",\\n  \\\"timezone\\\": \\\"UTC\\\",\\n  \\\"totalCount\\\": 14,\\n  \\\"todayCount\\\": 0,\\n  \\\"perAsset\\\": [\\n    {\\n      \\\"code\\\": \\\"USDC\\\",\\n      \\\"rangeCount\\\": 8,\\n      \\\"todayCount\\\": 0\\n    },\\n    {\\n      \\\"code\\\": \\\"EURC\\\",\\n      \\\"rangeCount\\\": 3,\\n      \\\"todayCount\\\": 0\\n    }\\n  ],\\n  \\\"countSeries\\\": [\\n    {\\n      \\\"date\\\": \\\"2026-07-18\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-19\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-20\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-21\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-22\\\",\\n      \\\"count\\\": 14\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-23\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-24\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-25\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-26\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-27\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-28\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-29\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-30\\\",\\n      \\\"count\\\": 0\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-31\\\",\\n      \\\"count\\\": 0\\n    }\\n  ],\\n  \\\"byAssetSeries\\\": [\\n    {\\n      \\\"date\\\": \\\"2026-07-18\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-19\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-20\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-21\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-22\\\",\\n      \\\"byAsset\\\": {\\n        \\\"EURC\\\": 3,\\n        \\\"USDC\\\": 8\\n      }\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-23\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-24\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-25\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-26\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-27\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-28\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-29\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-30\\\",\\n      \\\"byAsset\\\": {}\\n    },\\n    {\\n      \\\"date\\\": \\\"2026-07-31\\\",\\n      \\\"byAsset\\\": {}\\n    }\\n  ],\\n  \\\"distribution\\\": [\\n    {\\n      \\\"code\\\": \\\"USDC\\\",\\n      \\\"value\\\": 8,\\n      \\\"percentage\\\": 73\\n    },\\n    {\\n      \\\"code\\\": \\\"EURC\\\",\\n      \\\"value\\\": 3,\\n      \\\"percentage\\\": 27\\n    }\\n  ]\\n}\"}],\"structuredContent\":{\"range\":\"14d\",\"timezone\":\"UTC\",\"totalCount\":14,\"todayCount\":0,\"perAsset\":[{\"code\":\"USDC\",\"rangeCount\":8,\"todayCount\":0},{\"code\":\"EURC\",\"rangeCount\":3,\"todayCount\":0}],\"countSeries\":[{\"date\":\"2026-07-18\",\"count\":0},{\"date\":\"2026-07-19\",\"count\":0},{\"date\":\"2026-07-20\",\"count\":0},{\"date\":\"2026-07-21\",\"count\":0},{\"date\":\"2026-07-22\",\"count\":14},{\"date\":\"2026-07-23\",\"count\":0},{\"date\":\"2026-07-24\",\"count\":0},{\"date\":\"2026-07-25\",\"count\":0},{\"date\":\"2026-07-26\",\"count\":0},{\"date\":\"2026-07-27\",\"count\":0},{\"date\":\"2026-07-28\",\"count\":0},{\"date\":\"2026-07-29\",\"count\":0},{\"date\":\"2026-07-30\",\"count\":0},{\"date\":\"2026-07-31\",\"count\":0}],\"byAssetSeries\":[{\"date\":\"2026-07-18\",\"byAsset\":{}},{\"date\":\"2026-07-19\",\"byAsset\":{}},{\"date\":\"2026-07-20\",\"byAsset\":{}},{\"date\":\"2026-07-21\",\"byAsset\":{}},{\"date\":\"2026-07-22\",\"byAsset\":{\"EURC\":3,\"USDC\":8}},{\"date\":\"2026-07-23\",\"byAsset\":{}},{\"date\":\"2026-07-24\",\"byAsset\":{}},{\"date\":\"2026-07-25\",\"byAsset\":{}},{\"date\":\"2026-07-26\",\"byAsset\":{}},{\"date\":\"2026-07-27\",\"byAsset\":{}},{\"date\":\"2026-07-28\",\"byAsset\":{}},{\"date\":\"2026-07-29\",\"byAsset\":{}},{\"date\":\"2026-07-30\",\"byAsset\":{}},{\"date\":\"2026-07-31\",\"byAsset\":{}}],\"distribution\":[{\"code\":\"USDC\",\"value\":8,\"percentage\":73},{\"code\":\"EURC\",\"value\":3,\"percentage\":27}]}},\"jsonrpc\":\"2.0\",\"id\":12}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"range\": \"14d\",\n  \"timezone\": \"UTC\",\n  \"totalCount\": 14,\n  \"todayCount\": 0,\n  \"perAsset\": [\n    {\n      \"code\": \"USDC\",\n      \"rangeCount\": 8,\n      \"todayCount\": 0\n    },\n    {\n      \"code\": \"EURC\",\n      \"rangeCount\": 3,\n      \"todayCount\": 0\n    }\n  ],\n  \"countSeries\": [\n    {\n      \"date\": \"2026-07-18\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-19\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-20\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-21\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-22\",\n      \"count\": 14\n    },\n    {\n      \"date\": \"2026-07-23\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-24\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-25\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-26\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-27\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-28\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-29\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-30\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-31\",\n      \"count\": 0\n    }\n  ],\n  \"byAssetSeries\": [\n    {\n      \"date\": \"2026-07-18\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-19\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-20\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-21\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-22\",\n      \"byAsset\": {\n        \"EURC\": 3,\n        \"USDC\": 8\n      }\n    },\n    {\n      \"date\": \"2026-07-23\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-24\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-25\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-26\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-27\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-28\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-29\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-30\",\n      \"byAsset\": {}\n    },\n    {\n      \"date\": \"2026-07-31\",\n      \"byAsset\": {}\n    }\n  ],\n  \"distribution\": [\n    {\n      \"code\": \"USDC\",\n      \"value\": 8,\n      \"percentage\": 73\n    },\n    {\n      \"code\": \"EURC\",\n      \"value\": 3,\n      \"percentage\": 27\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "range": "14d",
+        "timezone": "UTC",
+        "totalCount": 14,
+        "todayCount": 0,
+        "perAsset": [
+          {
+            "code": "USDC",
+            "rangeCount": 8,
+            "todayCount": 0
+          },
+          {
+            "code": "EURC",
+            "rangeCount": 3,
+            "todayCount": 0
+          }
+        ],
+        "countSeries": [
+          {
+            "date": "2026-07-18",
+            "count": 0
+          },
+          {
+            "date": "2026-07-19",
+            "count": 0
+          },
+          {
+            "date": "2026-07-20",
+            "count": 0
+          },
+          {
+            "date": "2026-07-21",
+            "count": 0
+          },
+          {
+            "date": "2026-07-22",
+            "count": 14
+          },
+          {
+            "date": "2026-07-23",
+            "count": 0
+          },
+          {
+            "date": "2026-07-24",
+            "count": 0
+          },
+          {
+            "date": "2026-07-25",
+            "count": 0
+          },
+          {
+            "date": "2026-07-26",
+            "count": 0
+          },
+          {
+            "date": "2026-07-27",
+            "count": 0
+          },
+          {
+            "date": "2026-07-28",
+            "count": 0
+          },
+          {
+            "date": "2026-07-29",
+            "count": 0
+          },
+          {
+            "date": "2026-07-30",
+            "count": 0
+          },
+          {
+            "date": "2026-07-31",
+            "count": 0
+          }
+        ],
+        "byAssetSeries": [
+          {
+            "date": "2026-07-18",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-19",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-20",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-21",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-22",
+            "byAsset": {
+              "EURC": 3,
+              "USDC": 8
+            }
+          },
+          {
+            "date": "2026-07-23",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-24",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-25",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-26",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-27",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-28",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-29",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-30",
+            "byAsset": {}
+          },
+          {
+            "date": "2026-07-31",
+            "byAsset": {}
+          }
+        ],
+        "distribution": [
+          {
+            "code": "USDC",
+            "value": 8,
+            "percentage": 73
+          },
+          {
+            "code": "EURC",
+            "value": 3,
+            "percentage": 27
+          }
+        ]
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 12
+  }
+}

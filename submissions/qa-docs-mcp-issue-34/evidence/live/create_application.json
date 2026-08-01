@@ -1,0 +1,73 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"id\\\": \\\"cms8whk6b001b0ipdmm6r24p7\\\",\\n  \\\"name\\\": \\\"qa-ab-arm-b-7b7706\\\",\\n  \\\"network\\\": \\\"testnet\\\",\\n  \\\"funding_mode\\\": \\\"IMMEDIATE\\\",\\n  \\\"funding_starting_balance_xlm\\\": \\\"0\\\",\\n  \\\"sponsor_trustlines\\\": true,\\n  \\\"sponsor_trustline_external\\\": true,\\n  \\\"chains\\\": [\\n    \\\"STELLAR\\\"\\n  ],\\n  \\\"allowed_origins\\\": [],\\n  \\\"swap_venues\\\": [],\\n  \\\"sponsor_swap_venues\\\": [],\\n  \\\"sponsor_swap_external\\\": false,\\n  \\\"sponsor_transfer_external\\\": false,\\n  \\\"sponsor_contract_external\\\": false,\\n  \\\"sponsor_all_contracts\\\": false,\\n  \\\"styles\\\": {\\n    \\\"theme\\\": \\\"light\\\",\\n    \\\"providers\\\": {\\n      \\\"x\\\": false,\\n      \\\"apple\\\": false,\\n      \\\"github\\\": false,\\n      \\\"google\\\": true,\\n      \\\"discord\\\": false\\n    },\\n    \\\"logoBase64\\\": null,\\n    \\\"accentColor\\\": \\\"#005DB4\\\",\\n    \\\"emailEnabled\\\": true,\\n    \\\"embeddedWallets\\\": true\\n  },\\n  \\\"email_from\\\": null,\\n  \\\"tx_policy\\\": null,\\n  \\\"soroban_auth_max_ledger_window\\\": null,\\n  \\\"access_token_ttl_seconds\\\": null,\\n  \\\"refresh_token_ttl_seconds\\\": null,\\n  \\\"user_id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n  \\\"project_id\\\": \\\"cms8whk65001a0ipdyb9d5oeh\\\",\\n  \\\"created_at\\\": \\\"2026-07-31T12:10:11.939Z\\\",\\n  \\\"updated_at\\\": \\\"2026-07-31T12:10:11.939Z\\\",\\n  \\\"deleted_at\\\": null,\\n  \\\"archived_at\\\": null,\\n  \\\"user\\\": {\\n    \\\"id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n    \\\"email\\\": \\\"…@REDACTED\\\",\\n    \\\"first_name\\\": \\\"kaleel\\\",\\n    \\\"last_name\\\": null,\\n    \\\"avatar\\\": \\\"https://…/REDACTED\\\",\\n    \\\"plan\\\": \\\"STARTER\\\",\\n    \\\"role\\\": \\\"DEVELOPER\\\",\\n    \\\"created_at\\\": \\\"2026-07-22T03:43:18.003Z\\\",\\n    \\\"updated_at\\\": \\\"2026-07-22T03:43:30.784Z\\\",\\n    \\\"deleted_at\\\": null\\n  }\\n}\"}],\"structuredContent\":{\"id\":\"cms8whk6b001b0ipdmm6r24p7\",\"name\":\"qa-ab-arm-b-7b7706\",\"network\":\"testnet\",\"funding_mode\":\"IMMEDIATE\",\"funding_starting_balance_xlm\":\"0\",\"sponsor_trustlines\":true,\"sponsor_trustline_external\":true,\"chains\":[\"STELLAR\"],\"allowed_origins\":[],\"swap_venues\":[],\"sponsor_swap_venues\":[],\"sponsor_swap_external\":false,\"sponsor_transfer_external\":false,\"sponsor_contract_external\":false,\"sponsor_all_contracts\":false,\"styles\":{\"theme\":\"light\",\"providers\":{\"x\":false,\"apple\":false,\"github\":false,\"google\":true,\"discord\":false},\"logoBase64\":null,\"accentColor\":\"#005DB4\",\"emailEnabled\":true,\"embeddedWallets\":true},\"email_from\":null,\"tx_policy\":null,\"soroban_auth_max_ledger_window\":null,\"access_token_ttl_seconds\":null,\"refresh_token_ttl_seconds\":null,\"user_id\":\"cmrvjf0mr00000hqhlm9epdko\",\"project_id\":\"cms8whk65001a0ipdyb9d5oeh\",\"created_at\":\"2026-07-31T12:10:11.939Z\",\"updated_at\":\"2026-07-31T12:10:11.939Z\",\"deleted_at\":null,\"archived_at\":null,\"user\":{\"id\":\"cmrvjf0mr00000hqhlm9epdko\",\"email\":\"…@REDACTED\",\"first_name\":\"kaleel\",\"last_name\":null,\"avatar\":\"https://…/REDACTED\",\"plan\":\"STARTER\",\"role\":\"DEVELOPER\",\"created_at\":\"2026-07-22T03:43:18.003Z\",\"updated_at\":\"2026-07-22T03:43:30.784Z\",\"deleted_at\":null}}},\"jsonrpc\":\"2.0\",\"id\":24}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"cms8whk6b001b0ipdmm6r24p7\",\n  \"name\": \"qa-ab-arm-b-7b7706\",\n  \"network\": \"testnet\",\n  \"funding_mode\": \"IMMEDIATE\",\n  \"funding_starting_balance_xlm\": \"0\",\n  \"sponsor_trustlines\": true,\n  \"sponsor_trustline_external\": true,\n  \"chains\": [\n    \"STELLAR\"\n  ],\n  \"allowed_origins\": [],\n  \"swap_venues\": [],\n  \"sponsor_swap_venues\": [],\n  \"sponsor_swap_external\": false,\n  \"sponsor_transfer_external\": false,\n  \"sponsor_contract_external\": false,\n  \"sponsor_all_contracts\": false,\n  \"styles\": {\n    \"theme\": \"light\",\n    \"providers\": {\n      \"x\": false,\n      \"apple\": false,\n      \"github\": false,\n      \"google\": true,\n      \"discord\": false\n    },\n    \"logoBase64\": null,\n    \"accentColor\": \"#005DB4\",\n    \"emailEnabled\": true,\n    \"embeddedWallets\": true\n  },\n  \"email_from\": null,\n  \"tx_policy\": null,\n  \"soroban_auth_max_ledger_window\": null,\n  \"access_token_ttl_seconds\": null,\n  \"refresh_token_ttl_seconds\": null,\n  \"user_id\": \"cmrvjf0mr00000hqhlm9epdko\",\n  \"project_id\": \"cms8whk65001a0ipdyb9d5oeh\",\n  \"created_at\": \"2026-07-31T12:10:11.939Z\",\n  \"updated_at\": \"2026-07-31T12:10:11.939Z\",\n  \"deleted_at\": null,\n  \"archived_at\": null,\n  \"user\": {\n    \"id\": \"cmrvjf0mr00000hqhlm9epdko\",\n    \"email\": \"…@REDACTED\",\n    \"first_name\": \"kaleel\",\n    \"last_name\": null,\n    \"avatar\": \"https://…/REDACTED\",\n    \"plan\": \"STARTER\",\n    \"role\": \"DEVELOPER\",\n    \"created_at\": \"2026-07-22T03:43:18.003Z\",\n    \"updated_at\": \"2026-07-22T03:43:30.784Z\",\n    \"deleted_at\": null\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "id": "cms8whk6b001b0ipdmm6r24p7",
+        "name": "qa-ab-arm-b-7b7706",
+        "network": "testnet",
+        "funding_mode": "IMMEDIATE",
+        "funding_starting_balance_xlm": "0",
+        "sponsor_trustlines": true,
+        "sponsor_trustline_external": true,
+        "chains": [
+          "STELLAR"
+        ],
+        "allowed_origins": [],
+        "swap_venues": [],
+        "sponsor_swap_venues": [],
+        "sponsor_swap_external": false,
+        "sponsor_transfer_external": false,
+        "sponsor_contract_external": false,
+        "sponsor_all_contracts": false,
+        "styles": {
+          "theme": "light",
+          "providers": {
+            "x": false,
+            "apple": false,
+            "github": false,
+            "google": true,
+            "discord": false
+          },
+          "logoBase64": null,
+          "accentColor": "#005DB4",
+          "emailEnabled": true,
+          "embeddedWallets": true
+        },
+        "email_from": null,
+        "tx_policy": null,
+        "soroban_auth_max_ledger_window": null,
+        "access_token_ttl_seconds": null,
+        "refresh_token_ttl_seconds": null,
+        "user_id": "cmrvjf0mr00000hqhlm9epdko",
+        "project_id": "cms8whk65001a0ipdyb9d5oeh",
+        "created_at": "2026-07-31T12:10:11.939Z",
+        "updated_at": "2026-07-31T12:10:11.939Z",
+        "deleted_at": null,
+        "archived_at": null,
+        "user": {
+          "id": "cmrvjf0mr00000hqhlm9epdko",
+          "email": "…@REDACTED",
+          "first_name": "kaleel",
+          "last_name": null,
+          "avatar": "https://…/REDACTED",
+          "plan": "STARTER",
+          "role": "DEVELOPER",
+          "created_at": "2026-07-22T03:43:18.003Z",
+          "updated_at": "2026-07-22T03:43:30.784Z",
+          "deleted_at": null
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 24
+  }
+}

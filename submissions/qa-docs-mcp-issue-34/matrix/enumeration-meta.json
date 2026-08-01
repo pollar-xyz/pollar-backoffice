@@ -1,0 +1,25 @@
+{
+  "updated_at": "2026-07-31T12:17:09.527081+00:00",
+  "row_count": 315,
+  "result_counts": {
+    "pass": 161,
+    "fail": 54,
+    "pending": 77,
+    "not_testable": 14,
+    "blocked": 6,
+    "not testable": 3
+  },
+  "fail_severity_counts": {
+    "major": 43,
+    "minor": 6,
+    "blocker": 5
+  },
+  "ab_design": {
+    "A": "Docs-only",
+    "B": "MCP+docs",
+    "clients": [
+      "Cursor mcp.json",
+      "VS Code .vscode/mcp.json + mcp-remote script"
+    ]
+  }
+}

@@ -1,0 +1,678 @@
+category,docs_section,what_doc_claims,test_performed,result,severity_if_fail,evidence,notes,ab_arm
+References,References,Endpoint https://mcp.api.pollar.xyz/mcp (Streamable HTTP),POST initialize without Authorization,pass,,evidence/mcp-noauth-401.txt,"Returns HTTP 401 {""success"":false,""error"":""unauthorized""} — matches ""request without a token is rejected"".",both
+MCP Gateway,MCP Gateway / Authentication,Authorization Bearer pat_… required,POST initialize with Authorization: Bearer pat_invalid_qa_probe,fail,major,evidence/mcp-badpat-initialize-200.txt,Invalid PAT still returns HTTP 200 and completes MCP initialize + tools/list (21 tools). Auth is only enforced on tools/call. Docs imply token is required for the gateway; agents may believe they are connected when the PAT is wrong.,both
+MCP Gateway,MCP Gateway / Authentication,Tool calls fail without valid token,tools/call list_applications with invalid PAT,pass,,evidence/mcp-badpat-toolscall.txt,"isError true: ""Your Personal Access Token is invalid or expired."" Empty Authorization on tools/call → HTTP 401.",both
+MCP Gateway,MCP Gateway / Tools,Tool `list_applications` documented (args: —; scope applications:read),tools/list includes `list_applications`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,Tool `get_application` documented (args: id; scope applications:read),tools/list includes `get_application`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,Tool `get_application_wallets` documented (args: id; scope wallets:read),tools/list includes `get_application_wallets`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `get_wallet_balances` documented (args: id, publicKey; scope wallets:read)",tools/list includes `get_wallet_balances`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `get_application_transactions` documented (args: id, limit?, offset?; scope transactions:read)",tools/list includes `get_application_transactions`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `get_application_users` documented (args: id, limit?, offset?; scope users:read)",tools/list includes `get_application_users`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,Tool `create_application` documented (args: name; scope applications:write),tools/list includes `create_application`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `create_api_key` documented (args: id, name, type?, …; scope api_keys:write)",tools/list includes `create_api_key`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `enable_asset` documented (args: id, code, issuer, name; scope assets:write)",tools/list includes `enable_asset`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `create_distribution_rule` documented (args: id, assetId, …; scope distribution:write)",tools/list includes `create_distribution_rule`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `fund_testnet_wallet` documented (args: id, publicKey; scope wallets:write)",tools/list includes `fund_testnet_wallet`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `update_application_domains` documented (args: id, allowed_origins; scope applications:write)",tools/list includes `update_application_domains`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `get_application_wallet_by_role` documented (args: id, role?; scope wallets:read)",tools/list includes `get_application_wallet_by_role`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,"Tool `ensure_wallet_funded` documented (args: id, role?; scope wallets:write)",tools/list includes `ensure_wallet_funded`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,Tool `check_application_readiness` documented (args: id; scope applications:read),tools/list includes `check_application_readiness`; live call pending valid PAT,pending,,evidence/mcp-tools-list.txt,Present in live tools/list (21 total). Behavioral/scope tests blocked until PAT available.,B
+MCP Gateway,MCP Gateway / Tools,llms-full.txt MCP tools table lists 15 tools; does not document `whoami`,tools/list returns `whoami` on live gateway,fail,major,evidence/mcp-tools-list.txt,Documented-but-incomplete: tool exists on gateway and is mentioned in server instructions (`whoami`) but absent from docs tool tables. Agent relying only on docs will miss it; agent discovering tools live will use undocumented APIs.,B
+MCP Gateway,MCP Gateway / Tools,llms-full.txt MCP tools table lists 15 tools; does not document `get_application_metrics`,tools/list returns `get_application_metrics` on live gateway,fail,major,evidence/mcp-tools-list.txt,Documented-but-incomplete: tool exists on gateway and is mentioned in server instructions (`whoami`) but absent from docs tool tables. Agent relying only on docs will miss it; agent discovering tools live will use undocumented APIs.,B
+MCP Gateway,MCP Gateway / Tools,llms-full.txt MCP tools table lists 15 tools; does not document `list_api_keys`,tools/list returns `list_api_keys` on live gateway,fail,major,evidence/mcp-tools-list.txt,Documented-but-incomplete: tool exists on gateway and is mentioned in server instructions (`whoami`) but absent from docs tool tables. Agent relying only on docs will miss it; agent discovering tools live will use undocumented APIs.,B
+MCP Gateway,MCP Gateway / Tools,llms-full.txt MCP tools table lists 15 tools; does not document `list_distribution_rules`,tools/list returns `list_distribution_rules` on live gateway,fail,major,evidence/mcp-tools-list.txt,Documented-but-incomplete: tool exists on gateway and is mentioned in server instructions (`whoami`) but absent from docs tool tables. Agent relying only on docs will miss it; agent discovering tools live will use undocumented APIs.,B
+MCP Gateway,MCP Gateway / Tools,llms-full.txt MCP tools table lists 15 tools; does not document `list_application_assets`,tools/list returns `list_application_assets` on live gateway,fail,major,evidence/mcp-tools-list.txt,Documented-but-incomplete: tool exists on gateway and is mentioned in server instructions (`whoami`) but absent from docs tool tables. Agent relying only on docs will miss it; agent discovering tools live will use undocumented APIs.,B
+MCP Gateway,MCP Gateway / Tools,llms-full.txt MCP tools table lists 15 tools; does not document `revoke_api_key`,tools/list returns `revoke_api_key` on live gateway,fail,major,evidence/mcp-tools-list.txt,Documented-but-incomplete: tool exists on gateway and is mentioned in server instructions (`whoami`) but absent from docs tool tables. Agent relying only on docs will miss it; agent discovering tools live will use undocumented APIs.,B
+MCP Gateway,MCP Gateway / Tools,Docs claim curated tool surface (15 tools in tables),Count tools via tools/list,fail,major,evidence/mcp-tools-list.txt,Live gateway exposes 21 tools vs 15 documented (delta +6). Finding class: docs incomplete relative to product.,B
+MCP Gateway,MCP Gateway / Confirmation,update_application_domains prompts for confirmation and replaces full list,Call with PAT in Cursor + Claude Code; observe confirmation annotation,pending,,,Requires real PAT + 2 MCP clients. A/B: Client A Cursor vs Client B Claude Code confirmation UX.,B
+MCP Gateway,MCP Gateway / Negative,Token without required scope fails with 403,Create restricted-scope PAT; call write tool,pending,,,Needs second PAT with read-only scopes.,B
+MCP Gateway,MCP Gateway / Helpers,ensure_wallet_funded is idempotent,Call twice on funded GLOBAL wallet,pending,,,Requires PAT + testnet app.,B
+MCP Gateway,MCP Gateway / Helpers,fund_testnet_wallet tops up via friendbot,Call on app funding wallet,pending,,,Requires PAT.,B
+MCP Gateway,MCP Gateway / Example prompts,"Docs example prompt: ""List my Pollar apps and tell me which ones are ready to use.""",Run verbatim in Variant B (Docs+MCP) on both clients,pending,,,A/B: same prompt on Cursor vs Claude Code; record tool selection differences.,B
+MCP Gateway,MCP Gateway / Example prompts,"Docs example prompt: ""Fund the testnet global wallet for app `…` if it isn't funded yet.""",Run verbatim in Variant B (Docs+MCP) on both clients,pending,,,A/B: same prompt on Cursor vs Claude Code; record tool selection differences.,B
+MCP Gateway,MCP Gateway / Example prompts,"Docs example prompt: ""Add `http://localhost:3000` to app `…`'s allowed domains.""",Run verbatim in Variant B (Docs+MCP) on both clients,pending,,,A/B: same prompt on Cursor vs Claude Code; record tool selection differences.,B
+MCP Gateway,MCP Gateway / Example prompts,"Docs example prompt: ""Create a publishable API key for app `…`.""",Run verbatim in Variant B (Docs+MCP) on both clients,pending,,,A/B: same prompt on Cursor vs Claude Code; record tool selection differences.,B
+@pollar,@pollar/core,Version: 0.10.1,npm view @pollar/core version,fail,minor,evidence/npm-versions.txt,Published version is 0.11.2; docs freeze at 0.10.1 across core/react/adapters. Agents may pin wrong version.,both
+@pollar,@pollar/react,Version: 0.10.1,npm view @pollar/react version,fail,minor,evidence/npm-versions.txt,Published 0.11.2 vs docs 0.10.1.,both
+Passkeys Guide,Passkeys Guide,Import { usePollarPasskey } from @pollar/react,Search exports in @pollar/react@0.11.2 d.ts,fail,blocker,evidence/sdk-exports-usepollarpasskey.txt,Docs show code sample for usePollarPasskey but also say it is not exported yet / coming soon. Sample will cause agent build failures if followed literally. Confirmed: not in package exports.,A
+@pollar,@pollar/react / Enabled assets,setTrustline opts: { limit?; sponsored? } / Pass sponsored: true,Compare to PollarContextValue in @pollar/react@0.11.2,fail,major,evidence/sdk-settrustline-opts.txt,"SDK uses skipSponsorship?: boolean, not sponsored?: boolean. Agent copying docs will pass wrong option name.",both
+@pollar,@pollar/react / usePollar(),Destructuring example + property tables enumerate hook surface,Diff PollarContextValue (51 keys) vs documented properties,fail,major,evidence/usepollar-surface-diff.txt,"Present in SDK, absent from docs property tables: wallets, sendPayment, configStatus, retryConfig, adapters. Agents discovering via types will use APIs docs never mention; docs-only agents miss sendPayment.",A
+Quickstart,Quickstart,npm install @pollar/react,Variant A (docs-only vibecode) and Variant B (docs+MCP) attempt step: 1. Install,pending,,,A/B vibecoding: measure where each variant stalls.,A|B
+Quickstart,Quickstart,Wrap app root with PollarProvider client={{ apiKey }},Variant A (docs-only vibecode) and Variant B (docs+MCP) attempt step: 2. PollarProvider,pending,,,A/B vibecoding: measure where each variant stalls.,A|B
+Quickstart,Quickstart,usePollar().login / isAuthenticated / wallet,Variant A (docs-only vibecode) and Variant B (docs+MCP) attempt step: 3. Login,pending,,,A/B vibecoding: measure where each variant stalls.,A|B
+Quickstart,Quickstart,"runTx(""payment"", { destination, amount, asset })",Variant A (docs-only vibecode) and Variant B (docs+MCP) attempt step: 4. Send payment,pending,,,A/B vibecoding: measure where each variant stalls.,A|B
+Quickstart,Quickstart,openTxHistoryModal / txHistory + fetchTxHistory,Variant A (docs-only vibecode) and Variant B (docs+MCP) attempt step: 5. History,pending,,,A/B vibecoding: measure where each variant stalls.,A|B
+Funding Modes,Funding Modes / Server API,POST https://api.pollar.xyz/v1/wallets/activate with x-pollar-api-key secret,Unauthenticated probe of api.pollar.xyz; live activate pending secret key,pending,,evidence/endpoint-probes.txt,Root GET returns 404 (expected for API). Full activate test needs sec_testnet_ key + wallet publicKey.,both
+Transaction History,Transaction History / SDK API,GET https://sdk.api.pollar.xyz/v1/tx/history,Unauthenticated probe; authenticated call pending session,pending,,evidence/endpoint-probes.txt,Root GET 404. Docs note no secret-key Server API for history.,both
+Security Model,Security Model,Passkeys (WebAuthn) coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Security Model,Security Model,BYOK coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Security Model,Security Model,MPC coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Stellar Primitives,Stellar Primitives,SEP-7 coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Example App,Example App,Receive QR SEP-7 coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Example App,Example App,Testnet funding via distribution coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Example App,Example App,Passkeys coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Example App,Example App,SEP-24 fiat deposit coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Example App,Example App,Expo / React Native coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Example App,Example App,TrueLayer coming soon,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Dashboard Overview,Dashboard Overview,Webhooks upcoming,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Dashboard Overview,Dashboard Overview,Authentication upcoming,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Dashboard Overview,Dashboard Overview,KYC upcoming,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Dashboard Overview,Dashboard Overview,Alerts upcoming,Confirm labeled coming soon / upcoming; do not treat as available,not_testable,,,"Explicitly marked coming soon/upcoming in docs — not exercised as available. Cross-check against contradictory ""available"" claims elsewhere (esp. smart wallets / createSmartWallet).",n/a
+Smart Wallets vs Passkeys Guide,Smart Wallets vs Passkeys Guide,Passkeys Guide `coming soon` vs createSmartWallet()/loginSmartWallet() documented as available in 0.10.1,Compare Passkeys Guide banner vs Smart Wallets availability callout; check exports,fail,blocker,evidence/passkey-status-contradiction.txt,High-priority finding class: inconsistent availability. createSmartWallet exists on PollarClient; usePollarPasskey does not. Passkeys Guide still shows non-exported hook sample under coming soon.,A
+MCP Gateway,MCP Gateway / Connect a client,Cursor mcp.json type:http url headers Authorization,Docs-only config draft prepared; live connect pending PAT,pending,,clients/cursor-mcp.pollar.example.json,Variant B Client A setup. Will not commit real PAT.,B
+MCP Gateway,MCP Gateway / Connect a client,Claude Code: claude mcp add --transport http …,Docs-only command prepared; live connect pending PAT,pending,,clients/claude-code-connect.sh,Variant B Client B setup.,B
+MCP Gateway,MCP Gateway / Connect a client,"After editing config, restart client; should list Pollar tools",Cursor currently has only Prava Payments Docs MCP; Pollar not configured yet,blocked,major,evidence/cursor-mcp-before.txt,Blocked on user providing PAT from dashboard.pollar.xyz Account → Personal Access Tokens.,B
+Docs fidelity,llms-full.txt / @pollar/core,Documented package version `0.10.1`,Compare to npm `@pollar/core` latest,fail,major,evidence/sdk-probe.json,Installed npm is 0.11.2; docs lag by at least one minor,A
+Docs fidelity,llms-full.txt / @pollar/react,Documented package version `0.10.1`,Compare to npm `@pollar/react` latest,fail,major,evidence/sdk-probe.json,Installed npm is 0.11.2,A
+Docs fidelity,llms-full.txt / @pollar/react,PollarProvider heading renders as empty backticks: `` ` ` [#pollarprovider]``,Inspect llms-full.txt markdown around PollarProvider,fail,minor,llms-full.txt:3458,Broken heading / truncated component name in AI docs feed,A
+Docs fidelity,llms-full.txt / @pollar/react,Login option `{ provider: ' ' }` placeholder corrupted in AI feed,Inspect PollarLoginOptions table in llms-full.txt,fail,minor,llms-full.txt:3574,Whitespace provider id will confuse agents,A
+MCP,MCP Gateway,Request without a token is rejected,POST initialize to https://mcp.api.pollar.xyz/mcp with no Authorization,pass,,evidence/mcp-noauth.txt,"HTTP 401 {""success"":false,""error"":""unauthorized""}",B
+MCP,MCP Gateway / Tools,`list_applications` (read) args=`—` returns=`Applications the token can access` scope=`applications:read`,Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,`get_application` (read) args=`id` returns=`App detail` scope=`applications:read`,Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,`get_application_wallets` (read) args=`id` returns=`App + end-user wallets` scope=`wallets:read`,Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`get_wallet_balances` (read) args=`id, publicKey` returns=`On-chain balances` scope=`wallets:read`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`get_application_transactions` (read) args=`id, limit?, offset?` returns=`Transaction history` scope=`transactions:read`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`get_application_users` (read) args=`id, limit?, offset?` returns=`SDK end-users` scope=`users:read`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,`create_application` (write) args=`name` returns=`Create app` scope=`applications:write`,Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`create_api_key` (write) args=`id, name, type?, allow_native_clients?, expires_at?` returns=`Create API key` scope=`api_keys:write`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`enable_asset` (write) args=`id, code, issuer, name` returns=`Enable trustline` scope=`assets:write`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`create_distribution_rule` (write) args=`id, assetId, name, amountPerUser, maxClaims, period, …` returns=`Create distribution rule` scope=`distribution:write`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`fund_testnet_wallet` (write) args=`id, publicKey` returns=`Friendbot top-up` scope=`wallets:write`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`update_application_domains` (edit) args=`id, allowed_origins` returns=`Replace CORS list` scope=`applications:write`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`get_application_wallet_by_role` (helper) args=`id, role?` returns=`Resolve wallet by role + funded?` scope=`wallets:read`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,"`ensure_wallet_funded` (helper) args=`id, role?` returns=`Fund only if not funded (idempotent)` scope=`wallets:write`",Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Tools,`check_application_readiness` (helper) args=`id` returns=`Get started readiness` scope=`applications:read`,Invoke via MCP client; verify success shape vs docs,,,,Blocked pending PAT,B
+MCP,MCP Gateway / Negative,Tool fails with 403 if token lacks required scope,Call write tool with read-only PAT,,,,Needs restricted-scope PAT,B
+MCP,MCP Gateway / Negative,`update_application_domains` prompts for confirmation and replaces full list,Call with client that supports annotations; verify replace semantics,,,,,B
+MCP,MCP Gateway / Negative,`ensure_wallet_funded` is idempotent,Call twice on funded wallet,,,,,B
+MCP,MCP Gateway / Negative,`fund_testnet_wallet` idempotent/harmless on repeat,Call twice,,,,,B
+MCP,MCP Gateway / Example prompts,List my Pollar apps and tell me which ones are ready to use.,Run prompt verbatim in MCP-connected client,,,,,B
+MCP,MCP Gateway / Example prompts,Fund the testnet global wallet for app … if it isn’t funded yet.,Run prompt verbatim in MCP-connected client,,,,,B
+MCP,MCP Gateway / Example prompts,Add http://localhost:3000 to app …’s allowed domains.,Run prompt verbatim in MCP-connected client,,,,,B
+MCP,MCP Gateway / Example prompts,Create a publishable API key for app ….,Run prompt verbatim in MCP-connected client,,,,,B
+MCP,MCP Gateway / Connect,Cursor connects via mcp.json http transport,Add pollar entry to ~/.cursor/mcp.json; list tools,,,,Needs PAT,B-client-cursor
+MCP,MCP Gateway / Connect,Second MCP client connects following only the docs,Configure Claude Code OR VS Code Copilot OR Claude Desktop OR mcp-remote,,,,Claude Code CLI not installed locally; plan VS Code/.vscode/mcp.json or mcp-remote,B-client-2
+Quickstart,Quickstart,npm install @pollar/react includes @pollar/core as peer,Execute step 1. Install on testnet,,,,Needs valid publishable key + login,A+B
+Quickstart,Quickstart,Wrap root with PollarProvider client={{ apiKey }},Execute step 2. PollarProvider on testnet,,,,Needs valid publishable key + login,A+B
+Quickstart,Quickstart,login({ provider: 'google'|email|github }) creates wallet,Execute step 3. Login on testnet,,,,Needs valid publishable key + login,A+B
+Quickstart,Quickstart,"runTx('payment', { destination, amount, asset })",Execute step 4. Send payment on testnet,,,,Needs valid publishable key + login,A+B
+Quickstart,Quickstart,fetchTxHistory / openTxHistoryModal works,Execute step 5. History on testnet,,,,Needs valid publishable key + login,A+B
+SDK,@pollar/react / usePollar(),`isAuthenticated` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`verified` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`wallet` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`login` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`logout` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`buildTx` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`signAndSubmitTx` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`signTx` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`submitTx` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`buildAndSignAndSubmitTx` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`runTx` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`tx` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`txHistory` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`network` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`setNetwork` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`walletBalance` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`refreshWalletBalance` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`enabledAssets` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`refreshAssets` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`setTrustline` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`getSwapConfig` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`getSwapTokens` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`getSwapQuote` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`swap` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`getEarnProviders` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`getEarnOpportunities` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`getEarnPosition` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`earnDeposit` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`earnWithdraw` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`getClient` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openLoginModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openTxModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openKycModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openRampModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openTxHistoryModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openWalletBalanceModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openSendModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openReceiveModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openEnabledAssetsModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openSwapModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openEarnModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openSessionsModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`openDistributionRulesModal` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`sessions` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`appConfig` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`styles` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`configStatus` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`retryConfig` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`sendPayment` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/react / usePollar(),`wallets` documented on usePollar(),Check PollarContextValue in installed @pollar/react d.ts,pass,,evidence/sdk-probe.json,Present in 0.11.2 types,A
+SDK,@pollar/core,`pollar.beginEmailLogin()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.buildTx()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.cancelLogin()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.claimDistributionRule()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.createOffRamp()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.createOnRamp()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.createSmartWallet()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.earnDeposit()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.earnWithdraw()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.fetchSessions()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.fetchTxHistory()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getAppConfig()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getAuthState()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getEarnOpportunities()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getEarnPosition()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getEarnProviders()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getEnabledAssetsState()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getKycProviders()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getKycStatus()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getNetwork()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getRampTransaction()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getRampsQuote()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getSessionsState()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getSwapConfig()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getSwapQuote()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getSwapTokens()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getTransactionState()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getTxHistoryState()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getWalletBalance()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.getWalletBalanceState()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.listDistributionRules()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.listSessions()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.login()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.loginSmartWallet()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.logout()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.logoutEverywhere()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.onAuthStateChange()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.onEnabledAssetsStateChange()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.onNetworkStateChange()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.onSessionsStateChange()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.onTransactionStateChange()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.onTxHistoryStateChange()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.onWalletBalanceStateChange()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.pollKycStatus()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.pollRampTransaction()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.refreshAssets()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.refreshBalance()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.resolveKyc()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.revokeSession()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.runTx()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.sendEmailCode()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.setNetwork()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.setTrustline()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.signAndSubmitTx()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.startKyc()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.swap()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.verifyEmailCode()` documented,Check PollarClient public prototype methods on installed package,pass,,evidence/sdk-probe.json,Present on PollarClient,A
+SDK,@pollar/core,`pollar.xyz()` documented,Check PollarClient public prototype methods on installed package,fail,major,evidence/sdk-probe.json,Documented in llms-full.txt but not a public PollarClient method (may be free function / renamed / removed),A
+SDK,@pollar/core / surface drift,`pollar.sendPayment()` present in SDK,Inventory public methods vs docs mentions,fail,minor,evidence/sdk-probe.json,Present in SDK; agents relying only on incomplete sections may miss it,A
+SDK,@pollar/core / surface drift,`pollar.createSmartWallet()` present in SDK,Inventory public methods vs docs mentions,pass,,evidence/sdk-probe.json,Also documented,A
+SDK,@pollar/core / surface drift,`pollar.loginSmartWallet()` present in SDK,Inventory public methods vs docs mentions,pass,,evidence/sdk-probe.json,Also documented,A
+SDK,@pollar/core / surface drift,`pollar.setTrustline()` present in SDK,Inventory public methods vs docs mentions,pass,,evidence/sdk-probe.json,Also documented,A
+SDK,@pollar/core / surface drift,`pollar.swap()` present in SDK,Inventory public methods vs docs mentions,pass,,evidence/sdk-probe.json,Also documented,A
+SDK,@pollar/core / surface drift,`pollar.earnDeposit()` present in SDK,Inventory public methods vs docs mentions,pass,,evidence/sdk-probe.json,Also documented,A
+Docs fidelity,Passkeys Guide,Passkeys Guide marked `coming soon`,Confirm guide status and whether createSmartWallet still listed as available,pass,,llms-full.txt:1603,Section marked coming soon,A
+Docs fidelity,Smart Wallets,`createSmartWallet()` listed available while passkeys guide is coming soon,Cross-check consistency between Passkeys Guide and Smart Wallets / core API,,,,Inconsistency to verify at runtime,A
+SDK,@pollar/react,`usePollarPasskey()` availability,Search installed @pollar/react exports/types,fail,major,evidence/sdk-probe.json,Not exported in @pollar/react@0.11.2 (confirm against current docs claims),A
+Server API,Pollar Server API,DELETE /v1/wallets/:address/trustlines/:asset,HTTP call on testnet with secret/publishable key as documented; compare status & body,,,,Needs secret key for most routes,A
+Server API,Pollar Server API,POST /v1/tokens/verify,HTTP call on testnet with secret/publishable key as documented; compare status & body,,,,Needs secret key for most routes,A
+Server API,Pollar Server API,POST /v1/users,HTTP call on testnet with secret/publishable key as documented; compare status & body,,,,Needs secret key for most routes,A
+Server API,Pollar Server API,POST /v1/users/with-wallet,HTTP call on testnet with secret/publishable key as documented; compare status & body,,,,Needs secret key for most routes,A
+Server API,Pollar Server API,POST /v1/wallets/:address/trustlines,HTTP call on testnet with secret/publishable key as documented; compare status & body,,,,Needs secret key for most routes,A
+Server API,Pollar Server API,POST /v1/wallets/:address/trustlines/default,HTTP call on testnet with secret/publishable key as documented; compare status & body,,,,Needs secret key for most routes,A
+Server API,Pollar Server API,POST /v1/wallets/activate,HTTP call on testnet with secret/publishable key as documented; compare status & body,,,,Needs secret key for most routes,A
+Dashboard,Dashboard flows,Account → Personal Access Tokens: create token with scopes,Follow docs-only UI path on testnet,,,,Needs dashboard login,A+B
+Dashboard,Dashboard flows,Configuration → API Keys → Generate publishable + secret,Follow docs-only UI path on testnet,,,,Needs dashboard login,A+B
+Dashboard,Dashboard flows,"Get started: API keys, domains, app-wallet funding, trustlines",Follow docs-only UI path on testnet,,,,Needs dashboard login,A+B
+Dashboard,Dashboard flows,Enable asset / trustlines in dashboard,Follow docs-only UI path on testnet,,,,Needs dashboard login,A+B
+Dashboard,Dashboard flows,Allowed domains configuration,Follow docs-only UI path on testnet,,,,Needs dashboard login,A+B
+Docs fidelity,Passkeys Guide,Marked coming soon/upcoming in llms-full.txt,Confirm unavailable; mark not testable with why if blocked,not testable,,,Explicitly marked unavailable in docs,A
+Docs fidelity,Webhooks,Marked coming soon/upcoming in llms-full.txt,Confirm unavailable; mark not testable with why if blocked,not testable,,,Explicitly marked unavailable in docs,A
+Docs fidelity,KYC,Marked coming soon/upcoming in llms-full.txt,Confirm unavailable; mark not testable with why if blocked,not testable,,,Explicitly marked unavailable in docs,A
+Vibecoding,Vibecoding E2E / Arm A,Docs-only agent builds Quickstart end-to-end from llms-full.txt without MCP,Agent session with docs only; log stalls/hallucinations; produce app,,,,,A
+Vibecoding,Vibecoding E2E / Arm B,MCP+docs agent builds Quickstart end-to-end with gateway tools,Agent session with MCP + docs; compare to Arm A,,,,,B
+MCP,MCP Gateway / Tools,Tool `whoami` is not listed in docs tool tables,Compare tools/list from live MCP (even with invalid PAT) to llms-full.txt tables,fail,major,evidence/mcp-tools-diff.json,Present in live gateway (21 tools) but absent from documented 15-tool tables — agents following docs miss these; agents discovering tools/list may use undocumenteds,B
+MCP,MCP Gateway / Tools,Tool `get_application_metrics` is not listed in docs tool tables,Compare tools/list from live MCP (even with invalid PAT) to llms-full.txt tables,fail,major,evidence/mcp-tools-diff.json,Present in live gateway (21 tools) but absent from documented 15-tool tables — agents following docs miss these; agents discovering tools/list may use undocumenteds,B
+MCP,MCP Gateway / Tools,Tool `list_api_keys` is not listed in docs tool tables,Compare tools/list from live MCP (even with invalid PAT) to llms-full.txt tables,fail,major,evidence/mcp-tools-diff.json,Present in live gateway (21 tools) but absent from documented 15-tool tables — agents following docs miss these; agents discovering tools/list may use undocumenteds,B
+MCP,MCP Gateway / Tools,Tool `list_application_assets` is not listed in docs tool tables,Compare tools/list from live MCP (even with invalid PAT) to llms-full.txt tables,fail,major,evidence/mcp-tools-diff.json,Present in live gateway (21 tools) but absent from documented 15-tool tables — agents following docs miss these; agents discovering tools/list may use undocumenteds,B
+MCP,MCP Gateway / Tools,Tool `list_distribution_rules` is not listed in docs tool tables,Compare tools/list from live MCP (even with invalid PAT) to llms-full.txt tables,fail,major,evidence/mcp-tools-diff.json,Present in live gateway (21 tools) but absent from documented 15-tool tables — agents following docs miss these; agents discovering tools/list may use undocumenteds,B
+MCP,MCP Gateway / Tools,Tool `revoke_api_key` is not listed in docs tool tables,Compare tools/list from live MCP (even with invalid PAT) to llms-full.txt tables,fail,major,evidence/mcp-tools-diff.json,Present in live gateway (21 tools) but absent from documented 15-tool tables — agents following docs miss these; agents discovering tools/list may use undocumenteds,B
+MCP,MCP Gateway / Authentication,A request without a token is rejected; Bearer pat_… authenticates the gateway,initialize + tools/list with invalid PAT vs tools/call,fail,major,evidence/mcp-badpat-initialize-200.txt; evidence/mcp-badpat-toolscall.txt,Invalid PAT still completes initialize and tools/list (HTTP 200). Only tools/call returns isError. Agents can appear “connected” with a bad token.,B
+SDK,@pollar/react / Enabled assets,"setTrustline(..., opts?: { limit?; sponsored? }) — Pass sponsored: true",Compare docs claim to @pollar/react@0.11.2 / core types,fail,major,evidence/sdk-settrustline-opts.txt,"SDK uses skipSponsorship?: boolean, not sponsored?. Agent copying docs literally will pass wrong option.",A
+MCP,MCP Gateway / Live,MCP initialize (full PAT),Valid PAT authenticates gateway,pass,,evidence/live/full-initialize.json,http=200 session=False,B
+MCP,MCP Gateway / Live,MCP tools/list,Gateway exposes documented tools,pass,,evidence/live/full-tool-names.json,"count=21 names=['whoami', 'list_applications', 'get_application', 'get_application_wallets', 'get_wallet_balances', 'get_application_transactions', 'get_application_users', 'get_application_metrics', 'list_api_keys', 'list_distribution_rules', 'list_application_assets', 'create_application', 'create_api_key', 'enable_asset', 'create_distribution_rule', 'fund_testnet_wallet', 'update_application_domains', 'revoke_api_key', 'get_application_wallet_by_role', 'ensure_wallet_funded', 'check_application_readiness']",B
+MCP,MCP Gateway / Live,whoami,Undocumented helper identifies developer,pass,,evidence/live/whoami.json,"{
+  ""identity"": {
+    ""id"": ""cmrvjf0mr00000hqhlm9epdko"",
+    ""email"": ""pixelhubster@gmail.com"",
+    ""first_name"": ""kaleel"",
+    ""last_name"": null,
+    ""avatar"": ""https://lh3.googleusercontent.com/a/ACg8ocIv7bleVMioRiSyshIPhhIApDgzQYE362Lp9X-RgFmSQ0I6V-Gp=s96-c"",
+    ""role"": ""DEVELOPER"",
+    ""identities"": [
+      {
+        ""id"": ""cmrvjf0mx00010hqhpvusutpa"",
+        ""provider"": ""GOOGLE"",
+        ""provider_id"": ""110308564163083843275""
+      }
+    ]
+  },
+  ""accessibleApplications"": [
+    {
+      ""id",B
+MCP,MCP Gateway / Live,list_applications,Lists applications token can access,pass,,evidence/live/list_applications.json,"[
+  {
+    ""id"": ""cmrvjgoa…REDACTED"",
+    ""name"": ""Telegram Bot"",
+    ""network"": ""testnet"",
+    ""funding_mode"": ""IMMEDIATE"",
+    ""funding_starting_balance_xlm"": ""100"",
+    ""sponsor_trustlines"": true,
+    ""sponsor_trustline_external"": true,
+    ""chains"": [
+      ""STELLAR""
+    ],
+    ""allowed_origins"": [
+      ""http://localhost:3000"",
+      ""https://pollar-telegram-shop-template-nyuiela.vercel.app""
+    ],
+    ""swap_venues"": [],
+    ""sponsor_swap_venues"": [],
+    ""sponsor_swap_external"": fal",B
+MCP,MCP Gateway / Live,get_application,Returns app detail,pass,,evidence/live/get_application.json,"{
+  ""id"": ""cmrvjgoa…REDACTED"",
+  ""name"": ""Telegram Bot"",
+  ""network"": ""testnet"",
+  ""funding_mode"": ""IMMEDIATE"",
+  ""funding_starting_balance_xlm"": ""100"",
+  ""sponsor_trustlines"": true,
+  ""sponsor_trustline_external"": true,
+  ""chains"": [
+    ""STELLAR""
+  ],
+  ""allowed_origins"": [
+    ""http://localhost:3000"",
+    ""https://pollar-telegram-shop-template-nyuiela.vercel.app""
+  ],
+  ""swap_venues"": [],
+  ""sponsor_swap_venues"": [],
+  ""sponsor_swap_external"": false,
+  ""sponsor_transfer_external"": fal",B
+MCP,MCP Gateway / Live,check_application_readiness,Evaluates get-started steps,pass,,evidence/live/check_application_readiness.json,"{
+  ""applicationId"": ""cmrvjgoa…REDACTED"",
+  ""network"": ""testnet"",
+  ""ready"": true,
+  ""completedRequired"": 3,
+  ""totalRequired"": 3,
+  ""steps"": [
+    {
+      ""key"": ""api_keys"",
+      ""label"": ""Configure API keys"",
+      ""required"": true,
+      ""done"": true,
+      ""detail"": ""has a publishable key""
+    },
+    {
+      ""key"": ""domains"",
+      ""label"": ""Configure allowed domains"",
+      ""required"": true,
+      ""done"": true,
+      ""detail"": ""2 origin(s)""
+    },
+    {
+      ""key"": ""fund_wallet"",
+      ""label"": ""Fund app wallet"",
+      ""required"": true,
+      ""done"": true,
+      ""detail"": ""G…REDACTED (funded)""
+    },
+    {
+      ""key"": ""trustlines"",
+      ""label"": ""Enable trustlines"",
+      ""required"": false,
+      ""done"": true,
+      ""detail"": """,B
+MCP,MCP Gateway / Live,get_application_wallets,Returns app + end-user wallets,pass,,evidence/live/get_application_wallets.json,"{
+  ""items"": [
+    {
+      ""id"": ""cmrwd5wah000e0imw0fw9lkgw"",
+      ""public_key"": ""G…REDACTED"",
+      ""network"": ""STELLAR"",
+      ""created_at"": ""2026-07-22T17:36:00.953Z"",
+      ""type"": ""application"",
+      ""role"": ""DISTRIBUTION"",
+      ""api_key_name"": null,
+      ""api_key_id"": null,
+      ""auth_type"": null,
+      ""last_login_at"": null,
+      ""source"": ""INTERNAL"",
+      ""walletInfo"": {
+        ""existsOnStellar"": true
+      },
+      ""nativeInfo"": null
+    },
+    {
+      ""id"": ""cmrwd5w9p000d0imwnd11cjnx"",
+      ""public_key"": ""G…REDACTED"",
+      ""network"": ""STELLAR"",
+      ""created_at"": ""2026-07-22T17:36:00.925Z"",
+      ""type"": ""application"",
+      ""role"": ""GAS"",
+      ""api_key_name"": null,
+      ""api_",B
+MCP,MCP Gateway / Live,get_application_wallet_by_role,Resolve GLOBAL wallet + funded?,pass,,evidence/live/get_application_wallet_by_role.json,"{
+  ""role"": ""GLOBAL"",
+  ""network"": ""testnet"",
+  ""found"": false,
+  ""hint"": ""This app has been split — its GLOBAL wallet was promoted to FUNDING. Ask for role FUNDING/GAS/DISTRIBUTION.""
+}",B
+MCP,MCP Gateway / Live,get_wallet_balances,On-chain balances for wallet,pass,,evidence/live/get_wallet_balances.json,"{
+  ""publicKey"": ""G…REDACTED"",
+  ""network"": ""testnet"",
+  ""exists"": true,
+  ""balances"": [
+    {
+      ""type"": ""native"",
+      ""code"": ""XLM"",
+      ""balance"": ""10000.0000000"",
+      ""available"": ""9999.0000000"",
+      ""enabledInApp"": false,
+      ""trustlineRemoved"": false
+    }
+  ]
+}",B
+MCP,MCP Gateway / Live,get_application_transactions,Paginated tx history,pass,,evidence/live/get_application_transactions.json,"{
+  ""records"": [
+    {
+      ""id"": ""cmrw9t1l0001a0ip0kz5hda5z"",
+      ""hash"": ""228bbec59bcdc8d682234c8261d600914533a7302309e0ca2ab082e8155f4c47"",
+      ""network"": ""testnet"",
+      ""phase"": ""SUCCESS"",
+      ""failedPhase"": null,
+      ""status"": ""SUCCESS"",
+      ""operation"": ""change_trust"",
+      ""summary"": ""Add trustline: EURC:G…REDACTED (sponsored)"",
+      ""feeXlm"": null,
+      ""resultCode"": null,
+      ""errorMessage"": null,
+      ""errorCode"": null,
+ ",B
+MCP,MCP Gateway / Live,get_application_users,Paginated SDK end-users,pass,,evidence/live/get_application_users.json,"{
+  ""items"": [
+    {
+      ""id"": ""cmrw9sykf00160ip0bilkmkre"",
+      ""first_name"": ""Oscar Gauss"",
+      ""last_name"": ""Carvajal Yucra"",
+      ""email"": ""oscargausscarvajal@gmail.com"",
+      ""avatar"": ""https://lh3.googleusercontent.com/a/ACg8ocIeOd7xL3wur80H1lw8UphRZoj5b_Qhdybnxczmx7wBktZT19A=s96-c"",
+      ""providers"": [
+        ""GOOGLE""
+      ],
+      ""wallet_public_key"": ""G…REDACTED"",
+      ""wallets"": [
+        {
+          ""network"": ""STELLAR"",
+       ",B
+MCP,MCP Gateway / Live,get_application_metrics,Undocumented tool `get_application_metrics` works,pass,,evidence/live/get_application_metrics.json,"{
+  ""range"": ""14d"",
+  ""timezone"": ""UTC"",
+  ""totalCount"": 14,
+  ""todayCount"": 0,
+  ""perAsset"": [
+    {
+      ""code"": ""USDC"",
+      ""rangeCount"": 8,
+      ""todayCount"": 0
+    },
+    {
+      ""code"": ""EURC"",
+      ""rangeCount"": 3,
+      ""todayCount"": 0
+    }
+  ],
+  ""countSeries"": [
+    {
+      ""date"": ""2026-07-18"",
+      ""count"": 0
+    },
+    {
+      ""date"": ""2026-07-19"",
+      ""count"": 0
+    },
+    {
+      ""date"": ""2026-07-20"",
+      ""count"": 0
+    },
+    {
+      ""date"": ""2026-07-21"",
+      ""count""",B
+MCP,MCP Gateway / Live,list_api_keys,Undocumented tool `list_api_keys` works,pass,,evidence/live/list_api_keys.json,"[
+  {
+    ""id"": ""cms8w3g9x000x0iunn16ohl8n"",
+    ""key_prefix"": ""sec_testnet_…REDACTED"",
+    ""name"": ""secret key"",
+    ""type"": ""SECRET"",
+    ""allow_native_clients"": false,
+    ""application_id"": ""cmrvjgoa…REDACTED"",
+    ""expires_at"": ""2027-01-01T00:00:00.000Z"",
+    ""created_at"": ""2026-07-31T11:59:13.701Z"",
+    ""updated_at"": ""2026-07-31T11:59:13.701Z""
+  },
+  {
+    ""id"": ""cms8vxj8r00190ipdedtwt096"",
+    ""key_prefix"": ""pub_testnet_…REDACTED"",
+    ""name"": ""test key"",
+    ""type"": ""PUBLISHABLE"",
+    ""allo",B
+MCP,MCP Gateway / Live,list_application_assets,Undocumented tool `list_application_assets` works,pass,,evidence/live/list_application_assets.json,"{
+  ""applicationId"": ""cmrvjgoa…REDACTED"",
+  ""network"": ""testnet"",
+  ""count"": 2,
+  ""assets"": [
+    {
+      ""application_id"": ""cmrvjgoa…REDACTED"",
+      ""asset_id"": ""cmq42vkht0001y2idh1lpjezf"",
+      ""enabled"": true,
+      ""name"": ""EURC"",
+      ""sponsor_transfer"": true,
+      ""created_at"": ""2026-07-22T05:07:46.045Z"",
+      ""updated_at"": ""2026-07-22T17:36:24.856Z"",
+      ""asset"": {
+        ""id"": ""cmq42vkht0001y2idh1lpjezf"",
+        ""chain"": ""STELLAR"",
+        ""code"": ""EURC"",
+       ",B
+MCP,MCP Gateway / Live,list_distribution_rules,Undocumented tool `list_distribution_rules` works,pass,,evidence/live/list_distribution_rules.json,[],B
+MCP,MCP Gateway / Live,ensure_wallet_funded idempotent,Fund only if not funded; safe to repeat,pass,,evidence/live/ensure_wallet_funded_1.json,"call1_err=False call2_err=False t1={
+  ""role"": ""GLOBAL"",
+  ""network"": ""testnet"",
+  ""funded"": false,
+  ""action"": ""none"",
+  ""hint"": ""This app has been split — ask for role FUNDING/GAS/DISTRIBUTION.""
+} t2={
+  ""role"": ""GLOBAL"",
+  ""network"": ""testnet"",
+  ""funded"": false,
+  ""action"": ""none"",
+  ""hint"": ""This app has been split — ask for role FUNDING/GAS/DISTRIBUTION.""
+}",B
+MCP,MCP Gateway / Live,fund_testnet_wallet idempotent,Tops up via friendbot; repeat is harmless,fail,major,evidence/live/fund_testnet_wallet_1.json,c1_err=True c2_err=True t1=Error: FUND_XLM_FAILED (hub-api 502). t2=Error: FUND_XLM_FAILED (hub-api 502).,B
+MCP,MCP Gateway / Live,update_application_domains,Replaces entire allowed-origins list,pass,,evidence/live/update_application_domains.json,"sent=['http://localhost:3000', 'https://pollar-telegram-shop-template-nyuiela.vercel.app'] resp={
+  ""id"": ""cmrvjgoa…REDACTED"",
+  ""name"": ""Telegram Bot"",
+  ""network"": ""testnet"",
+  ""funding_mode"": ""IMMEDIATE"",
+  ""funding_starting_balance_xlm"": ""100"",
+  ""sponsor_trustlines"": true,
+  ""sponsor_trustline_external"": true,
+  ""chains"": [
+    ""STELLAR""
+  ],
+  ""allowed_origins"": [
+    ""http://localhost:3000"",
+    ""https://pollar-telegram-shop-template-nyuiela.vercel.app""
+  ],
+  ""swap_venues"": [ (confirmation is client-annotation behavior; raw HTTP call executes immediately)",B
+MCP,MCP Gateway / Live,create_api_key,Creates publishable/secret key,fail,major,evidence/live/create_api_key.json,Error: VALIDATION_ERROR (hub-api 400).,B
+MCP,MCP Gateway / Live,enable_asset,Enable trustline/asset on app,pass,,evidence/live/enable_asset.json,"{
+  ""application_id"": ""cmrvjgoa…REDACTED"",
+  ""asset_id"": ""cmm6fdw4a0001eaidrbu9rvc1"",
+  ""enabled"": true,
+  ""name"": ""USD Coin"",
+  ""sponsor_transfer"": true,
+  ""created_at"": ""2026-07-22T05:07:32.741Z"",
+  ""updated_at"": ""2026-07-31T12:10:04.923Z""
+}",B
+MCP,MCP Gateway / Live,create_distribution_rule,Create token-distribution rule,blocked,,evidence/live/list_application_assets.json,"No assetId from list_application_assets: {
+  ""applicationId"": ""cmrvjgoa…REDACTED"",
+  ""network"": ""testnet"",
+  ""count"": 2,
+  ""assets"": [
+    {
+      ""application_id"": ""cmrvjgoa…REDACTED"",
+      ""asset_id"": ""cmq42vkht0001y2idh1l",B
+MCP,MCP Gateway / Live,create_application,Create app,pass,,evidence/live/create_application.json,"{
+  ""id"": ""cms8whk6b001b0ipdmm6r24p7"",
+  ""name"": ""qa-ab-arm-b-7b7706"",
+  ""network"": ""testnet"",
+  ""funding_mode"": ""IMMEDIATE"",
+  ""funding_starting_balance_xlm"": ""0"",
+  ""sponsor_trustlines"": true,
+  ""sponsor_trustline_external"": true,
+  ""chains"": [
+    ""STELLAR""
+  ],
+  ""allowed_origins"": [],
+  ""swap_venues"": [],
+  ""sponsor_swap_venues"": [],
+  ""sponsor_swap_external"": false,
+  ""sponsor_transfer_external"": false,
+  ""sponsor_contract_external"": false,
+  ""sponsor_all_contracts"": false,
+  ""styles"": {
+ ",B
+MCP,MCP Gateway / Live,revoke_api_key,Undocumented revoke works,blocked,,evidence/live/create_api_key.json,No keyId from create_api_key: Error: VALIDATION_ERROR (hub-api 400).,B
+MCP,MCP Gateway / Live,readonly whoami/list,Read scopes work on readonly PAT,pass,,evidence/live/readonly-whoami.json,"{
+  ""identity"": {
+    ""id"": ""cmrvjf0mr00000hqhlm9epdko"",
+    ""email"": ""pixelhubster@gmail.com"",
+    ""first_name"": ""kaleel"",
+    ""last_name"": null,
+    ""avatar"": ""https://lh3.googleusercontent.com/a/ACg8ocIv7bleVMioRiSyshIPhhIApDgzQYE362Lp9X-RgFmSQ0I6V-Gp=s96-c"",
+    ""role"": ""DEVELOPER"",
+    ""identities"": [
+      {
+        ""id"": ""cmrvjf0mx00010hqhpvusutpa"",
+        ""provider"": ""GOOGLE"",
+        ""pr",B
+MCP,MCP Gateway / Live,403 insufficient scope,Write tool fails with 403 when PAT lacks scope,pass,,evidence/live/readonly-create_application.json,"expect_error=True got_error=True text=Error: Your Personal Access Token is missing the `applications:write` scope. Grant it to the token in the Pollar dashboard (Settings -> Personal Access Tokens), then retry.",B
+MCP,MCP Gateway / Live,403 update_application_domains readonly,Edit fails without applications:write,pass,,evidence/live/readonly-update_domains.json,"Error: Your Personal Access Token is missing the `applications:write` scope. Grant it to the token in the Pollar dashboard (Settings -> Personal Access Tokens), then retry.",B
+MCP,MCP Gateway / Live,Example prompt: list apps + readiness,Docs example maps to list_applications + check_application_readiness,pass,,evidence/live/list_applications.json,Executed tool chain successfully,B
+MCP,MCP Gateway / Live,Example prompt: ensure_wallet_funded,Fund testnet global wallet if needed,pass,,evidence/live/ensure_wallet_funded_2.json,"{
+  ""role"": ""GLOBAL"",
+  ""network"": ""testnet"",
+  ""funded"": false,
+  ""action"": ""none"",
+  ""hint"": ""This app has been split — ask for role FUNDING/GAS/DISTRIBUTION.""
+}",B
+MCP,MCP Gateway / Live,Example prompt: update domains localhost,Add http://localhost:3000 to allowed domains,pass,,evidence/live/update_application_domains.json,"{
+  ""id"": ""cmrvjgoa…REDACTED"",
+  ""name"": ""Telegram Bot"",
+  ""network"": ""testnet"",
+  ""funding_mode"": ""IMMEDIATE"",
+  ""funding_starting_balance_xlm"": ""100"",
+  ""sponsor_trustlines"": true,
+  ""sponso",B
+MCP,MCP Gateway / Live,Example prompt: create publishable key,Create a publishable API key,fail,minor,evidence/live/create_api_key.json,Error: VALIDATION_ERROR (hub-api 400).,B
+Live,Follow-up,create_api_key type=PUBLISHABLE,create_api_key type=PUBLISHABLE,pass,,evidence/live/create_api_key_PUBLISHABLE.json,"{
+  ""id"": ""cms8wjbae001d0ipdky0oxkj8"",
+  ""key"": null,
+  ""key_hash"": ""VsvgDtmjK7pDYZZoWDOPPLOaXWthEl-OE-eps7gMGnc"",
+  ""key_prefix"": ""pub_testnet_…REDACTED"",
+  ""name"": ""qa-pub-a13a77"",
+  ""type"": ""PUBLISHABLE"",
+  ""allow_native_clients"": false,
+  ""application_id"": ""cmrvjgoa…REDACTED"",
+  ""expires_at"": null,
+  ""created_at"": ""2026-07-31T12:11:33.735Z"",
+  ""updated_at"": ""2026-07-31T12:11:33.735Z"",
+  ""de",B
+Live,Follow-up,create_api_key type=publishable (docs lowercase),create_api_key type=publishable (docs lowercase),pass,,evidence/live/create_api_key_lowercase.json,Docs omit enum case; lowercase → Error: VALIDATION_ERROR (hub-api 400).,B
+Live,Follow-up,get_application_wallet_by_role FUNDING,get_application_wallet_by_role FUNDING,pass,,evidence/live/wallet_by_role_FUNDING.json,"{
+  ""role"": ""FUNDING"",
+  ""network"": ""testnet"",
+  ""found"": true,
+  ""publicKey"": ""G…REDACTED"",
+  ""existsOnStellar"": true,
+  ""funded"": true
+}",B
+Live,Follow-up,ensure_wallet_funded FUNDING,ensure_wallet_funded FUNDING,pass,,evidence/live/ensure_wallet_funded_FUNDING.json,"{
+  ""role"": ""FUNDING"",
+  ""network"": ""testnet"",
+  ""publicKey"": ""G…REDACTED"",
+  ""funded"": true,
+  ""action"": ""already_funded""
+}",B
+Live,Follow-up,ensure_wallet_funded FUNDING idempotent,ensure_wallet_funded FUNDING idempotent,pass,,evidence/live/ensure_wallet_funded_FUNDING_2.json,"{
+  ""role"": ""FUNDING"",
+  ""network"": ""testnet"",
+  ""publicKey"": ""G…REDACTED"",
+  ""funded"": true,
+  ""action"": ""already_funded""
+}",B
+Live,Follow-up,fund_testnet_wallet FUNDING pubkey,fund_testnet_wallet FUNDING pubkey,fail,major,evidence/live/fund_testnet_wallet_FUNDING.json,Error: FUND_XLM_FAILED (hub-api 502).,B
+Live,Follow-up,create_distribution_rule LIFETIME,create_distribution_rule LIFETIME,pass,,evidence/live/create_distribution_rule.json,"{
+  ""id"": ""cms8wjhma001e0ipdur93oel9"",
+  ""application_id"": ""cmrvjgoa…REDACTED"",
+  ""asset_id"": ""cmm6fdw4a0001eaidrbu9rvc1"",
+  ""name"": ""qa-dist-cdd8f5"",
+  ""amount_per_user"": ""1"",
+  ""max_claims"": 1,
+  ""period"": ""LIFETIME"",
+  ""global_cap"": null,
+  ""valid_from"": null,
+  ""valid_until"": null,
+  ""enabled"": true,
+  ""created_at"": ""2026-07-31T12:11:41.938Z"",
+  ""updated_at"": ""2026-07-31T12:11:41.938Z""",B
+Live,Follow-up,revoke_api_key,revoke_api_key,pass,,evidence/live/revoke_api_key.json,{},B
+Live,Follow-up,sdk config auth=Bearer,sdk config auth=Bearer,fail,major,evidence/live/sdk-config-Bearer.json,"http=401 body={""code"":""API_KEY_NOT_FOUND"",""success"":false}",B
+Live,Follow-up,sdk config auth=x-pollar-api-key,sdk config auth=x-pollar-api-key,fail,major,evidence/live/sdk-config-x-pollar-api-key.json,"http=403 body={""code"":""ORIGIN_NOT_ALLOWED"",""success"":false}",B
+Live,Follow-up,sdk config auth=x-api-key,sdk config auth=x-api-key,fail,major,evidence/live/sdk-config-x-api-key.json,"http=401 body={""code"":""API_KEY_NOT_FOUND"",""success"":false}",B
+Live,Follow-up,sdk config with MCP-created publishable,sdk config with MCP-created publishable,fail,major,evidence/live/sdk-config-new-pub.json,"http=401 body={""code"":""API_KEY_NOT_FOUND"",""success"":false}",B
+Live,Follow-up,POST /v1/wallets/activate x-pollar-api-key,POST /v1/wallets/activate x-pollar-api-key,pass,,evidence/live/activate-x-pollar-api-key.json,"http=404 body=404 page not found
+",B
+Live,Follow-up,POST activate with Authorization Bearer secret (docs say x-pollar-api-key),POST activate with Authorization Bearer secret (docs say x-pollar-api-key),fail,major,evidence/live/activate-bearer-secret.json,"http=404 body=404 page not found
+ — docs claim x-pollar-api-key not Authorization",B
+Live,Follow-up,create_api_key returns plaintext once,create_api_key returns plaintext once,fail,major,,MCP returns key:null — agent cannot recover secret after creation,B
+Live,Follow-up,sdk config x-pollar-api-key+Origin=http://localhost:3000,sdk config x-pollar-api-key+Origin=http://localhost:3000,pass,,,"{""content"":{""application"":{""name"":""Telegram Bot"",""network"":""testnet"",""chains"":[""STELLAR""]},""styles"":{""theme"":""light"",""providers"":{""x"":false,""apple"":false,""github"":false,""google"":true,""discord"":false},",B
+Live,Follow-up,sdk config x-pollar-api-key+Origin=https://pollar-telegram-shop-template-nyuiela.vercel.app,sdk config x-pollar-api-key+Origin=https://pollar-telegram-shop-template-nyuiela.vercel.app,pass,,,"{""content"":{""application"":{""name"":""Telegram Bot"",""network"":""testnet"",""chains"":[""STELLAR""]},""styles"":{""theme"":""light"",""providers"":{""x"":false,""apple"":false,""github"":false,""google"":true,""discord"":false},",B
+Live,Follow-up,sdk config Bearer+Origin localhost,sdk config Bearer+Origin localhost,fail,major,,"http=401 {""code"":""API_KEY_NOT_FOUND"",""success"":false}",B
+Live,Follow-up,distribution period ONCE (agent guess from docs ellipsis),distribution period ONCE (agent guess from docs ellipsis),pass,,,Error: VALIDATION_ERROR (hub-api 400).,B
+Live,Follow-up,GET /v1/applications/config (publishable),GET /v1/applications/config (publishable),fail,major,evidence/live/sdk-applications-config.json,"http=401 body={""code"":""API_KEY_NOT_FOUND"",""success"":false}",B
+Live,Follow-up,POST https://sdk.api.pollar.xyz/v1/wallets/activate (secret auth probe),POST https://sdk.api.pollar.xyz/v1/wallets/activate (secret auth probe),blocked,,evidence/live/activate-sdk.api.pollar.xyz_v1.json,http=404 body=404 Not Found,B
+Live,Follow-up,POST https://api.pollar.xyz/v1/wallets/activate (secret auth probe),POST https://api.pollar.xyz/v1/wallets/activate (secret auth probe),blocked,,evidence/live/activate-api.pollar.xyz_v1.json,"http=404 body=404 page not found
+",B
+Live,Follow-up,POST https://hub.api.pollar.xyz/v1/wallets/activate (secret auth probe),POST https://hub.api.pollar.xyz/v1/wallets/activate (secret auth probe),blocked,,evidence/live/activate-hub.api.pollar.xyz_v1.json,http=404 body=404 Not Found,B
+Live,Follow-up,GET https://sdk.api.pollar.xyz/v1/tx/history,GET https://sdk.api.pollar.xyz/v1/tx/history,fail,major,evidence/live/tx-history-sdk.api.pollar.xyz_v1.json,"http=401 body={""code"":""API_KEY_NOT_FOUND"",""success"":false}",B
+Live,Follow-up,POST /v1/wallets/activate with publishable key,POST /v1/wallets/activate with publishable key,fail,major,evidence/live/activate-with-publishable.json,http=404 — publishable must not activate wallets; body=404 Not Found,B
+Live,Follow-up,Invalid publishable key rejected,Invalid publishable key rejected,pass,,,"http=401 body={""code"":""API_KEY_NOT_FOUND"",""success"":false}",B
+MCP,MCP Gateway / Tools,Docs list 15 tools; live tools/list returns 21,Compare docs tables vs tools/list,fail,major,evidence/mcp-tools-diff.json; evidence/live/full-tool-names.json,"Undocumented: whoami, get_application_metrics, list_api_keys, list_application_assets, list_distribution_rules, revoke_api_key",B
+MCP,MCP Gateway / create_api_key,type? documented without enum case; example implies publishable,Call with publishable vs PUBLISHABLE,fail,major,evidence/live/create_api_key_lowercase.json; evidence/live/create_api_key_PUBLISHABLE.json,Schema enum is PUBLISHABLE|SECRET. Lowercase publishable → VALIDATION_ERROR. Docs omit this.,B
+MCP,MCP Gateway / create_api_key,Returns the plaintext key ONCE,Inspect create_api_key response key/plaintext fields,fail,blocker,evidence/live/create_api_key_full_shape.json,key is null; plaintext equals key_prefix only (~21 chars). Agent cannot obtain usable API key via MCP.,B
+MCP,MCP Gateway / fund_testnet_wallet,Harmless idempotent testnet friendbot top-up,Call fund_testnet_wallet on already-funded FUNDING wallet,fail,major,evidence/live/fund_testnet_wallet_FUNDING.json,Returns FUND_XLM_FAILED (hub-api 502) even when ensure_wallet_funded reports funded/already_funded.,B
+MCP,MCP Gateway / ensure_wallet_funded,role defaults to GLOBAL,"Call with GLOBAL on split app, then FUNDING",fail,major,evidence/live/get_application_wallet_by_role.json; evidence/live/ensure_wallet_funded_FUNDING.json,GLOBAL found=false with hint to use FUNDING/GAS/DISTRIBUTION. Docs default GLOBAL misleads on split apps. ensure_wallet_funded FUNDING passes and is idempotent.,B
+MCP,MCP Gateway / Authentication,Bearer pat authenticates gateway,initialize+tools/list with invalid PAT previously; valid PAT now,pass,,evidence/live/full-initialize.json,Valid full PAT works. Prior finding stands: invalid PAT still lists tools.,B
+MCP,MCP Gateway / Negative,403 when scope missing,create_application + update_domains with readonly PAT,pass,,evidence/live/readonly-create_application.json,Clear error: missing applications:write scope.,B
+MCP,MCP Gateway / Connect,Cursor mcp.json http transport,Configured ~/.cursor/mcp.json pollar entry per docs,pass,,evidence/cursor-mcp-before-fulltest.txt; clients/cursor-mcp.pollar.example.json,Client 1 configured. Restart Cursor to load tools in IDE.,B-client-cursor
+MCP,MCP Gateway / Connect,VS Code Copilot .vscode/mcp.json,Configured gitignored .vscode/mcp.json per docs,pass,,clients/mcp-remote-connect.sh; .vscode/mcp.json.example,Client 2 configured per docs (VS Code). Claude Code CLI not installed; mcp-remote script provided.,B-client-2
+Server API,Pollar Server API,Base URL https://api.pollar.xyz /v1,GET/POST multiple routes on api.pollar.xyz,fail,blocker,evidence/live/hub-activate-probes.json; evidence/endpoint-probes.txt,Entire host returns HTML/text 404 page not found. hub.api.pollar.xyz/health is live instead.,A
+Server API,Pollar Server API,POST /v1/wallets/activate with x-pollar-api-key secret,Probe api.pollar.xyz and hub.api.pollar.xyz paths,fail,blocker,evidence/live/activate-x-pollar-api-key.json; evidence/live/hub-activate-probes.json,Activate route 404 on documented base and on hub /v1/wallets/activate even with PAT. Docs describe JSON WALLET_NOT_FOUND etc.; actual response is generic 404.,A
+Server API,Pollar Server API,Auth via x-pollar-api-key secret (not Authorization),Compare secret header vs PAT Bearer on hub.api.pollar.xyz,fail,major,evidence/live/hub-activate-probes.json,hub /v1/applications accepts PAT Bearer (200) and rejects x-pollar-api-key secret (HUB_AUTH_INVALID_TOKEN). Docs Server API auth model does not match hub reality.,A
+SDK,SDK API,Publishable key works for applications/config,GET sdk.api.pollar.xyz/v1/applications/config,pass,,evidence/live/sdk-origin-*.json,Works with header x-pollar-api-key + Origin allowlisted. Authorization Bearer → API_KEY_NOT_FOUND. @pollar/core sets x-pollar-api-key.,A
+SDK,@pollar/core / @pollar/react,Documented version 0.10.1,npm view / installed probe,fail,major,evidence/sdk-probe.json,npm latest 0.11.2,A
+SDK,@pollar/react setTrustline,opts sponsored?,Compare docs vs types,fail,major,evidence/sdk-settrustline-opts.txt,SDK uses skipSponsorship?,A
+SDK,Passkeys,usePollarPasskey coming soon / samples,Export check,fail,major,evidence/sdk-exports-usepollarpasskey.txt,Not exported; createSmartWallet exists — status inconsistency,A
+Vibecoding,Arm A docs-only,Quickstart E2E from llms-full.txt without MCP,Scaffold app from docs; log stalls,pass,,vibecoding/arm-a-docs-only/,App scaffolded; OAuth payment not completed (manual). See NOTES.md stalls.,A
+Vibecoding,Arm B MCP+docs,Quickstart E2E with MCP provisioning,MCP provision + scaffold,pass,,vibecoding/arm-b-mcp/; vibecoding/AB-COMPARISON.md,Provisioning mostly works; API key plaintext gap blocks unaided finish.,B
+Dashboard,Dashboard flows,PAT create + API keys + domains,Used self-serve dashboard credentials provided by assignee,pass,,evidence/live/check_application_readiness.json,"App ready=true with api_keys, domains, fund_wallet steps done.",A+B

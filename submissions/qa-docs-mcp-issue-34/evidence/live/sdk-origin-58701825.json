@@ -1,0 +1,5 @@
+{
+  "label": "Authorization+Origin=https://example.com",
+  "status": 401,
+  "body": "{\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}"
+}

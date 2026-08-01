@@ -1,0 +1,86 @@
+[
+  {
+    "item": "create_api_key type=PUBLISHABLE",
+    "result": "pass",
+    "notes": "{\n  \"id\": \"cms8wjbae001d0ipdky0oxkj8\",\n  \"key\": null,\n  \"key_hash\": \"VsvgDtmjK7pDYZZoWDOPPLOaXWthEl-OE-eps7gMGnc\",\n  \"key_prefix\": \"pub_testnet_…REDACTED\",\n  \"name\": \"qa-pub-a13a77\",\n  \"type\": \"PUBLISHABLE\",\n  \"allow_native_clients\": false,\n  \"application_id\": \"cmrvjgoa…REDACTED\",\n  \"expires_at\": null,\n  \"created_at\": \"2026-07-31T12:11:33.735Z\",\n  \"updated_at\": \"2026-07-31T12:11:33.735Z\",\n  \"de",
+    "evidence": "evidence/live/create_api_key_PUBLISHABLE.json"
+  },
+  {
+    "item": "create_api_key type=publishable (docs lowercase)",
+    "result": "pass",
+    "notes": "Docs omit enum case; lowercase \u2192 Error: VALIDATION_ERROR (hub-api 400).",
+    "evidence": "evidence/live/create_api_key_lowercase.json"
+  },
+  {
+    "item": "get_application_wallet_by_role FUNDING",
+    "result": "pass",
+    "notes": "{\n  \"role\": \"FUNDING\",\n  \"network\": \"testnet\",\n  \"found\": true,\n  \"publicKey\": \"G…REDACTED\",\n  \"existsOnStellar\": true,\n  \"funded\": true\n}",
+    "evidence": "evidence/live/wallet_by_role_FUNDING.json"
+  },
+  {
+    "item": "ensure_wallet_funded FUNDING",
+    "result": "pass",
+    "notes": "{\n  \"role\": \"FUNDING\",\n  \"network\": \"testnet\",\n  \"publicKey\": \"G…REDACTED\",\n  \"funded\": true,\n  \"action\": \"already_funded\"\n}",
+    "evidence": "evidence/live/ensure_wallet_funded_FUNDING.json"
+  },
+  {
+    "item": "ensure_wallet_funded FUNDING idempotent",
+    "result": "pass",
+    "notes": "{\n  \"role\": \"FUNDING\",\n  \"network\": \"testnet\",\n  \"publicKey\": \"G…REDACTED\",\n  \"funded\": true,\n  \"action\": \"already_funded\"\n}",
+    "evidence": "evidence/live/ensure_wallet_funded_FUNDING_2.json"
+  },
+  {
+    "item": "fund_testnet_wallet FUNDING pubkey",
+    "result": "fail",
+    "notes": "Error: FUND_XLM_FAILED (hub-api 502).",
+    "evidence": "evidence/live/fund_testnet_wallet_FUNDING.json"
+  },
+  {
+    "item": "create_distribution_rule LIFETIME",
+    "result": "pass",
+    "notes": "{\n  \"id\": \"cms8wjhma001e0ipdur93oel9\",\n  \"application_id\": \"cmrvjgoa…REDACTED\",\n  \"asset_id\": \"cmm6fdw4a0001eaidrbu9rvc1\",\n  \"name\": \"qa-dist-cdd8f5\",\n  \"amount_per_user\": \"1\",\n  \"max_claims\": 1,\n  \"period\": \"LIFETIME\",\n  \"global_cap\": null,\n  \"valid_from\": null,\n  \"valid_until\": null,\n  \"enabled\": true,\n  \"created_at\": \"2026-07-31T12:11:41.938Z\",\n  \"updated_at\": \"2026-07-31T12:11:41.938Z\"",
+    "evidence": "evidence/live/create_distribution_rule.json"
+  },
+  {
+    "item": "revoke_api_key",
+    "result": "pass",
+    "notes": "{}",
+    "evidence": "evidence/live/revoke_api_key.json"
+  },
+  {
+    "item": "sdk config auth=Bearer",
+    "result": "fail",
+    "notes": "http=401 body={\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}",
+    "evidence": "evidence/live/sdk-config-Bearer.json"
+  },
+  {
+    "item": "sdk config auth=x-pollar-api-key",
+    "result": "fail",
+    "notes": "http=403 body={\"code\":\"ORIGIN_NOT_ALLOWED\",\"success\":false}",
+    "evidence": "evidence/live/sdk-config-x-pollar-api-key.json"
+  },
+  {
+    "item": "sdk config auth=x-api-key",
+    "result": "fail",
+    "notes": "http=401 body={\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}",
+    "evidence": "evidence/live/sdk-config-x-api-key.json"
+  },
+  {
+    "item": "sdk config with MCP-created publishable",
+    "result": "fail",
+    "notes": "http=401 body={\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}",
+    "evidence": "evidence/live/sdk-config-new-pub.json"
+  },
+  {
+    "item": "POST /v1/wallets/activate x-pollar-api-key",
+    "result": "pass",
+    "notes": "http=404 body=404 page not found\n",
+    "evidence": "evidence/live/activate-x-pollar-api-key.json"
+  },
+  {
+    "item": "POST activate with Authorization Bearer secret (docs say x-pollar-api-key)",
+    "result": "fail",
+    "notes": "http=404 body=404 page not found\n \u2014 docs claim x-pollar-api-key not Authorization",
+    "evidence": "evidence/live/activate-bearer-secret.json"
+  }
+]

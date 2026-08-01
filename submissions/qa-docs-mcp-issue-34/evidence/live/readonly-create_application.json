@@ -1,0 +1,18 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"Error: Your Personal Access Token is missing the `applications:write` scope. Grant it to the token in the Pollar dashboard (Settings -> Personal Access Tokens), then retry.\"}],\"isError\":true},\"jsonrpc\":\"2.0\",\"id\":3}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Error: Your Personal Access Token is missing the `applications:write` scope. Grant it to the token in the Pollar dashboard (Settings -> Personal Access Tokens), then retry."
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

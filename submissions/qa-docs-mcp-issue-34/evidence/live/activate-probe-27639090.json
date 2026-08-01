@@ -1,0 +1,8 @@
+{
+  "url": "https://api.pollar.xyz/wallets/activate",
+  "status": 404,
+  "body": "404 page not found\n",
+  "req": {
+    "publicKey": "G…REDACTED"
+  }
+}

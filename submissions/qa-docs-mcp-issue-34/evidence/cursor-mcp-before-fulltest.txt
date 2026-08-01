@@ -1,0 +1,6 @@
+{
+  "Prava Payments Docs": {
+    "url": "https://docs.prava.space/mcp",
+    "has_auth": false
+  }
+}

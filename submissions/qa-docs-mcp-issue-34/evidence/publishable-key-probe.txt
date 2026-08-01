@@ -1,0 +1,6 @@
+Probe of previously local NEXT_PUBLIC_POLLAR_PUBLISHABLE_KEY (value redacted):
+GET https://sdk.api.pollar.xyz/v1/applications/config
+Authorization: Bearer pub_testnet_REDACTED
+→ HTTP 401 {"code":"API_KEY_NOT_FOUND","success":false}
+
+Conclusion: existing local publishable key is invalid/revoked; fresh keys required from dashboard.

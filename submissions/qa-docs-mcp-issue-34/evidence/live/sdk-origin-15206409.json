@@ -1,0 +1,5 @@
+{
+  "label": "x-pollar-api-key+Origin=https://example.com",
+  "status": 403,
+  "body": "{\"code\":\"ORIGIN_NOT_ALLOWED\",\"success\":false}"
+}

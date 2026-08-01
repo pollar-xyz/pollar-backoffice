@@ -1,0 +1,16 @@
+{
+  "status": 200,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Error: VALIDATION_ERROR (hub-api 400)."
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

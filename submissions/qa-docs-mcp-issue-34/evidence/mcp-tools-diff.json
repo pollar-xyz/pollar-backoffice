@@ -1,0 +1,51 @@
+{
+  "actual": [
+    "check_application_readiness",
+    "create_api_key",
+    "create_application",
+    "create_distribution_rule",
+    "enable_asset",
+    "ensure_wallet_funded",
+    "fund_testnet_wallet",
+    "get_application",
+    "get_application_metrics",
+    "get_application_transactions",
+    "get_application_users",
+    "get_application_wallet_by_role",
+    "get_application_wallets",
+    "get_wallet_balances",
+    "list_api_keys",
+    "list_application_assets",
+    "list_applications",
+    "list_distribution_rules",
+    "revoke_api_key",
+    "update_application_domains",
+    "whoami"
+  ],
+  "documented": [
+    "check_application_readiness",
+    "create_api_key",
+    "create_application",
+    "create_distribution_rule",
+    "enable_asset",
+    "ensure_wallet_funded",
+    "fund_testnet_wallet",
+    "get_application",
+    "get_application_transactions",
+    "get_application_users",
+    "get_application_wallet_by_role",
+    "get_application_wallets",
+    "get_wallet_balances",
+    "list_applications",
+    "update_application_domains"
+  ],
+  "undocumented_actual": [
+    "get_application_metrics",
+    "list_api_keys",
+    "list_application_assets",
+    "list_distribution_rules",
+    "revoke_api_key",
+    "whoami"
+  ],
+  "documented_missing": []
+}

@@ -1,0 +1,32 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n  \\\"network\\\": \\\"testnet\\\",\\n  \\\"exists\\\": true,\\n  \\\"balances\\\": [\\n    {\\n      \\\"type\\\": \\\"native\\\",\\n      \\\"code\\\": \\\"XLM\\\",\\n      \\\"balance\\\": \\\"10000.0000000\\\",\\n      \\\"available\\\": \\\"9999.0000000\\\",\\n      \\\"enabledInApp\\\": false,\\n      \\\"trustlineRemoved\\\": false\\n    }\\n  ]\\n}\"}],\"structuredContent\":{\"publicKey\":\"G…REDACTED\",\"network\":\"testnet\",\"exists\":true,\"balances\":[{\"type\":\"native\",\"code\":\"XLM\",\"balance\":\"10000.0000000\",\"available\":\"9999.0000000\",\"enabledInApp\":false,\"trustlineRemoved\":false}]}},\"jsonrpc\":\"2.0\",\"id\":9}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"publicKey\": \"G…REDACTED\",\n  \"network\": \"testnet\",\n  \"exists\": true,\n  \"balances\": [\n    {\n      \"type\": \"native\",\n      \"code\": \"XLM\",\n      \"balance\": \"10000.0000000\",\n      \"available\": \"9999.0000000\",\n      \"enabledInApp\": false,\n      \"trustlineRemoved\": false\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "publicKey": "G…REDACTED",
+        "network": "testnet",
+        "exists": true,
+        "balances": [
+          {
+            "type": "native",
+            "code": "XLM",
+            "balance": "10000.0000000",
+            "available": "9999.0000000",
+            "enabledInApp": false,
+            "trustlineRemoved": false
+          }
+        ]
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 9
+  }
+}

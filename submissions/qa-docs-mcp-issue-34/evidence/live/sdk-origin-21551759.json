@@ -1,0 +1,5 @@
+{
+  "label": "Authorization+Origin=https://pollar-telegram-shop-template-nyuiela.vercel.app",
+  "status": 401,
+  "body": "{\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}"
+}

@@ -1,0 +1,77 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"[\\n  {\\n    \\\"id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n    \\\"name\\\": \\\"Telegram Bot\\\",\\n    \\\"network\\\": \\\"testnet\\\",\\n    \\\"funding_mode\\\": \\\"IMMEDIATE\\\",\\n    \\\"funding_starting_balance_xlm\\\": \\\"100\\\",\\n    \\\"sponsor_trustlines\\\": true,\\n    \\\"sponsor_trustline_external\\\": true,\\n    \\\"chains\\\": [\\n      \\\"STELLAR\\\"\\n    ],\\n    \\\"allowed_origins\\\": [\\n      \\\"http://localhost:3000\\\",\\n      \\\"https://pollar-telegram-shop-template-nyuiela.vercel.app\\\"\\n    ],\\n    \\\"swap_venues\\\": [],\\n    \\\"sponsor_swap_venues\\\": [],\\n    \\\"sponsor_swap_external\\\": false,\\n    \\\"sponsor_transfer_external\\\": false,\\n    \\\"sponsor_contract_external\\\": false,\\n    \\\"sponsor_all_contracts\\\": false,\\n    \\\"styles\\\": {\\n      \\\"theme\\\": \\\"light\\\",\\n      \\\"providers\\\": {\\n        \\\"x\\\": false,\\n        \\\"apple\\\": false,\\n        \\\"github\\\": false,\\n        \\\"google\\\": true,\\n        \\\"discord\\\": false\\n      },\\n      \\\"accentColor\\\": \\\"#005DB4\\\",\\n      \\\"emailEnabled\\\": true,\\n      \\\"embeddedWallets\\\": true\\n    },\\n    \\\"email_from\\\": null,\\n    \\\"tx_policy\\\": null,\\n    \\\"soroban_auth_max_ledger_window\\\": null,\\n    \\\"access_token_ttl_seconds\\\": null,\\n    \\\"refresh_token_ttl_seconds\\\": null,\\n    \\\"user_id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n    \\\"project_id\\\": \\\"cmrvjgoa500020imwb3d81ntr\\\",\\n    \\\"created_at\\\": \\\"2026-07-22T03:44:35.316Z\\\",\\n    \\\"updated_at\\\": \\\"2026-07-31T12:09:10.710Z\\\",\\n    \\\"deleted_at\\\": null,\\n    \\\"archived_at\\\": null,\\n    \\\"user\\\": {\\n      \\\"id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n      \\\"email\\\": \\\"…@REDACTED\\\",\\n      \\\"first_name\\\": \\\"kaleel\\\",\\n      \\\"last_name\\\": null,\\n      \\\"avatar\\\": \\\"https://…/REDACTED\\\"\\n    },\\n    \\\"members\\\": [],\\n    \\\"last_user_login_at\\\": \\\"2026-07-23T14:27:31.007Z\\\",\\n    \\\"accessType\\\": \\\"owner\\\"\\n  }\\n]\"}],\"structuredContent\":{\"items\":[{\"id\":\"cmrvjgoa…REDACTED\",\"name\":\"Telegram Bot\",\"network\":\"testnet\",\"funding_mode\":\"IMMEDIATE\",\"funding_starting_balance_xlm\":\"100\",\"sponsor_trustlines\":true,\"sponsor_trustline_external\":true,\"chains\":[\"STELLAR\"],\"allowed_origins\":[\"http://localhost:3000\",\"https://pollar-telegram-shop-template-nyuiela.vercel.app\"],\"swap_venues\":[],\"sponsor_swap_venues\":[],\"sponsor_swap_external\":false,\"sponsor_transfer_external\":false,\"sponsor_contract_external\":false,\"sponsor_all_contracts\":false,\"styles\":{\"theme\":\"light\",\"providers\":{\"x\":false,\"apple\":false,\"github\":false,\"google\":true,\"discord\":false},\"accentColor\":\"#005DB4\",\"emailEnabled\":true,\"embeddedWallets\":true},\"email_from\":null,\"tx_policy\":null,\"soroban_auth_max_ledger_window\":null,\"access_token_ttl_seconds\":null,\"refresh_token_ttl_seconds\":null,\"user_id\":\"cmrvjf0mr00000hqhlm9epdko\",\"project_id\":\"cmrvjgoa500020imwb3d81ntr\",\"created_at\":\"2026-07-22T03:44:35.316Z\",\"updated_at\":\"2026-07-31T12:09:10.710Z\",\"deleted_at\":null,\"archived_at\":null,\"user\":{\"id\":\"cmrvjf0mr00000hqhlm9epdko\",\"email\":\"…@REDACTED\",\"first_name\":\"kaleel\",\"last_name\":null,\"avatar\":\"https://…/REDACTED\"},\"members\":[],\"last_user_login_at\":\"2026-07-23T14:27:31.007Z\",\"accessType\":\"owner\"}]}},\"jsonrpc\":\"2.0\",\"id\":4}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[\n  {\n    \"id\": \"cmrvjgoa…REDACTED\",\n    \"name\": \"Telegram Bot\",\n    \"network\": \"testnet\",\n    \"funding_mode\": \"IMMEDIATE\",\n    \"funding_starting_balance_xlm\": \"100\",\n    \"sponsor_trustlines\": true,\n    \"sponsor_trustline_external\": true,\n    \"chains\": [\n      \"STELLAR\"\n    ],\n    \"allowed_origins\": [\n      \"http://localhost:3000\",\n      \"https://pollar-telegram-shop-template-nyuiela.vercel.app\"\n    ],\n    \"swap_venues\": [],\n    \"sponsor_swap_venues\": [],\n    \"sponsor_swap_external\": false,\n    \"sponsor_transfer_external\": false,\n    \"sponsor_contract_external\": false,\n    \"sponsor_all_contracts\": false,\n    \"styles\": {\n      \"theme\": \"light\",\n      \"providers\": {\n        \"x\": false,\n        \"apple\": false,\n        \"github\": false,\n        \"google\": true,\n        \"discord\": false\n      },\n      \"accentColor\": \"#005DB4\",\n      \"emailEnabled\": true,\n      \"embeddedWallets\": true\n    },\n    \"email_from\": null,\n    \"tx_policy\": null,\n    \"soroban_auth_max_ledger_window\": null,\n    \"access_token_ttl_seconds\": null,\n    \"refresh_token_ttl_seconds\": null,\n    \"user_id\": \"cmrvjf0mr00000hqhlm9epdko\",\n    \"project_id\": \"cmrvjgoa500020imwb3d81ntr\",\n    \"created_at\": \"2026-07-22T03:44:35.316Z\",\n    \"updated_at\": \"2026-07-31T12:09:10.710Z\",\n    \"deleted_at\": null,\n    \"archived_at\": null,\n    \"user\": {\n      \"id\": \"cmrvjf0mr00000hqhlm9epdko\",\n      \"email\": \"…@REDACTED\",\n      \"first_name\": \"kaleel\",\n      \"last_name\": null,\n      \"avatar\": \"https://…/REDACTED\"\n    },\n    \"members\": [],\n    \"last_user_login_at\": \"2026-07-23T14:27:31.007Z\",\n    \"accessType\": \"owner\"\n  }\n]"
+        }
+      ],
+      "structuredContent": {
+        "items": [
+          {
+            "id": "cmrvjgoa…REDACTED",
+            "name": "Telegram Bot",
+            "network": "testnet",
+            "funding_mode": "IMMEDIATE",
+            "funding_starting_balance_xlm": "100",
+            "sponsor_trustlines": true,
+            "sponsor_trustline_external": true,
+            "chains": [
+              "STELLAR"
+            ],
+            "allowed_origins": [
+              "http://localhost:3000",
+              "https://pollar-telegram-shop-template-nyuiela.vercel.app"
+            ],
+            "swap_venues": [],
+            "sponsor_swap_venues": [],
+            "sponsor_swap_external": false,
+            "sponsor_transfer_external": false,
+            "sponsor_contract_external": false,
+            "sponsor_all_contracts": false,
+            "styles": {
+              "theme": "light",
+              "providers": {
+                "x": false,
+                "apple": false,
+                "github": false,
+                "google": true,
+                "discord": false
+              },
+              "accentColor": "#005DB4",
+              "emailEnabled": true,
+              "embeddedWallets": true
+            },
+            "email_from": null,
+            "tx_policy": null,
+            "soroban_auth_max_ledger_window": null,
+            "access_token_ttl_seconds": null,
+            "refresh_token_ttl_seconds": null,
+            "user_id": "cmrvjf0mr00000hqhlm9epdko",
+            "project_id": "cmrvjgoa500020imwb3d81ntr",
+            "created_at": "2026-07-22T03:44:35.316Z",
+            "updated_at": "2026-07-31T12:09:10.710Z",
+            "deleted_at": null,
+            "archived_at": null,
+            "user": {
+              "id": "cmrvjf0mr00000hqhlm9epdko",
+              "email": "…@REDACTED",
+              "first_name": "kaleel",
+              "last_name": null,
+              "avatar": "https://…/REDACTED"
+            },
+            "members": [],
+            "last_user_login_at": "2026-07-23T14:27:31.007Z",
+            "accessType": "owner"
+          }
+        ]
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

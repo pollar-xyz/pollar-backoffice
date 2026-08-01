@@ -1,0 +1,43 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"identity\\\": {\\n    \\\"id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n    \\\"email\\\": \\\"…@REDACTED\\\",\\n    \\\"first_name\\\": \\\"kaleel\\\",\\n    \\\"last_name\\\": null,\\n    \\\"avatar\\\": \\\"https://…/REDACTED\\\",\\n    \\\"role\\\": \\\"DEVELOPER\\\",\\n    \\\"identities\\\": [\\n      {\\n        \\\"id\\\": \\\"cmrvjf0mx00010hqhpvusutpa\\\",\\n        \\\"provider\\\": \\\"GOOGLE\\\",\\n        \\\"provider_id\\\": \\\"110308564163083843275\\\"\\n      }\\n    ]\\n  },\\n  \\\"accessibleApplications\\\": [\\n    {\\n      \\\"id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n      \\\"name\\\": \\\"Telegram Bot\\\",\\n      \\\"network\\\": \\\"testnet\\\"\\n    }\\n  ],\\n  \\\"accessibleCount\\\": 1,\\n  \\\"note\\\": \\\"Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens.\\\"\\n}\"}],\"structuredContent\":{\"identity\":{\"id\":\"cmrvjf0mr00000hqhlm9epdko\",\"email\":\"…@REDACTED\",\"first_name\":\"kaleel\",\"last_name\":null,\"avatar\":\"https://…/REDACTED\",\"role\":\"DEVELOPER\",\"identities\":[{\"id\":\"cmrvjf0mx00010hqhpvusutpa\",\"provider\":\"GOOGLE\",\"provider_id\":\"110308564163083843275\"}]},\"accessibleApplications\":[{\"id\":\"cmrvjgoa…REDACTED\",\"name\":\"Telegram Bot\",\"network\":\"testnet\"}],\"accessibleCount\":1,\"note\":\"Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens.\"}},\"jsonrpc\":\"2.0\",\"id\":3}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"identity\": {\n    \"id\": \"cmrvjf0mr00000hqhlm9epdko\",\n    \"email\": \"…@REDACTED\",\n    \"first_name\": \"kaleel\",\n    \"last_name\": null,\n    \"avatar\": \"https://…/REDACTED\",\n    \"role\": \"DEVELOPER\",\n    \"identities\": [\n      {\n        \"id\": \"cmrvjf0mx00010hqhpvusutpa\",\n        \"provider\": \"GOOGLE\",\n        \"provider_id\": \"110308564163083843275\"\n      }\n    ]\n  },\n  \"accessibleApplications\": [\n    {\n      \"id\": \"cmrvjgoa…REDACTED\",\n      \"name\": \"Telegram Bot\",\n      \"network\": \"testnet\"\n    }\n  ],\n  \"accessibleCount\": 1,\n  \"note\": \"Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens.\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "identity": {
+          "id": "cmrvjf0mr00000hqhlm9epdko",
+          "email": "…@REDACTED",
+          "first_name": "kaleel",
+          "last_name": null,
+          "avatar": "https://…/REDACTED",
+          "role": "DEVELOPER",
+          "identities": [
+            {
+              "id": "cmrvjf0mx00010hqhpvusutpa",
+              "provider": "GOOGLE",
+              "provider_id": "110308564163083843275"
+            }
+          ]
+        },
+        "accessibleApplications": [
+          {
+            "id": "cmrvjgoa…REDACTED",
+            "name": "Telegram Bot",
+            "network": "testnet"
+          }
+        ],
+        "accessibleCount": 1,
+        "note": "Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens."
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

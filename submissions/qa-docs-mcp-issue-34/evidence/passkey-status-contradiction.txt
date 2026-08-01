@@ -1,0 +1,3 @@
+Passkeys Guide section titled coming soon; shows usePollarPasskey sample; notes hook not exported.
+Smart Wallets section: createSmartWallet/loginSmartWallet available in 0.10.1.
+SDK: createSmartWallet + loginSmartWallet present; usePollarPasskey absent.

@@ -1,0 +1,24 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"role\\\": \\\"GLOBAL\\\",\\n  \\\"network\\\": \\\"testnet\\\",\\n  \\\"funded\\\": false,\\n  \\\"action\\\": \\\"none\\\",\\n  \\\"hint\\\": \\\"This app has been split \u2014 ask for role FUNDING/GAS/DISTRIBUTION.\\\"\\n}\"}],\"structuredContent\":{\"role\":\"GLOBAL\",\"network\":\"testnet\",\"funded\":false,\"action\":\"none\",\"hint\":\"This app has been split \u2014 ask for role FUNDING/GAS/DISTRIBUTION.\"}},\"jsonrpc\":\"2.0\",\"id\":17}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"role\": \"GLOBAL\",\n  \"network\": \"testnet\",\n  \"funded\": false,\n  \"action\": \"none\",\n  \"hint\": \"This app has been split \u2014 ask for role FUNDING/GAS/DISTRIBUTION.\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "role": "GLOBAL",
+        "network": "testnet",
+        "funded": false,
+        "action": "none",
+        "hint": "This app has been split \u2014 ask for role FUNDING/GAS/DISTRIBUTION."
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 17
+  }
+}

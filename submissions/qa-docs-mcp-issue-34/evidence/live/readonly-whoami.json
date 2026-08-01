@@ -1,0 +1,53 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"identity\\\": {\\n    \\\"id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n    \\\"email\\\": \\\"…@REDACTED\\\",\\n    \\\"first_name\\\": \\\"kaleel\\\",\\n    \\\"last_name\\\": null,\\n    \\\"avatar\\\": \\\"https://…/REDACTED\\\",\\n    \\\"role\\\": \\\"DEVELOPER\\\",\\n    \\\"identities\\\": [\\n      {\\n        \\\"id\\\": \\\"cmrvjf0mx00010hqhpvusutpa\\\",\\n        \\\"provider\\\": \\\"GOOGLE\\\",\\n        \\\"provider_id\\\": \\\"110308564163083843275\\\"\\n      }\\n    ]\\n  },\\n  \\\"accessibleApplications\\\": [\\n    {\\n      \\\"id\\\": \\\"cms8whk6b001b0ipdmm6r24p7\\\",\\n      \\\"name\\\": \\\"qa-ab-arm-b-7b7706\\\",\\n      \\\"network\\\": \\\"testnet\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"cms8wgdll000z0iunnwy5b3rd\\\",\\n      \\\"name\\\": \\\"qa-ab-arm-b-1c9be0\\\",\\n      \\\"network\\\": \\\"testnet\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n      \\\"name\\\": \\\"Telegram Bot\\\",\\n      \\\"network\\\": \\\"testnet\\\"\\n    }\\n  ],\\n  \\\"accessibleCount\\\": 3,\\n  \\\"note\\\": \\\"Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens.\\\"\\n}\"}],\"structuredContent\":{\"identity\":{\"id\":\"cmrvjf0mr00000hqhlm9epdko\",\"email\":\"…@REDACTED\",\"first_name\":\"kaleel\",\"last_name\":null,\"avatar\":\"https://…/REDACTED\",\"role\":\"DEVELOPER\",\"identities\":[{\"id\":\"cmrvjf0mx00010hqhpvusutpa\",\"provider\":\"GOOGLE\",\"provider_id\":\"110308564163083843275\"}]},\"accessibleApplications\":[{\"id\":\"cms8whk6b001b0ipdmm6r24p7\",\"name\":\"qa-ab-arm-b-7b7706\",\"network\":\"testnet\"},{\"id\":\"cms8wgdll000z0iunnwy5b3rd\",\"name\":\"qa-ab-arm-b-1c9be0\",\"network\":\"testnet\"},{\"id\":\"cmrvjgoa…REDACTED\",\"name\":\"Telegram Bot\",\"network\":\"testnet\"}],\"accessibleCount\":3,\"note\":\"Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens.\"}},\"jsonrpc\":\"2.0\",\"id\":2}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"identity\": {\n    \"id\": \"cmrvjf0mr00000hqhlm9epdko\",\n    \"email\": \"…@REDACTED\",\n    \"first_name\": \"kaleel\",\n    \"last_name\": null,\n    \"avatar\": \"https://…/REDACTED\",\n    \"role\": \"DEVELOPER\",\n    \"identities\": [\n      {\n        \"id\": \"cmrvjf0mx00010hqhpvusutpa\",\n        \"provider\": \"GOOGLE\",\n        \"provider_id\": \"110308564163083843275\"\n      }\n    ]\n  },\n  \"accessibleApplications\": [\n    {\n      \"id\": \"cms8whk6b001b0ipdmm6r24p7\",\n      \"name\": \"qa-ab-arm-b-7b7706\",\n      \"network\": \"testnet\"\n    },\n    {\n      \"id\": \"cms8wgdll000z0iunnwy5b3rd\",\n      \"name\": \"qa-ab-arm-b-1c9be0\",\n      \"network\": \"testnet\"\n    },\n    {\n      \"id\": \"cmrvjgoa…REDACTED\",\n      \"name\": \"Telegram Bot\",\n      \"network\": \"testnet\"\n    }\n  ],\n  \"accessibleCount\": 3,\n  \"note\": \"Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens.\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "identity": {
+          "id": "cmrvjf0mr00000hqhlm9epdko",
+          "email": "…@REDACTED",
+          "first_name": "kaleel",
+          "last_name": null,
+          "avatar": "https://…/REDACTED",
+          "role": "DEVELOPER",
+          "identities": [
+            {
+              "id": "cmrvjf0mx00010hqhpvusutpa",
+              "provider": "GOOGLE",
+              "provider_id": "110308564163083843275"
+            }
+          ]
+        },
+        "accessibleApplications": [
+          {
+            "id": "cms8whk6b001b0ipdmm6r24p7",
+            "name": "qa-ab-arm-b-7b7706",
+            "network": "testnet"
+          },
+          {
+            "id": "cms8wgdll000z0iunnwy5b3rd",
+            "name": "qa-ab-arm-b-1c9be0",
+            "network": "testnet"
+          },
+          {
+            "id": "cmrvjgoa…REDACTED",
+            "name": "Telegram Bot",
+            "network": "testnet"
+          }
+        ],
+        "accessibleCount": 3,
+        "note": "Granular PAT scopes are enforced per call by hub-api; a 403 PAT_INSUFFICIENT_SCOPE means this token lacks the required `<resource>:<action>` scope. Grant it in the dashboard under Settings -> Personal Access Tokens."
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  }
+}

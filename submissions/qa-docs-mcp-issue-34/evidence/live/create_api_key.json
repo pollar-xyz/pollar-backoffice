@@ -1,0 +1,18 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"Error: VALIDATION_ERROR (hub-api 400).\"}],\"isError\":true},\"jsonrpc\":\"2.0\",\"id\":21}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Error: VALIDATION_ERROR (hub-api 400)."
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 21
+  }
+}

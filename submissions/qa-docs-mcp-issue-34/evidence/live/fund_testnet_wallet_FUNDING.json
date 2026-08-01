@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Error: FUND_XLM_FAILED (hub-api 502)."
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 8
+  }
+}

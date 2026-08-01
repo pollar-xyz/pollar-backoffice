@@ -1,0 +1,7 @@
+SDK PollarContextValue keys not in docs property tables:
+- wallets
+- sendPayment
+- configStatus
+- retryConfig
+- adapters
+(verified/enabledAssets/setTrustline/openEnabledAssetsModal ARE documented in current llms-full.txt)
