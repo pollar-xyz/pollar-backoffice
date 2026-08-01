@@ -1,0 +1,2 @@
+usePollarPasskey in @pollar/…@REDACTED exports: ABSENT
+Confirmed via package dist/index.d.ts export list and string search.

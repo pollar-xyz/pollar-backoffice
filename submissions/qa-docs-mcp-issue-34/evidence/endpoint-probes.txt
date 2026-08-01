@@ -1,0 +1,7 @@
+noauth:401
+badpat_initialize:200
+api.pollar.xyz root:404
+sdk.api.pollar.xyz root:404
+dashboard:200
+docs llms-full:200
+mcp GET:401

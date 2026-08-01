@@ -1,0 +1,27 @@
+[
+  {
+    "item": "create_api_key returns plaintext once",
+    "result": "fail",
+    "notes": "MCP returns key:null \u2014 agent cannot recover secret after creation"
+  },
+  {
+    "item": "sdk config x-pollar-api-key+Origin=http://localhost:3000",
+    "result": "pass",
+    "notes": "{\"content\":{\"application\":{\"name\":\"Telegram Bot\",\"network\":\"testnet\",\"chains\":[\"STELLAR\"]},\"styles\":{\"theme\":\"light\",\"providers\":{\"x\":false,\"apple\":false,\"github\":false,\"google\":true,\"discord\":false},"
+  },
+  {
+    "item": "sdk config x-pollar-api-key+Origin=https://pollar-telegram-shop-template-nyuiela.vercel.app",
+    "result": "pass",
+    "notes": "{\"content\":{\"application\":{\"name\":\"Telegram Bot\",\"network\":\"testnet\",\"chains\":[\"STELLAR\"]},\"styles\":{\"theme\":\"light\",\"providers\":{\"x\":false,\"apple\":false,\"github\":false,\"google\":true,\"discord\":false},"
+  },
+  {
+    "item": "sdk config Bearer+Origin localhost",
+    "result": "fail",
+    "notes": "http=401 {\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}"
+  },
+  {
+    "item": "distribution period ONCE (agent guess from docs ellipsis)",
+    "result": "pass",
+    "notes": "Error: VALIDATION_ERROR (hub-api 400)."
+  }
+]

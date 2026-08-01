@@ -1,0 +1,65 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"[\\n  {\\n    \\\"id\\\": \\\"cms8w3g9x000x0iunn16ohl8n\\\",\\n    \\\"key_prefix\\\": \\\"sec_testnet_…REDACTED\\\",\\n    \\\"name\\\": \\\"secret key\\\",\\n    \\\"type\\\": \\\"SECRET\\\",\\n    \\\"allow_native_clients\\\": false,\\n    \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n    \\\"expires_at\\\": \\\"2027-01-01T00:00:00.000Z\\\",\\n    \\\"created_at\\\": \\\"2026-07-31T11:59:13.701Z\\\",\\n    \\\"updated_at\\\": \\\"2026-07-31T11:59:13.701Z\\\"\\n  },\\n  {\\n    \\\"id\\\": \\\"cms8vxj8r00190ipdedtwt096\\\",\\n    \\\"key_prefix\\\": \\\"pub_testnet_…REDACTED\\\",\\n    \\\"name\\\": \\\"test key\\\",\\n    \\\"type\\\": \\\"PUBLISHABLE\\\",\\n    \\\"allow_native_clients\\\": false,\\n    \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n    \\\"expires_at\\\": \\\"2027-01-01T00:00:00.000Z\\\",\\n    \\\"created_at\\\": \\\"2026-07-31T11:54:37.611Z\\\",\\n    \\\"updated_at\\\": \\\"2026-07-31T11:54:37.611Z\\\"\\n  },\\n  {\\n    \\\"id\\\": \\\"cmrvjitav00050inwtpmnt1m8\\\",\\n    \\\"key_prefix\\\": \\\"sec_testnet_…REDACTED\\\",\\n    \\\"name\\\": \\\"TelegramBot\\\",\\n    \\\"type\\\": \\\"SECRET\\\",\\n    \\\"allow_native_clients\\\": false,\\n    \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n    \\\"expires_at\\\": null,\\n    \\\"created_at\\\": \\\"2026-07-22T03:46:15.127Z\\\",\\n    \\\"updated_at\\\": \\\"2026-07-22T03:46:15.127Z\\\"\\n  },\\n  {\\n    \\\"id\\\": \\\"cmrvjhmn000020hqhufe5d3v0\\\",\\n    \\\"key_prefix\\\": \\\"pub_testnet_…REDACTED\\\",\\n    \\\"name\\\": \\\"Telegram Bot Test\\\",\\n    \\\"type\\\": \\\"PUBLISHABLE\\\",\\n    \\\"allow_native_clients\\\": true,\\n    \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n    \\\"expires_at\\\": \\\"2029-02-28T00:00:00.000Z\\\",\\n    \\\"created_at\\\": \\\"2026-07-22T03:45:19.836Z\\\",\\n    \\\"updated_at\\\": \\\"2026-07-22T03:57:00.489Z\\\"\\n  }\\n]\"}],\"structuredContent\":{\"items\":[{\"id\":\"cms8w3g9x000x0iunn16ohl8n\",\"key_prefix\":\"sec_testnet_…REDACTED\",\"name\":\"secret key\",\"type\":\"SECRET\",\"allow_native_clients\":false,\"application_id\":\"cmrvjgoa…REDACTED\",\"expires_at\":\"2027-01-01T00:00:00.000Z\",\"created_at\":\"2026-07-31T11:59:13.701Z\",\"updated_at\":\"2026-07-31T11:59:13.701Z\"},{\"id\":\"cms8vxj8r00190ipdedtwt096\",\"key_prefix\":\"pub_testnet_…REDACTED\",\"name\":\"test key\",\"type\":\"PUBLISHABLE\",\"allow_native_clients\":false,\"application_id\":\"cmrvjgoa…REDACTED\",\"expires_at\":\"2027-01-01T00:00:00.000Z\",\"created_at\":\"2026-07-31T11:54:37.611Z\",\"updated_at\":\"2026-07-31T11:54:37.611Z\"},{\"id\":\"cmrvjitav00050inwtpmnt1m8\",\"key_prefix\":\"sec_testnet_…REDACTED\",\"name\":\"TelegramBot\",\"type\":\"SECRET\",\"allow_native_clients\":false,\"application_id\":\"cmrvjgoa…REDACTED\",\"expires_at\":null,\"created_at\":\"2026-07-22T03:46:15.127Z\",\"updated_at\":\"2026-07-22T03:46:15.127Z\"},{\"id\":\"cmrvjhmn000020hqhufe5d3v0\",\"key_prefix\":\"pub_testnet_…REDACTED\",\"name\":\"Telegram Bot Test\",\"type\":\"PUBLISHABLE\",\"allow_native_clients\":true,\"application_id\":\"cmrvjgoa…REDACTED\",\"expires_at\":\"2029-02-28T00:00:00.000Z\",\"created_at\":\"2026-07-22T03:45:19.836Z\",\"updated_at\":\"2026-07-22T03:57:00.489Z\"}]}},\"jsonrpc\":\"2.0\",\"id\":13}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[\n  {\n    \"id\": \"cms8w3g9x000x0iunn16ohl8n\",\n    \"key_prefix\": \"sec_testnet_…REDACTED\",\n    \"name\": \"secret key\",\n    \"type\": \"SECRET\",\n    \"allow_native_clients\": false,\n    \"application_id\": \"cmrvjgoa…REDACTED\",\n    \"expires_at\": \"2027-01-01T00:00:00.000Z\",\n    \"created_at\": \"2026-07-31T11:59:13.701Z\",\n    \"updated_at\": \"2026-07-31T11:59:13.701Z\"\n  },\n  {\n    \"id\": \"cms8vxj8r00190ipdedtwt096\",\n    \"key_prefix\": \"pub_testnet_…REDACTED\",\n    \"name\": \"test key\",\n    \"type\": \"PUBLISHABLE\",\n    \"allow_native_clients\": false,\n    \"application_id\": \"cmrvjgoa…REDACTED\",\n    \"expires_at\": \"2027-01-01T00:00:00.000Z\",\n    \"created_at\": \"2026-07-31T11:54:37.611Z\",\n    \"updated_at\": \"2026-07-31T11:54:37.611Z\"\n  },\n  {\n    \"id\": \"cmrvjitav00050inwtpmnt1m8\",\n    \"key_prefix\": \"sec_testnet_…REDACTED\",\n    \"name\": \"TelegramBot\",\n    \"type\": \"SECRET\",\n    \"allow_native_clients\": false,\n    \"application_id\": \"cmrvjgoa…REDACTED\",\n    \"expires_at\": null,\n    \"created_at\": \"2026-07-22T03:46:15.127Z\",\n    \"updated_at\": \"2026-07-22T03:46:15.127Z\"\n  },\n  {\n    \"id\": \"cmrvjhmn000020hqhufe5d3v0\",\n    \"key_prefix\": \"pub_testnet_…REDACTED\",\n    \"name\": \"Telegram Bot Test\",\n    \"type\": \"PUBLISHABLE\",\n    \"allow_native_clients\": true,\n    \"application_id\": \"cmrvjgoa…REDACTED\",\n    \"expires_at\": \"2029-02-28T00:00:00.000Z\",\n    \"created_at\": \"2026-07-22T03:45:19.836Z\",\n    \"updated_at\": \"2026-07-22T03:57:00.489Z\"\n  }\n]"
+        }
+      ],
+      "structuredContent": {
+        "items": [
+          {
+            "id": "cms8w3g9x000x0iunn16ohl8n",
+            "key_prefix": "sec_testnet_…REDACTED",
+            "name": "secret key",
+            "type": "SECRET",
+            "allow_native_clients": false,
+            "application_id": "cmrvjgoa…REDACTED",
+            "expires_at": "2027-01-01T00:00:00.000Z",
+            "created_at": "2026-07-31T11:59:13.701Z",
+            "updated_at": "2026-07-31T11:59:13.701Z"
+          },
+          {
+            "id": "cms8vxj8r00190ipdedtwt096",
+            "key_prefix": "pub_testnet_…REDACTED",
+            "name": "test key",
+            "type": "PUBLISHABLE",
+            "allow_native_clients": false,
+            "application_id": "cmrvjgoa…REDACTED",
+            "expires_at": "2027-01-01T00:00:00.000Z",
+            "created_at": "2026-07-31T11:54:37.611Z",
+            "updated_at": "2026-07-31T11:54:37.611Z"
+          },
+          {
+            "id": "cmrvjitav00050inwtpmnt1m8",
+            "key_prefix": "sec_testnet_…REDACTED",
+            "name": "TelegramBot",
+            "type": "SECRET",
+            "allow_native_clients": false,
+            "application_id": "cmrvjgoa…REDACTED",
+            "expires_at": null,
+            "created_at": "2026-07-22T03:46:15.127Z",
+            "updated_at": "2026-07-22T03:46:15.127Z"
+          },
+          {
+            "id": "cmrvjhmn000020hqhufe5d3v0",
+            "key_prefix": "pub_testnet_…REDACTED",
+            "name": "Telegram Bot Test",
+            "type": "PUBLISHABLE",
+            "allow_native_clients": true,
+            "application_id": "cmrvjgoa…REDACTED",
+            "expires_at": "2029-02-28T00:00:00.000Z",
+            "created_at": "2026-07-22T03:45:19.836Z",
+            "updated_at": "2026-07-22T03:57:00.489Z"
+          }
+        ]
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 13
+  }
+}

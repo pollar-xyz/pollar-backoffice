@@ -1,0 +1,5 @@
+{
+  "label": "x-pollar-api-key+Origin=http://localhost:3000",
+  "status": 200,
+  "body": "{\"content\":{\"application\":{\"name\":\"Telegram Bot\",\"network\":\"testnet\",\"chains\":[\"STELLAR\"]},\"styles\":{\"theme\":\"light\",\"providers\":{\"x\":false,\"apple\":false,\"github\":false,\"google\":true,\"discord\":false},\"accentColor\":\"#005DB4\",\"emailEnabled\":true,\"embeddedWallets\":true,\"authentikEnabled\":false}},\"code\":\"SDK_APPLICATION_CONFIG\",\"success\":true}"
+}

@@ -1,0 +1,62 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"applicationId\\\": \\\"cmrvjgoa…REDACTED\\\",\\n  \\\"network\\\": \\\"testnet\\\",\\n  \\\"count\\\": 2,\\n  \\\"assets\\\": [\\n    {\\n      \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n      \\\"asset_id\\\": \\\"cmq42vkht0001y2idh1lpjezf\\\",\\n      \\\"enabled\\\": true,\\n      \\\"name\\\": \\\"EURC\\\",\\n      \\\"sponsor_transfer\\\": true,\\n      \\\"created_at\\\": \\\"2026-07-22T05:07:46.045Z\\\",\\n      \\\"updated_at\\\": \\\"2026-07-22T17:36:24.856Z\\\",\\n      \\\"asset\\\": {\\n        \\\"id\\\": \\\"cmq42vkht0001y2idh1lpjezf\\\",\\n        \\\"chain\\\": \\\"STELLAR\\\",\\n        \\\"code\\\": \\\"EURC\\\",\\n        \\\"issuer\\\": \\\"G…REDACTED\\\",\\n        \\\"decimals\\\": 7,\\n        \\\"created_at\\\": \\\"2026-06-07T17:50:47.681Z\\\",\\n        \\\"updated_at\\\": \\\"2026-06-07T17:50:47.681Z\\\",\\n        \\\"deleted_at\\\": null\\n      }\\n    },\\n    {\\n      \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n      \\\"asset_id\\\": \\\"cmm6fdw4a0001eaidrbu9rvc1\\\",\\n      \\\"enabled\\\": true,\\n      \\\"name\\\": \\\"USD Coin\\\",\\n      \\\"sponsor_transfer\\\": true,\\n      \\\"created_at\\\": \\\"2026-07-22T05:07:32.741Z\\\",\\n      \\\"updated_at\\\": \\\"2026-07-31T12:09:13.698Z\\\",\\n      \\\"asset\\\": {\\n        \\\"id\\\": \\\"cmm6fdw4a0001eaidrbu9rvc1\\\",\\n        \\\"chain\\\": \\\"STELLAR\\\",\\n        \\\"code\\\": \\\"USDC\\\",\\n        \\\"issuer\\\": \\\"G…REDACTED\\\",\\n        \\\"decimals\\\": 7,\\n        \\\"created_at\\\": \\\"2026-02-28T14:37:40.648Z\\\",\\n        \\\"updated_at\\\": \\\"2026-02-28T14:37:40.648Z\\\",\\n        \\\"deleted_at\\\": null\\n      }\\n    }\\n  ]\\n}\"}],\"structuredContent\":{\"applicationId\":\"cmrvjgoa…REDACTED\",\"network\":\"testnet\",\"count\":2,\"assets\":[{\"application_id\":\"cmrvjgoa…REDACTED\",\"asset_id\":\"cmq42vkht0001y2idh1lpjezf\",\"enabled\":true,\"name\":\"EURC\",\"sponsor_transfer\":true,\"created_at\":\"2026-07-22T05:07:46.045Z\",\"updated_at\":\"2026-07-22T17:36:24.856Z\",\"asset\":{\"id\":\"cmq42vkht0001y2idh1lpjezf\",\"chain\":\"STELLAR\",\"code\":\"EURC\",\"issuer\":\"G…REDACTED\",\"decimals\":7,\"created_at\":\"2026-06-07T17:50:47.681Z\",\"updated_at\":\"2026-06-07T17:50:47.681Z\",\"deleted_at\":null}},{\"application_id\":\"cmrvjgoa…REDACTED\",\"asset_id\":\"cmm6fdw4a0001eaidrbu9rvc1\",\"enabled\":true,\"name\":\"USD Coin\",\"sponsor_transfer\":true,\"created_at\":\"2026-07-22T05:07:32.741Z\",\"updated_at\":\"2026-07-31T12:09:13.698Z\",\"asset\":{\"id\":\"cmm6fdw4a0001eaidrbu9rvc1\",\"chain\":\"STELLAR\",\"code\":\"USDC\",\"issuer\":\"G…REDACTED\",\"decimals\":7,\"created_at\":\"2026-02-28T14:37:40.648Z\",\"updated_at\":\"2026-02-28T14:37:40.648Z\",\"deleted_at\":null}}]}},\"jsonrpc\":\"2.0\",\"id\":14}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"applicationId\": \"cmrvjgoa…REDACTED\",\n  \"network\": \"testnet\",\n  \"count\": 2,\n  \"assets\": [\n    {\n      \"application_id\": \"cmrvjgoa…REDACTED\",\n      \"asset_id\": \"cmq42vkht0001y2idh1lpjezf\",\n      \"enabled\": true,\n      \"name\": \"EURC\",\n      \"sponsor_transfer\": true,\n      \"created_at\": \"2026-07-22T05:07:46.045Z\",\n      \"updated_at\": \"2026-07-22T17:36:24.856Z\",\n      \"asset\": {\n        \"id\": \"cmq42vkht0001y2idh1lpjezf\",\n        \"chain\": \"STELLAR\",\n        \"code\": \"EURC\",\n        \"issuer\": \"G…REDACTED\",\n        \"decimals\": 7,\n        \"created_at\": \"2026-06-07T17:50:47.681Z\",\n        \"updated_at\": \"2026-06-07T17:50:47.681Z\",\n        \"deleted_at\": null\n      }\n    },\n    {\n      \"application_id\": \"cmrvjgoa…REDACTED\",\n      \"asset_id\": \"cmm6fdw4a0001eaidrbu9rvc1\",\n      \"enabled\": true,\n      \"name\": \"USD Coin\",\n      \"sponsor_transfer\": true,\n      \"created_at\": \"2026-07-22T05:07:32.741Z\",\n      \"updated_at\": \"2026-07-31T12:09:13.698Z\",\n      \"asset\": {\n        \"id\": \"cmm6fdw4a0001eaidrbu9rvc1\",\n        \"chain\": \"STELLAR\",\n        \"code\": \"USDC\",\n        \"issuer\": \"G…REDACTED\",\n        \"decimals\": 7,\n        \"created_at\": \"2026-02-28T14:37:40.648Z\",\n        \"updated_at\": \"2026-02-28T14:37:40.648Z\",\n        \"deleted_at\": null\n      }\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "applicationId": "cmrvjgoa…REDACTED",
+        "network": "testnet",
+        "count": 2,
+        "assets": [
+          {
+            "application_id": "cmrvjgoa…REDACTED",
+            "asset_id": "cmq42vkht0001y2idh1lpjezf",
+            "enabled": true,
+            "name": "EURC",
+            "sponsor_transfer": true,
+            "created_at": "2026-07-22T05:07:46.045Z",
+            "updated_at": "2026-07-22T17:36:24.856Z",
+            "asset": {
+              "id": "cmq42vkht0001y2idh1lpjezf",
+              "chain": "STELLAR",
+              "code": "EURC",
+              "issuer": "G…REDACTED",
+              "decimals": 7,
+              "created_at": "2026-06-07T17:50:47.681Z",
+              "updated_at": "2026-06-07T17:50:47.681Z",
+              "deleted_at": null
+            }
+          },
+          {
+            "application_id": "cmrvjgoa…REDACTED",
+            "asset_id": "cmm6fdw4a0001eaidrbu9rvc1",
+            "enabled": true,
+            "name": "USD Coin",
+            "sponsor_transfer": true,
+            "created_at": "2026-07-22T05:07:32.741Z",
+            "updated_at": "2026-07-31T12:09:13.698Z",
+            "asset": {
+              "id": "cmm6fdw4a0001eaidrbu9rvc1",
+              "chain": "STELLAR",
+              "code": "USDC",
+              "issuer": "G…REDACTED",
+              "decimals": 7,
+              "created_at": "2026-02-28T14:37:40.648Z",
+              "updated_at": "2026-02-28T14:37:40.648Z",
+              "deleted_at": null
+            }
+          }
+        ]
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 14
+  }
+}

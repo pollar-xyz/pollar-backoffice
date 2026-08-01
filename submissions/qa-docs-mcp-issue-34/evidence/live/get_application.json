@@ -1,0 +1,138 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n  \\\"name\\\": \\\"Telegram Bot\\\",\\n  \\\"network\\\": \\\"testnet\\\",\\n  \\\"funding_mode\\\": \\\"IMMEDIATE\\\",\\n  \\\"funding_starting_balance_xlm\\\": \\\"100\\\",\\n  \\\"sponsor_trustlines\\\": true,\\n  \\\"sponsor_trustline_external\\\": true,\\n  \\\"chains\\\": [\\n    \\\"STELLAR\\\"\\n  ],\\n  \\\"allowed_origins\\\": [\\n    \\\"http://localhost:3000\\\",\\n    \\\"https://pollar-telegram-shop-template-nyuiela.vercel.app\\\"\\n  ],\\n  \\\"swap_venues\\\": [],\\n  \\\"sponsor_swap_venues\\\": [],\\n  \\\"sponsor_swap_external\\\": false,\\n  \\\"sponsor_transfer_external\\\": false,\\n  \\\"sponsor_contract_external\\\": false,\\n  \\\"sponsor_all_contracts\\\": false,\\n  \\\"styles\\\": {\\n    \\\"theme\\\": \\\"light\\\",\\n    \\\"providers\\\": {\\n      \\\"x\\\": false,\\n      \\\"apple\\\": false,\\n      \\\"github\\\": false,\\n      \\\"google\\\": true,\\n      \\\"discord\\\": false\\n    },\\n    \\\"logoBase64\\\": null,\\n    \\\"accentColor\\\": \\\"#005DB4\\\",\\n    \\\"emailEnabled\\\": true,\\n    \\\"embeddedWallets\\\": true\\n  },\\n  \\\"email_from\\\": null,\\n  \\\"tx_policy\\\": null,\\n  \\\"soroban_auth_max_ledger_window\\\": null,\\n  \\\"access_token_ttl_seconds\\\": null,\\n  \\\"refresh_token_ttl_seconds\\\": null,\\n  \\\"user_id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n  \\\"project_id\\\": \\\"cmrvjgoa500020imwb3d81ntr\\\",\\n  \\\"created_at\\\": \\\"2026-07-22T03:44:35.316Z\\\",\\n  \\\"updated_at\\\": \\\"2026-07-31T12:09:10.710Z\\\",\\n  \\\"deleted_at\\\": null,\\n  \\\"archived_at\\\": null,\\n  \\\"user\\\": {\\n    \\\"id\\\": \\\"cmrvjf0mr00000hqhlm9epdko\\\",\\n    \\\"email\\\": \\\"…@REDACTED\\\",\\n    \\\"first_name\\\": \\\"kaleel\\\",\\n    \\\"last_name\\\": null,\\n    \\\"avatar\\\": \\\"https://…/REDACTED\\\"\\n  },\\n  \\\"application_assets\\\": [\\n    {\\n      \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n      \\\"asset_id\\\": \\\"cmq42vkht0001y2idh1lpjezf\\\",\\n      \\\"enabled\\\": true,\\n      \\\"name\\\": \\\"EURC\\\",\\n      \\\"sponsor_transfer\\\": true,\\n      \\\"created_at\\\": \\\"2026-07-22T05:07:46.045Z\\\",\\n      \\\"updated_at\\\": \\\"2026-07-22T17:36:24.856Z\\\",\\n      \\\"asset\\\": {\\n        \\\"id\\\": \\\"cmq42vkht0001y2idh1lpjezf\\\",\\n        \\\"chain\\\": \\\"STELLAR\\\",\\n        \\\"code\\\": \\\"EURC\\\",\\n        \\\"issuer\\\": \\\"G…REDACTED\\\",\\n        \\\"decimals\\\": 7,\\n        \\\"created_at\\\": \\\"2026-06-07T17:50:47.681Z\\\",\\n        \\\"updated_at\\\": \\\"2026-06-07T17:50:47.681Z\\\",\\n        \\\"deleted_at\\\": null\\n      }\\n    },\\n    {\\n      \\\"application_id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n      \\\"asset_id\\\": \\\"cmm6fdw4a0001eaidrbu9rvc1\\\",\\n      \\\"enabled\\\": true,\\n      \\\"name\\\": \\\"USD Coin\\\",\\n      \\\"sponsor_transfer\\\": true,\\n      \\\"created_at\\\": \\\"2026-07-22T05:07:32.741Z\\\",\\n      \\\"updated_at\\\": \\\"2026-07-31T12:09:13.698Z\\\",\\n      \\\"asset\\\": {\\n        \\\"id\\\": \\\"cmm6fdw4a0001eaidrbu9rvc1\\\",\\n        \\\"chain\\\": \\\"STELLAR\\\",\\n        \\\"code\\\": \\\"USDC\\\",\\n        \\\"issuer\\\": \\\"G…REDACTED\\\",\\n        \\\"decimals\\\": 7,\\n        \\\"created_at\\\": \\\"2026-02-28T14:37:40.648Z\\\",\\n        \\\"updated_at\\\": \\\"2026-02-28T14:37:40.648Z\\\",\\n        \\\"deleted_at\\\": null\\n      }\\n    }\\n  ],\\n  \\\"members\\\": [],\\n  \\\"accessType\\\": \\\"owner\\\",\\n  \\\"projectApps\\\": [\\n    {\\n      \\\"id\\\": \\\"cmrvjgoa…REDACTED\\\",\\n      \\\"name\\\": \\\"Telegram Bot\\\",\\n      \\\"network\\\": \\\"testnet\\\"\\n    }\\n  ],\\n  \\\"wallets\\\": {\\n    \\\"type\\\": \\\"split\\\",\\n    \\\"funding\\\": {\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"existsOnStellar\\\": true,\\n      \\\"createdAt\\\": 1784691875363\\n    },\\n    \\\"gas\\\": {\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"existsOnStellar\\\": true,\\n      \\\"createdAt\\\": 1784741760916\\n    },\\n    \\\"distribution\\\": {\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"existsOnStellar\\\": true,\\n      \\\"createdAt\\\": 1784741760920\\n    }\\n  }\\n}\"}],\"structuredContent\":{\"id\":\"cmrvjgoa…REDACTED\",\"name\":\"Telegram Bot\",\"network\":\"testnet\",\"funding_mode\":\"IMMEDIATE\",\"funding_starting_balance_xlm\":\"100\",\"sponsor_trustlines\":true,\"sponsor_trustline_external\":true,\"chains\":[\"STELLAR\"],\"allowed_origins\":[\"http://localhost:3000\",\"https://pollar-telegram-shop-template-nyuiela.vercel.app\"],\"swap_venues\":[],\"sponsor_swap_venues\":[],\"sponsor_swap_external\":false,\"sponsor_transfer_external\":false,\"sponsor_contract_external\":false,\"sponsor_all_contracts\":false,\"styles\":{\"theme\":\"light\",\"providers\":{\"x\":false,\"apple\":false,\"github\":false,\"google\":true,\"discord\":false},\"logoBase64\":null,\"accentColor\":\"#005DB4\",\"emailEnabled\":true,\"embeddedWallets\":true},\"email_from\":null,\"tx_policy\":null,\"soroban_auth_max_ledger_window\":null,\"access_token_ttl_seconds\":null,\"refresh_token_ttl_seconds\":null,\"user_id\":\"cmrvjf0mr00000hqhlm9epdko\",\"project_id\":\"cmrvjgoa500020imwb3d81ntr\",\"created_at\":\"2026-07-22T03:44:35.316Z\",\"updated_at\":\"2026-07-31T12:09:10.710Z\",\"deleted_at\":null,\"archived_at\":null,\"user\":{\"id\":\"cmrvjf0mr00000hqhlm9epdko\",\"email\":\"…@REDACTED\",\"first_name\":\"kaleel\",\"last_name\":null,\"avatar\":\"https://…/REDACTED\"},\"application_assets\":[{\"application_id\":\"cmrvjgoa…REDACTED\",\"asset_id\":\"cmq42vkht0001y2idh1lpjezf\",\"enabled\":true,\"name\":\"EURC\",\"sponsor_transfer\":true,\"created_at\":\"2026-07-22T05:07:46.045Z\",\"updated_at\":\"2026-07-22T17:36:24.856Z\",\"asset\":{\"id\":\"cmq42vkht0001y2idh1lpjezf\",\"chain\":\"STELLAR\",\"code\":\"EURC\",\"issuer\":\"G…REDACTED\",\"decimals\":7,\"created_at\":\"2026-06-07T17:50:47.681Z\",\"updated_at\":\"2026-06-07T17:50:47.681Z\",\"deleted_at\":null}},{\"application_id\":\"cmrvjgoa…REDACTED\",\"asset_id\":\"cmm6fdw4a0001eaidrbu9rvc1\",\"enabled\":true,\"name\":\"USD Coin\",\"sponsor_transfer\":true,\"created_at\":\"2026-07-22T05:07:32.741Z\",\"updated_at\":\"2026-07-31T12:09:13.698Z\",\"asset\":{\"id\":\"cmm6fdw4a0001eaidrbu9rvc1\",\"chain\":\"STELLAR\",\"code\":\"USDC\",\"issuer\":\"G…REDACTED\",\"decimals\":7,\"created_at\":\"2026-02-28T14:37:40.648Z\",\"updated_at\":\"2026-02-28T14:37:40.648Z\",\"deleted_at\":null}}],\"members\":[],\"accessType\":\"owner\",\"projectApps\":[{\"id\":\"cmrvjgoa…REDACTED\",\"name\":\"Telegram Bot\",\"network\":\"testnet\"}],\"wallets\":{\"type\":\"split\",\"funding\":{\"publicKey\":\"G…REDACTED\",\"existsOnStellar\":true,\"createdAt\":1784691875363},\"gas\":{\"publicKey\":\"G…REDACTED\",\"existsOnStellar\":true,\"createdAt\":1784741760916},\"distribution\":{\"publicKey\":\"G…REDACTED\",\"existsOnStellar\":true,\"createdAt\":1784741760920}}}},\"jsonrpc\":\"2.0\",\"id\":5}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"cmrvjgoa…REDACTED\",\n  \"name\": \"Telegram Bot\",\n  \"network\": \"testnet\",\n  \"funding_mode\": \"IMMEDIATE\",\n  \"funding_starting_balance_xlm\": \"100\",\n  \"sponsor_trustlines\": true,\n  \"sponsor_trustline_external\": true,\n  \"chains\": [\n    \"STELLAR\"\n  ],\n  \"allowed_origins\": [\n    \"http://localhost:3000\",\n    \"https://pollar-telegram-shop-template-nyuiela.vercel.app\"\n  ],\n  \"swap_venues\": [],\n  \"sponsor_swap_venues\": [],\n  \"sponsor_swap_external\": false,\n  \"sponsor_transfer_external\": false,\n  \"sponsor_contract_external\": false,\n  \"sponsor_all_contracts\": false,\n  \"styles\": {\n    \"theme\": \"light\",\n    \"providers\": {\n      \"x\": false,\n      \"apple\": false,\n      \"github\": false,\n      \"google\": true,\n      \"discord\": false\n    },\n    \"logoBase64\": null,\n    \"accentColor\": \"#005DB4\",\n    \"emailEnabled\": true,\n    \"embeddedWallets\": true\n  },\n  \"email_from\": null,\n  \"tx_policy\": null,\n  \"soroban_auth_max_ledger_window\": null,\n  \"access_token_ttl_seconds\": null,\n  \"refresh_token_ttl_seconds\": null,\n  \"user_id\": \"cmrvjf0mr00000hqhlm9epdko\",\n  \"project_id\": \"cmrvjgoa500020imwb3d81ntr\",\n  \"created_at\": \"2026-07-22T03:44:35.316Z\",\n  \"updated_at\": \"2026-07-31T12:09:10.710Z\",\n  \"deleted_at\": null,\n  \"archived_at\": null,\n  \"user\": {\n    \"id\": \"cmrvjf0mr00000hqhlm9epdko\",\n    \"email\": \"…@REDACTED\",\n    \"first_name\": \"kaleel\",\n    \"last_name\": null,\n    \"avatar\": \"https://…/REDACTED\"\n  },\n  \"application_assets\": [\n    {\n      \"application_id\": \"cmrvjgoa…REDACTED\",\n      \"asset_id\": \"cmq42vkht0001y2idh1lpjezf\",\n      \"enabled\": true,\n      \"name\": \"EURC\",\n      \"sponsor_transfer\": true,\n      \"created_at\": \"2026-07-22T05:07:46.045Z\",\n      \"updated_at\": \"2026-07-22T17:36:24.856Z\",\n      \"asset\": {\n        \"id\": \"cmq42vkht0001y2idh1lpjezf\",\n        \"chain\": \"STELLAR\",\n        \"code\": \"EURC\",\n        \"issuer\": \"G…REDACTED\",\n        \"decimals\": 7,\n        \"created_at\": \"2026-06-07T17:50:47.681Z\",\n        \"updated_at\": \"2026-06-07T17:50:47.681Z\",\n        \"deleted_at\": null\n      }\n    },\n    {\n      \"application_id\": \"cmrvjgoa…REDACTED\",\n      \"asset_id\": \"cmm6fdw4a0001eaidrbu9rvc1\",\n      \"enabled\": true,\n      \"name\": \"USD Coin\",\n      \"sponsor_transfer\": true,\n      \"created_at\": \"2026-07-22T05:07:32.741Z\",\n      \"updated_at\": \"2026-07-31T12:09:13.698Z\",\n      \"asset\": {\n        \"id\": \"cmm6fdw4a0001eaidrbu9rvc1\",\n        \"chain\": \"STELLAR\",\n        \"code\": \"USDC\",\n        \"issuer\": \"G…REDACTED\",\n        \"decimals\": 7,\n        \"created_at\": \"2026-02-28T14:37:40.648Z\",\n        \"updated_at\": \"2026-02-28T14:37:40.648Z\",\n        \"deleted_at\": null\n      }\n    }\n  ],\n  \"members\": [],\n  \"accessType\": \"owner\",\n  \"projectApps\": [\n    {\n      \"id\": \"cmrvjgoa…REDACTED\",\n      \"name\": \"Telegram Bot\",\n      \"network\": \"testnet\"\n    }\n  ],\n  \"wallets\": {\n    \"type\": \"split\",\n    \"funding\": {\n      \"publicKey\": \"G…REDACTED\",\n      \"existsOnStellar\": true,\n      \"createdAt\": 1784691875363\n    },\n    \"gas\": {\n      \"publicKey\": \"G…REDACTED\",\n      \"existsOnStellar\": true,\n      \"createdAt\": 1784741760916\n    },\n    \"distribution\": {\n      \"publicKey\": \"G…REDACTED\",\n      \"existsOnStellar\": true,\n      \"createdAt\": 1784741760920\n    }\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "id": "cmrvjgoa…REDACTED",
+        "name": "Telegram Bot",
+        "network": "testnet",
+        "funding_mode": "IMMEDIATE",
+        "funding_starting_balance_xlm": "100",
+        "sponsor_trustlines": true,
+        "sponsor_trustline_external": true,
+        "chains": [
+          "STELLAR"
+        ],
+        "allowed_origins": [
+          "http://localhost:3000",
+          "https://pollar-telegram-shop-template-nyuiela.vercel.app"
+        ],
+        "swap_venues": [],
+        "sponsor_swap_venues": [],
+        "sponsor_swap_external": false,
+        "sponsor_transfer_external": false,
+        "sponsor_contract_external": false,
+        "sponsor_all_contracts": false,
+        "styles": {
+          "theme": "light",
+          "providers": {
+            "x": false,
+            "apple": false,
+            "github": false,
+            "google": true,
+            "discord": false
+          },
+          "logoBase64": null,
+          "accentColor": "#005DB4",
+          "emailEnabled": true,
+          "embeddedWallets": true
+        },
+        "email_from": null,
+        "tx_policy": null,
+        "soroban_auth_max_ledger_window": null,
+        "access_token_ttl_seconds": null,
+        "refresh_token_ttl_seconds": null,
+        "user_id": "cmrvjf0mr00000hqhlm9epdko",
+        "project_id": "cmrvjgoa500020imwb3d81ntr",
+        "created_at": "2026-07-22T03:44:35.316Z",
+        "updated_at": "2026-07-31T12:09:10.710Z",
+        "deleted_at": null,
+        "archived_at": null,
+        "user": {
+          "id": "cmrvjf0mr00000hqhlm9epdko",
+          "email": "…@REDACTED",
+          "first_name": "kaleel",
+          "last_name": null,
+          "avatar": "https://…/REDACTED"
+        },
+        "application_assets": [
+          {
+            "application_id": "cmrvjgoa…REDACTED",
+            "asset_id": "cmq42vkht0001y2idh1lpjezf",
+            "enabled": true,
+            "name": "EURC",
+            "sponsor_transfer": true,
+            "created_at": "2026-07-22T05:07:46.045Z",
+            "updated_at": "2026-07-22T17:36:24.856Z",
+            "asset": {
+              "id": "cmq42vkht0001y2idh1lpjezf",
+              "chain": "STELLAR",
+              "code": "EURC",
+              "issuer": "G…REDACTED",
+              "decimals": 7,
+              "created_at": "2026-06-07T17:50:47.681Z",
+              "updated_at": "2026-06-07T17:50:47.681Z",
+              "deleted_at": null
+            }
+          },
+          {
+            "application_id": "cmrvjgoa…REDACTED",
+            "asset_id": "cmm6fdw4a0001eaidrbu9rvc1",
+            "enabled": true,
+            "name": "USD Coin",
+            "sponsor_transfer": true,
+            "created_at": "2026-07-22T05:07:32.741Z",
+            "updated_at": "2026-07-31T12:09:13.698Z",
+            "asset": {
+              "id": "cmm6fdw4a0001eaidrbu9rvc1",
+              "chain": "STELLAR",
+              "code": "USDC",
+              "issuer": "G…REDACTED",
+              "decimals": 7,
+              "created_at": "2026-02-28T14:37:40.648Z",
+              "updated_at": "2026-02-28T14:37:40.648Z",
+              "deleted_at": null
+            }
+          }
+        ],
+        "members": [],
+        "accessType": "owner",
+        "projectApps": [
+          {
+            "id": "cmrvjgoa…REDACTED",
+            "name": "Telegram Bot",
+            "network": "testnet"
+          }
+        ],
+        "wallets": {
+          "type": "split",
+          "funding": {
+            "publicKey": "G…REDACTED",
+            "existsOnStellar": true,
+            "createdAt": 1784691875363
+          },
+          "gas": {
+            "publicKey": "G…REDACTED",
+            "existsOnStellar": true,
+            "createdAt": 1784741760916
+          },
+          "distribution": {
+            "publicKey": "G…REDACTED",
+            "existsOnStellar": true,
+            "createdAt": 1784741760920
+          }
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 5
+  }
+}

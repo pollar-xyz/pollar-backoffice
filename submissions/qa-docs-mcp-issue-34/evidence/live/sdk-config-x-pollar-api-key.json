@@ -1,0 +1,4 @@
+{
+  "status": 403,
+  "body": "{\"code\":\"ORIGIN_NOT_ALLOWED\",\"success\":false}"
+}

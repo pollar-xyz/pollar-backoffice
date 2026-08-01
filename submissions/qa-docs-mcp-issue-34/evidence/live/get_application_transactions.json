@@ -1,0 +1,251 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"records\\\": [\\n    {\\n      \\\"id\\\": \\\"cmrw9t1l0001a0ip0kz5hda5z\\\",\\n      \\\"hash\\\": \\\"228bbec59bcdc8d682234c8261d600914533a7302309e0ca2ab082e8155f4c47\\\",\\n      \\\"network\\\": \\\"testnet\\\",\\n      \\\"phase\\\": \\\"SUCCESS\\\",\\n      \\\"failedPhase\\\": null,\\n      \\\"status\\\": \\\"SUCCESS\\\",\\n      \\\"operation\\\": \\\"change_trust\\\",\\n      \\\"summary\\\": \\\"Add trustline: EURC:G…REDACTED (sponsored)\\\",\\n      \\\"feeXlm\\\": null,\\n      \\\"resultCode\\\": null,\\n      \\\"errorMessage\\\": null,\\n      \\\"errorCode\\\": null,\\n      \\\"unsignedXdr\\\": null,\\n      \\\"signedXdr\\\": null,\\n      \\\"contractId\\\": null,\\n      \\\"contractMethod\\\": null,\\n      \\\"contractError\\\": null,\\n      \\\"details\\\": {\\n        \\\"asset\\\": \\\"EURC:G…REDACTED\\\",\\n        \\\"summary\\\": \\\"Add trustline: EURC:G…REDACTED (sponsored)\\\",\\n        \\\"sponsored\\\": true\\n      },\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"walletSource\\\": \\\"INTERNAL\\\",\\n      \\\"walletNetwork\\\": \\\"STELLAR\\\",\\n      \\\"sdkUser\\\": {\\n        \\\"id\\\": \\\"cmrw9sykf00160ip0bilkmkre\\\",\\n        \\\"email\\\": \\\"…@REDACTED\\\",\\n        \\\"firstName\\\": \\\"Oscar Gauss\\\",\\n        \\\"lastName\\\": \\\"Carvajal Yucra\\\",\\n        \\\"avatar\\\": \\\"https://…/REDACTED\\\"\\n      },\\n      \\\"createdAt\\\": \\\"2026-07-22T16:02:02.436Z\\\",\\n      \\\"timestamps\\\": {\\n        \\\"building\\\": \\\"2026-07-22T16:02:02.432Z\\\",\\n        \\\"built\\\": \\\"2026-07-22T16:02:12.045Z\\\",\\n        \\\"signing\\\": null,\\n        \\\"signed\\\": null,\\n        \\\"submitting\\\": null,\\n        \\\"submitted\\\": null,\\n        \\\"confirmed\\\": \\\"2026-07-22T16:02:12.052Z\\\",\\n        \\\"failed\\\": null\\n      }\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrw9t1kl00190ip0uvb9r0kh\\\",\\n      \\\"hash\\\": \\\"e3283a7ebdd0e6aa1e498c4e167d06294f994e5b9a4f5da591c2ee1fab3ee027\\\",\\n      \\\"network\\\": \\\"testnet\\\",\\n      \\\"phase\\\": \\\"SUCCESS\\\",\\n      \\\"failedPhase\\\": null,\\n      \\\"status\\\": \\\"SUCCESS\\\",\\n      \\\"operation\\\": \\\"change_trust\\\",\\n      \\\"summary\\\": \\\"Add trustline: USDC:G…REDACTED (sponsored)\\\",\\n      \\\"feeXlm\\\": null,\\n      \\\"resultCode\\\": null,\\n      \\\"errorMessage\\\": null,\\n      \\\"errorCode\\\": null,\\n      \\\"unsignedXdr\\\": null,\\n      \\\"signedXdr\\\": null,\\n      \\\"contractId\\\": null,\\n      \\\"contractMethod\\\": null,\\n      \\\"contractError\\\": null,\\n      \\\"details\\\": {\\n        \\\"asset\\\": \\\"USDC:G…REDACTED\\\",\\n        \\\"summary\\\": \\\"Add trustline: USDC:G…REDACTED (sponsored)\\\",\\n        \\\"sponsored\\\": true\\n      },\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"walletSource\\\": \\\"INTERNAL\\\",\\n      \\\"walletNetwork\\\": \\\"STELLAR\\\",\\n      \\\"sdkUser\\\": {\\n        \\\"id\\\": \\\"cmrw9sykf00160ip0bilkmkre\\\",\\n        \\\"email\\\": \\\"…@REDACTED\\\",\\n        \\\"firstName\\\": \\\"Oscar Gauss\\\",\\n        \\\"lastName\\\": \\\"Carvajal Yucra\\\",\\n        \\\"avatar\\\": \\\"https://…/REDACTED\\\"\\n      },\\n      \\\"createdAt\\\": \\\"2026-07-22T16:02:02.421Z\\\",\\n      \\\"timestamps\\\": {\\n        \\\"building\\\": \\\"2026-07-22T16:02:02.417Z\\\",\\n        \\\"built\\\": \\\"2026-07-22T16:02:07.371Z\\\",\\n        \\\"signing\\\": null,\\n        \\\"signed\\\": null,\\n        \\\"submitting\\\": null,\\n        \\\"submitted\\\": null,\\n        \\\"confirmed\\\": \\\"2026-07-22T16:02:07.377Z\\\",\\n        \\\"failed\\\": null\\n      }\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrw8q1ct001b0imm3mb4xy43\\\",\\n      \\\"hash\\\": \\\"c2fc31467ceb016009901d4f6afc9ffd1b50bb75c34ad38385a09c0458d824da\\\",\\n      \\\"network\\\": \\\"testnet\\\",\\n      \\\"phase\\\": \\\"SUCCESS\\\",\\n      \\\"failedPhase\\\": null,\\n      \\\"status\\\": \\\"SUCCESS\\\",\\n      \\\"operation\\\": \\\"payment\\\",\\n      \\\"summary\\\": \\\"Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED\\\",\\n      \\\"feeXlm\\\": \\\"0.0000120\\\",\\n      \\\"resultCode\\\": null,\\n      \\\"errorMessage\\\": null,\\n      \\\"errorCode\\\": null,\\n      \\\"unsignedXdr\\\": \\\"AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABQAAAAEAAAAAAAAAAAAAAABqYOOKAAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAAAPQkAAAAAAAAAAAA==\\\",\\n      \\\"signedXdr\\\": null,\\n      \\\"contractId\\\": null,\\n      \\\"contractMethod\\\": null,\\n      \\\"contractError\\\": null,\\n      \\\"details\\\": {\\n        \\\"asset\\\": \\\"USDC:G…REDACTED\\\",\\n        \\\"amount\\\": \\\"0.1000000\\\",\\n        \\\"summary\\\": \\\"Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED\\\",\\n        \\\"destination\\\": \\\"G…REDACTED\\\"\\n      },\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"walletSource\\\": \\\"INTERNAL\\\",\\n      \\\"walletNetwork\\\": \\\"STELLAR\\\",\\n      \\\"sdkUser\\\": {\\n        \\\"id\\\": \\\"cmrvjy3w7000q0imm6bv3mnwa\\\",\\n        \\\"email\\\": \\\"…@REDACTED\\\",\\n        \\\"firstName\\\": null,\\n        \\\"lastName\\\": null,\\n        \\\"avatar\\\": null\\n      },\\n      \\\"createdAt\\\": \\\"2026-07-22T15:31:42.557Z\\\",\\n      \\\"timestamps\\\": {\\n        \\\"building\\\": \\\"2026-07-22T15:31:42.552Z\\\",\\n        \\\"built\\\": \\\"2026-07-22T15:31:42.589Z\\\",\\n        \\\"signing\\\": \\\"2026-07-22T15:31:43.155Z\\\",\\n        \\\"signed\\\": null,\\n        \\\"submitting\\\": null,\\n        \\\"submitted\\\": null,\\n        \\\"confirmed\\\": \\\"2026-07-22T15:31:53.280Z\\\",\\n        \\\"failed\\\": null\\n      }\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrw8pp3400190imm14tg9f95\\\",\\n      \\\"hash\\\": \\\"bb47056eb55781b3eb6ed3623c9eeeabd23e0ff67158c83cbf84829f5f821342\\\",\\n      \\\"network\\\": \\\"testnet\\\",\\n      \\\"phase\\\": \\\"SUCCESS\\\",\\n      \\\"failedPhase\\\": null,\\n      \\\"status\\\": \\\"SUCCESS\\\",\\n      \\\"operation\\\": \\\"payment\\\",\\n      \\\"summary\\\": \\\"Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED\\\",\\n      \\\"feeXlm\\\": \\\"0.0000120\\\",\\n      \\\"resultCode\\\": null,\\n      \\\"errorMessage\\\": null,\\n      \\\"errorCode\\\": null,\\n      \\\"unsignedXdr\\\": \\\"AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABAAAAAEAAAAAAAAAAAAAAABqYON6AAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAABMS0AAAAAAAAAAAA==\\\",\\n      \\\"signedXdr\\\": null,\\n      \\\"contractId\\\": null,\\n      \\\"contractMethod\\\": null,\\n      \\\"contractError\\\": null,\\n      \\\"details\\\": {\\n        \\\"asset\\\": \\\"USDC:G…REDACTED\\\",\\n        \\\"amount\\\": \\\"0.5000000\\\",\\n        \\\"summary\\\": \\\"Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED\\\",\\n        \\\"destination\\\": \\\"G…REDACTED\\\"\\n      },\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"walletSource\\\": \\\"INTERNAL\\\",\\n      \\\"walletNetwork\\\": \\\"STELLAR\\\",\\n      \\\"sdkUser\\\": {\\n        \\\"id\\\": \\\"cmrvjy3w7000q0imm6bv3mnwa\\\",\\n        \\\"email\\\": \\\"…@REDACTED\\\",\\n        \\\"firstName\\\": null,\\n        \\\"lastName\\\": null,\\n        \\\"avatar\\\": null\\n      },\\n      \\\"createdAt\\\": \\\"2026-07-22T15:31:26.656Z\\\",\\n      \\\"timestamps\\\": {\\n        \\\"building\\\": \\\"2026-07-22T15:31:26.652Z\\\",\\n        \\\"built\\\": \\\"2026-07-22T15:31:26.688Z\\\",\\n        \\\"signing\\\": \\\"2026-07-22T15:31:27.274Z\\\",\\n        \\\"signed\\\": null,\\n        \\\"submitting\\\": null,\\n        \\\"submitted\\\": null,\\n        \\\"confirmed\\\": \\\"2026-07-22T15:31:32.366Z\\\",\\n        \\\"failed\\\": null\\n      }\\n    },\\n    {\\n      \\\"id\\\": \\\"cmrw8f49o00160immv34bs7ie\\\",\\n      \\\"hash\\\": \\\"7c83db7c70ebd199d24c9da0cf91b871df4cdc53430e6195c7203650538b3663\\\",\\n      \\\"network\\\": \\\"testnet\\\",\\n      \\\"phase\\\": \\\"SUCCESS\\\",\\n      \\\"failedPhase\\\": null,\\n      \\\"status\\\": \\\"SUCCESS\\\",\\n      \\\"operation\\\": \\\"change_trust\\\",\\n      \\\"summary\\\": \\\"Add trustline: EURC:G…REDACTED (sponsored)\\\",\\n      \\\"feeXlm\\\": null,\\n      \\\"resultCode\\\": null,\\n      \\\"errorMessage\\\": null,\\n      \\\"errorCode\\\": null,\\n      \\\"unsignedXdr\\\": null,\\n      \\\"signedXdr\\\": null,\\n      \\\"contractId\\\": null,\\n      \\\"contractMethod\\\": null,\\n      \\\"contractError\\\": null,\\n      \\\"details\\\": {\\n        \\\"asset\\\": \\\"EURC:G…REDACTED\\\",\\n        \\\"summary\\\": \\\"Add trustline: EURC:G…REDACTED (sponsored)\\\",\\n        \\\"sponsored\\\": true\\n      },\\n      \\\"publicKey\\\": \\\"G…REDACTED\\\",\\n      \\\"walletSource\\\": \\\"INTERNAL\\\",\\n      \\\"walletNetwork\\\": \\\"STELLAR\\\",\\n      \\\"sdkUser\\\": {\\n        \\\"id\\\": \\\"cmrw8e74p000m0ilsjx0jgoo6\\\",\\n        \\\"email\\\": \\\"…@REDACTED\\\",\\n        \\\"firstName\\\": \\\"kaleel\\\",\\n        \\\"lastName\\\": null,\\n        \\\"avatar\\\": \\\"https://…/REDACTED\\\"\\n      },\\n      \\\"createdAt\\\": \\\"2026-07-22T15:23:13.116Z\\\",\\n      \\\"timestamps\\\": {\\n        \\\"building\\\": \\\"2026-07-22T15:23:13.113Z\\\",\\n        \\\"built\\\": \\\"2026-07-22T15:23:18.390Z\\\",\\n        \\\"signing\\\": null,\\n        \\\"signed\\\": null,\\n        \\\"submitting\\\": null,\\n        \\\"submitted\\\": null,\\n        \\\"confirmed\\\": \\\"2026-07-22T15:23:18.431Z\\\",\\n        \\\"failed\\\": null\\n      }\\n    }\\n  ],\\n  \\\"total\\\": 14,\\n  \\\"limit\\\": 5,\\n  \\\"offset\\\": 0\\n}\"}],\"structuredContent\":{\"records\":[{\"id\":\"cmrw9t1l0001a0ip0kz5hda5z\",\"hash\":\"228bbec59bcdc8d682234c8261d600914533a7302309e0ca2ab082e8155f4c47\",\"network\":\"testnet\",\"phase\":\"SUCCESS\",\"failedPhase\":null,\"status\":\"SUCCESS\",\"operation\":\"change_trust\",\"summary\":\"Add trustline: EURC:G…REDACTED (sponsored)\",\"feeXlm\":null,\"resultCode\":null,\"errorMessage\":null,\"errorCode\":null,\"unsignedXdr\":null,\"signedXdr\":null,\"contractId\":null,\"contractMethod\":null,\"contractError\":null,\"details\":{\"asset\":\"EURC:G…REDACTED\",\"summary\":\"Add trustline: EURC:G…REDACTED (sponsored)\",\"sponsored\":true},\"publicKey\":\"G…REDACTED\",\"walletSource\":\"INTERNAL\",\"walletNetwork\":\"STELLAR\",\"sdkUser\":{\"id\":\"cmrw9sykf00160ip0bilkmkre\",\"email\":\"…@REDACTED\",\"firstName\":\"Oscar Gauss\",\"lastName\":\"Carvajal Yucra\",\"avatar\":\"https://…/REDACTED\"},\"createdAt\":\"2026-07-22T16:02:02.436Z\",\"timestamps\":{\"building\":\"2026-07-22T16:02:02.432Z\",\"built\":\"2026-07-22T16:02:12.045Z\",\"signing\":null,\"signed\":null,\"submitting\":null,\"submitted\":null,\"confirmed\":\"2026-07-22T16:02:12.052Z\",\"failed\":null}},{\"id\":\"cmrw9t1kl00190ip0uvb9r0kh\",\"hash\":\"e3283a7ebdd0e6aa1e498c4e167d06294f994e5b9a4f5da591c2ee1fab3ee027\",\"network\":\"testnet\",\"phase\":\"SUCCESS\",\"failedPhase\":null,\"status\":\"SUCCESS\",\"operation\":\"change_trust\",\"summary\":\"Add trustline: USDC:G…REDACTED (sponsored)\",\"feeXlm\":null,\"resultCode\":null,\"errorMessage\":null,\"errorCode\":null,\"unsignedXdr\":null,\"signedXdr\":null,\"contractId\":null,\"contractMethod\":null,\"contractError\":null,\"details\":{\"asset\":\"USDC:G…REDACTED\",\"summary\":\"Add trustline: USDC:G…REDACTED (sponsored)\",\"sponsored\":true},\"publicKey\":\"G…REDACTED\",\"walletSource\":\"INTERNAL\",\"walletNetwork\":\"STELLAR\",\"sdkUser\":{\"id\":\"cmrw9sykf00160ip0bilkmkre\",\"email\":\"…@REDACTED\",\"firstName\":\"Oscar Gauss\",\"lastName\":\"Carvajal Yucra\",\"avatar\":\"https://…/REDACTED\"},\"createdAt\":\"2026-07-22T16:02:02.421Z\",\"timestamps\":{\"building\":\"2026-07-22T16:02:02.417Z\",\"built\":\"2026-07-22T16:02:07.371Z\",\"signing\":null,\"signed\":null,\"submitting\":null,\"submitted\":null,\"confirmed\":\"2026-07-22T16:02:07.377Z\",\"failed\":null}},{\"id\":\"cmrw8q1ct001b0imm3mb4xy43\",\"hash\":\"c2fc31467ceb016009901d4f6afc9ffd1b50bb75c34ad38385a09c0458d824da\",\"network\":\"testnet\",\"phase\":\"SUCCESS\",\"failedPhase\":null,\"status\":\"SUCCESS\",\"operation\":\"payment\",\"summary\":\"Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED\",\"feeXlm\":\"0.0000120\",\"resultCode\":null,\"errorMessage\":null,\"errorCode\":null,\"unsignedXdr\":\"AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABQAAAAEAAAAAAAAAAAAAAABqYOOKAAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAAAPQkAAAAAAAAAAAA==\",\"signedXdr\":null,\"contractId\":null,\"contractMethod\":null,\"contractError\":null,\"details\":{\"asset\":\"USDC:G…REDACTED\",\"amount\":\"0.1000000\",\"summary\":\"Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED\",\"destination\":\"G…REDACTED\"},\"publicKey\":\"G…REDACTED\",\"walletSource\":\"INTERNAL\",\"walletNetwork\":\"STELLAR\",\"sdkUser\":{\"id\":\"cmrvjy3w7000q0imm6bv3mnwa\",\"email\":\"…@REDACTED\",\"firstName\":null,\"lastName\":null,\"avatar\":null},\"createdAt\":\"2026-07-22T15:31:42.557Z\",\"timestamps\":{\"building\":\"2026-07-22T15:31:42.552Z\",\"built\":\"2026-07-22T15:31:42.589Z\",\"signing\":\"2026-07-22T15:31:43.155Z\",\"signed\":null,\"submitting\":null,\"submitted\":null,\"confirmed\":\"2026-07-22T15:31:53.280Z\",\"failed\":null}},{\"id\":\"cmrw8pp3400190imm14tg9f95\",\"hash\":\"bb47056eb55781b3eb6ed3623c9eeeabd23e0ff67158c83cbf84829f5f821342\",\"network\":\"testnet\",\"phase\":\"SUCCESS\",\"failedPhase\":null,\"status\":\"SUCCESS\",\"operation\":\"payment\",\"summary\":\"Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED\",\"feeXlm\":\"0.0000120\",\"resultCode\":null,\"errorMessage\":null,\"errorCode\":null,\"unsignedXdr\":\"AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABAAAAAEAAAAAAAAAAAAAAABqYON6AAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAABMS0AAAAAAAAAAAA==\",\"signedXdr\":null,\"contractId\":null,\"contractMethod\":null,\"contractError\":null,\"details\":{\"asset\":\"USDC:G…REDACTED\",\"amount\":\"0.5000000\",\"summary\":\"Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED\",\"destination\":\"G…REDACTED\"},\"publicKey\":\"G…REDACTED\",\"walletSource\":\"INTERNAL\",\"walletNetwork\":\"STELLAR\",\"sdkUser\":{\"id\":\"cmrvjy3w7000q0imm6bv3mnwa\",\"email\":\"…@REDACTED\",\"firstName\":null,\"lastName\":null,\"avatar\":null},\"createdAt\":\"2026-07-22T15:31:26.656Z\",\"timestamps\":{\"building\":\"2026-07-22T15:31:26.652Z\",\"built\":\"2026-07-22T15:31:26.688Z\",\"signing\":\"2026-07-22T15:31:27.274Z\",\"signed\":null,\"submitting\":null,\"submitted\":null,\"confirmed\":\"2026-07-22T15:31:32.366Z\",\"failed\":null}},{\"id\":\"cmrw8f49o00160immv34bs7ie\",\"hash\":\"7c83db7c70ebd199d24c9da0cf91b871df4cdc53430e6195c7203650538b3663\",\"network\":\"testnet\",\"phase\":\"SUCCESS\",\"failedPhase\":null,\"status\":\"SUCCESS\",\"operation\":\"change_trust\",\"summary\":\"Add trustline: EURC:G…REDACTED (sponsored)\",\"feeXlm\":null,\"resultCode\":null,\"errorMessage\":null,\"errorCode\":null,\"unsignedXdr\":null,\"signedXdr\":null,\"contractId\":null,\"contractMethod\":null,\"contractError\":null,\"details\":{\"asset\":\"EURC:G…REDACTED\",\"summary\":\"Add trustline: EURC:G…REDACTED (sponsored)\",\"sponsored\":true},\"publicKey\":\"G…REDACTED\",\"walletSource\":\"INTERNAL\",\"walletNetwork\":\"STELLAR\",\"sdkUser\":{\"id\":\"cmrw8e74p000m0ilsjx0jgoo6\",\"email\":\"…@REDACTED\",\"firstName\":\"kaleel\",\"lastName\":null,\"avatar\":\"https://…/REDACTED\"},\"createdAt\":\"2026-07-22T15:23:13.116Z\",\"timestamps\":{\"building\":\"2026-07-22T15:23:13.113Z\",\"built\":\"2026-07-22T15:23:18.390Z\",\"signing\":null,\"signed\":null,\"submitting\":null,\"submitted\":null,\"confirmed\":\"2026-07-22T15:23:18.431Z\",\"failed\":null}}],\"total\":14,\"limit\":5,\"offset\":0}},\"jsonrpc\":\"2.0\",\"id\":10}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"records\": [\n    {\n      \"id\": \"cmrw9t1l0001a0ip0kz5hda5z\",\n      \"hash\": \"228bbec59bcdc8d682234c8261d600914533a7302309e0ca2ab082e8155f4c47\",\n      \"network\": \"testnet\",\n      \"phase\": \"SUCCESS\",\n      \"failedPhase\": null,\n      \"status\": \"SUCCESS\",\n      \"operation\": \"change_trust\",\n      \"summary\": \"Add trustline: EURC:G…REDACTED (sponsored)\",\n      \"feeXlm\": null,\n      \"resultCode\": null,\n      \"errorMessage\": null,\n      \"errorCode\": null,\n      \"unsignedXdr\": null,\n      \"signedXdr\": null,\n      \"contractId\": null,\n      \"contractMethod\": null,\n      \"contractError\": null,\n      \"details\": {\n        \"asset\": \"EURC:G…REDACTED\",\n        \"summary\": \"Add trustline: EURC:G…REDACTED (sponsored)\",\n        \"sponsored\": true\n      },\n      \"publicKey\": \"G…REDACTED\",\n      \"walletSource\": \"INTERNAL\",\n      \"walletNetwork\": \"STELLAR\",\n      \"sdkUser\": {\n        \"id\": \"cmrw9sykf00160ip0bilkmkre\",\n        \"email\": \"…@REDACTED\",\n        \"firstName\": \"Oscar Gauss\",\n        \"lastName\": \"Carvajal Yucra\",\n        \"avatar\": \"https://…/REDACTED\"\n      },\n      \"createdAt\": \"2026-07-22T16:02:02.436Z\",\n      \"timestamps\": {\n        \"building\": \"2026-07-22T16:02:02.432Z\",\n        \"built\": \"2026-07-22T16:02:12.045Z\",\n        \"signing\": null,\n        \"signed\": null,\n        \"submitting\": null,\n        \"submitted\": null,\n        \"confirmed\": \"2026-07-22T16:02:12.052Z\",\n        \"failed\": null\n      }\n    },\n    {\n      \"id\": \"cmrw9t1kl00190ip0uvb9r0kh\",\n      \"hash\": \"e3283a7ebdd0e6aa1e498c4e167d06294f994e5b9a4f5da591c2ee1fab3ee027\",\n      \"network\": \"testnet\",\n      \"phase\": \"SUCCESS\",\n      \"failedPhase\": null,\n      \"status\": \"SUCCESS\",\n      \"operation\": \"change_trust\",\n      \"summary\": \"Add trustline: USDC:G…REDACTED (sponsored)\",\n      \"feeXlm\": null,\n      \"resultCode\": null,\n      \"errorMessage\": null,\n      \"errorCode\": null,\n      \"unsignedXdr\": null,\n      \"signedXdr\": null,\n      \"contractId\": null,\n      \"contractMethod\": null,\n      \"contractError\": null,\n      \"details\": {\n        \"asset\": \"USDC:G…REDACTED\",\n        \"summary\": \"Add trustline: USDC:G…REDACTED (sponsored)\",\n        \"sponsored\": true\n      },\n      \"publicKey\": \"G…REDACTED\",\n      \"walletSource\": \"INTERNAL\",\n      \"walletNetwork\": \"STELLAR\",\n      \"sdkUser\": {\n        \"id\": \"cmrw9sykf00160ip0bilkmkre\",\n        \"email\": \"…@REDACTED\",\n        \"firstName\": \"Oscar Gauss\",\n        \"lastName\": \"Carvajal Yucra\",\n        \"avatar\": \"https://…/REDACTED\"\n      },\n      \"createdAt\": \"2026-07-22T16:02:02.421Z\",\n      \"timestamps\": {\n        \"building\": \"2026-07-22T16:02:02.417Z\",\n        \"built\": \"2026-07-22T16:02:07.371Z\",\n        \"signing\": null,\n        \"signed\": null,\n        \"submitting\": null,\n        \"submitted\": null,\n        \"confirmed\": \"2026-07-22T16:02:07.377Z\",\n        \"failed\": null\n      }\n    },\n    {\n      \"id\": \"cmrw8q1ct001b0imm3mb4xy43\",\n      \"hash\": \"c2fc31467ceb016009901d4f6afc9ffd1b50bb75c34ad38385a09c0458d824da\",\n      \"network\": \"testnet\",\n      \"phase\": \"SUCCESS\",\n      \"failedPhase\": null,\n      \"status\": \"SUCCESS\",\n      \"operation\": \"payment\",\n      \"summary\": \"Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED\",\n      \"feeXlm\": \"0.0000120\",\n      \"resultCode\": null,\n      \"errorMessage\": null,\n      \"errorCode\": null,\n      \"unsignedXdr\": \"AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABQAAAAEAAAAAAAAAAAAAAABqYOOKAAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAAAPQkAAAAAAAAAAAA==\",\n      \"signedXdr\": null,\n      \"contractId\": null,\n      \"contractMethod\": null,\n      \"contractError\": null,\n      \"details\": {\n        \"asset\": \"USDC:G…REDACTED\",\n        \"amount\": \"0.1000000\",\n        \"summary\": \"Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED\",\n        \"destination\": \"G…REDACTED\"\n      },\n      \"publicKey\": \"G…REDACTED\",\n      \"walletSource\": \"INTERNAL\",\n      \"walletNetwork\": \"STELLAR\",\n      \"sdkUser\": {\n        \"id\": \"cmrvjy3w7000q0imm6bv3mnwa\",\n        \"email\": \"…@REDACTED\",\n        \"firstName\": null,\n        \"lastName\": null,\n        \"avatar\": null\n      },\n      \"createdAt\": \"2026-07-22T15:31:42.557Z\",\n      \"timestamps\": {\n        \"building\": \"2026-07-22T15:31:42.552Z\",\n        \"built\": \"2026-07-22T15:31:42.589Z\",\n        \"signing\": \"2026-07-22T15:31:43.155Z\",\n        \"signed\": null,\n        \"submitting\": null,\n        \"submitted\": null,\n        \"confirmed\": \"2026-07-22T15:31:53.280Z\",\n        \"failed\": null\n      }\n    },\n    {\n      \"id\": \"cmrw8pp3400190imm14tg9f95\",\n      \"hash\": \"bb47056eb55781b3eb6ed3623c9eeeabd23e0ff67158c83cbf84829f5f821342\",\n      \"network\": \"testnet\",\n      \"phase\": \"SUCCESS\",\n      \"failedPhase\": null,\n      \"status\": \"SUCCESS\",\n      \"operation\": \"payment\",\n      \"summary\": \"Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED\",\n      \"feeXlm\": \"0.0000120\",\n      \"resultCode\": null,\n      \"errorMessage\": null,\n      \"errorCode\": null,\n      \"unsignedXdr\": \"AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABAAAAAEAAAAAAAAAAAAAAABqYON6AAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAABMS0AAAAAAAAAAAA==\",\n      \"signedXdr\": null,\n      \"contractId\": null,\n      \"contractMethod\": null,\n      \"contractError\": null,\n      \"details\": {\n        \"asset\": \"USDC:G…REDACTED\",\n        \"amount\": \"0.5000000\",\n        \"summary\": \"Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED\",\n        \"destination\": \"G…REDACTED\"\n      },\n      \"publicKey\": \"G…REDACTED\",\n      \"walletSource\": \"INTERNAL\",\n      \"walletNetwork\": \"STELLAR\",\n      \"sdkUser\": {\n        \"id\": \"cmrvjy3w7000q0imm6bv3mnwa\",\n        \"email\": \"…@REDACTED\",\n        \"firstName\": null,\n        \"lastName\": null,\n        \"avatar\": null\n      },\n      \"createdAt\": \"2026-07-22T15:31:26.656Z\",\n      \"timestamps\": {\n        \"building\": \"2026-07-22T15:31:26.652Z\",\n        \"built\": \"2026-07-22T15:31:26.688Z\",\n        \"signing\": \"2026-07-22T15:31:27.274Z\",\n        \"signed\": null,\n        \"submitting\": null,\n        \"submitted\": null,\n        \"confirmed\": \"2026-07-22T15:31:32.366Z\",\n        \"failed\": null\n      }\n    },\n    {\n      \"id\": \"cmrw8f49o00160immv34bs7ie\",\n      \"hash\": \"7c83db7c70ebd199d24c9da0cf91b871df4cdc53430e6195c7203650538b3663\",\n      \"network\": \"testnet\",\n      \"phase\": \"SUCCESS\",\n      \"failedPhase\": null,\n      \"status\": \"SUCCESS\",\n      \"operation\": \"change_trust\",\n      \"summary\": \"Add trustline: EURC:G…REDACTED (sponsored)\",\n      \"feeXlm\": null,\n      \"resultCode\": null,\n      \"errorMessage\": null,\n      \"errorCode\": null,\n      \"unsignedXdr\": null,\n      \"signedXdr\": null,\n      \"contractId\": null,\n      \"contractMethod\": null,\n      \"contractError\": null,\n      \"details\": {\n        \"asset\": \"EURC:G…REDACTED\",\n        \"summary\": \"Add trustline: EURC:G…REDACTED (sponsored)\",\n        \"sponsored\": true\n      },\n      \"publicKey\": \"G…REDACTED\",\n      \"walletSource\": \"INTERNAL\",\n      \"walletNetwork\": \"STELLAR\",\n      \"sdkUser\": {\n        \"id\": \"cmrw8e74p000m0ilsjx0jgoo6\",\n        \"email\": \"…@REDACTED\",\n        \"firstName\": \"kaleel\",\n        \"lastName\": null,\n        \"avatar\": \"https://…/REDACTED\"\n      },\n      \"createdAt\": \"2026-07-22T15:23:13.116Z\",\n      \"timestamps\": {\n        \"building\": \"2026-07-22T15:23:13.113Z\",\n        \"built\": \"2026-07-22T15:23:18.390Z\",\n        \"signing\": null,\n        \"signed\": null,\n        \"submitting\": null,\n        \"submitted\": null,\n        \"confirmed\": \"2026-07-22T15:23:18.431Z\",\n        \"failed\": null\n      }\n    }\n  ],\n  \"total\": 14,\n  \"limit\": 5,\n  \"offset\": 0\n}"
+        }
+      ],
+      "structuredContent": {
+        "records": [
+          {
+            "id": "cmrw9t1l0001a0ip0kz5hda5z",
+            "hash": "228bbec59bcdc8d682234c8261d600914533a7302309e0ca2ab082e8155f4c47",
+            "network": "testnet",
+            "phase": "SUCCESS",
+            "failedPhase": null,
+            "status": "SUCCESS",
+            "operation": "change_trust",
+            "summary": "Add trustline: EURC:G…REDACTED (sponsored)",
+            "feeXlm": null,
+            "resultCode": null,
+            "errorMessage": null,
+            "errorCode": null,
+            "unsignedXdr": null,
+            "signedXdr": null,
+            "contractId": null,
+            "contractMethod": null,
+            "contractError": null,
+            "details": {
+              "asset": "EURC:G…REDACTED",
+              "summary": "Add trustline: EURC:G…REDACTED (sponsored)",
+              "sponsored": true
+            },
+            "publicKey": "G…REDACTED",
+            "walletSource": "INTERNAL",
+            "walletNetwork": "STELLAR",
+            "sdkUser": {
+              "id": "cmrw9sykf00160ip0bilkmkre",
+              "email": "…@REDACTED",
+              "firstName": "Oscar Gauss",
+              "lastName": "Carvajal Yucra",
+              "avatar": "https://…/REDACTED"
+            },
+            "createdAt": "2026-07-22T16:02:02.436Z",
+            "timestamps": {
+              "building": "2026-07-22T16:02:02.432Z",
+              "built": "2026-07-22T16:02:12.045Z",
+              "signing": null,
+              "signed": null,
+              "submitting": null,
+              "submitted": null,
+              "confirmed": "2026-07-22T16:02:12.052Z",
+              "failed": null
+            }
+          },
+          {
+            "id": "cmrw9t1kl00190ip0uvb9r0kh",
+            "hash": "e3283a7ebdd0e6aa1e498c4e167d06294f994e5b9a4f5da591c2ee1fab3ee027",
+            "network": "testnet",
+            "phase": "SUCCESS",
+            "failedPhase": null,
+            "status": "SUCCESS",
+            "operation": "change_trust",
+            "summary": "Add trustline: USDC:G…REDACTED (sponsored)",
+            "feeXlm": null,
+            "resultCode": null,
+            "errorMessage": null,
+            "errorCode": null,
+            "unsignedXdr": null,
+            "signedXdr": null,
+            "contractId": null,
+            "contractMethod": null,
+            "contractError": null,
+            "details": {
+              "asset": "USDC:G…REDACTED",
+              "summary": "Add trustline: USDC:G…REDACTED (sponsored)",
+              "sponsored": true
+            },
+            "publicKey": "G…REDACTED",
+            "walletSource": "INTERNAL",
+            "walletNetwork": "STELLAR",
+            "sdkUser": {
+              "id": "cmrw9sykf00160ip0bilkmkre",
+              "email": "…@REDACTED",
+              "firstName": "Oscar Gauss",
+              "lastName": "Carvajal Yucra",
+              "avatar": "https://…/REDACTED"
+            },
+            "createdAt": "2026-07-22T16:02:02.421Z",
+            "timestamps": {
+              "building": "2026-07-22T16:02:02.417Z",
+              "built": "2026-07-22T16:02:07.371Z",
+              "signing": null,
+              "signed": null,
+              "submitting": null,
+              "submitted": null,
+              "confirmed": "2026-07-22T16:02:07.377Z",
+              "failed": null
+            }
+          },
+          {
+            "id": "cmrw8q1ct001b0imm3mb4xy43",
+            "hash": "c2fc31467ceb016009901d4f6afc9ffd1b50bb75c34ad38385a09c0458d824da",
+            "network": "testnet",
+            "phase": "SUCCESS",
+            "failedPhase": null,
+            "status": "SUCCESS",
+            "operation": "payment",
+            "summary": "Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED",
+            "feeXlm": "0.0000120",
+            "resultCode": null,
+            "errorMessage": null,
+            "errorCode": null,
+            "unsignedXdr": "AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABQAAAAEAAAAAAAAAAAAAAABqYOOKAAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAAAPQkAAAAAAAAAAAA==",
+            "signedXdr": null,
+            "contractId": null,
+            "contractMethod": null,
+            "contractError": null,
+            "details": {
+              "asset": "USDC:G…REDACTED",
+              "amount": "0.1000000",
+              "summary": "Payment 0.1000000 USDC:G…REDACTED -> G…REDACTED",
+              "destination": "G…REDACTED"
+            },
+            "publicKey": "G…REDACTED",
+            "walletSource": "INTERNAL",
+            "walletNetwork": "STELLAR",
+            "sdkUser": {
+              "id": "cmrvjy3w7000q0imm6bv3mnwa",
+              "email": "…@REDACTED",
+              "firstName": null,
+              "lastName": null,
+              "avatar": null
+            },
+            "createdAt": "2026-07-22T15:31:42.557Z",
+            "timestamps": {
+              "building": "2026-07-22T15:31:42.552Z",
+              "built": "2026-07-22T15:31:42.589Z",
+              "signing": "2026-07-22T15:31:43.155Z",
+              "signed": null,
+              "submitting": null,
+              "submitted": null,
+              "confirmed": "2026-07-22T15:31:53.280Z",
+              "failed": null
+            }
+          },
+          {
+            "id": "cmrw8pp3400190imm14tg9f95",
+            "hash": "bb47056eb55781b3eb6ed3623c9eeeabd23e0ff67158c83cbf84829f5f821342",
+            "network": "testnet",
+            "phase": "SUCCESS",
+            "failedPhase": null,
+            "status": "SUCCESS",
+            "operation": "payment",
+            "summary": "Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED",
+            "feeXlm": "0.0000120",
+            "resultCode": null,
+            "errorMessage": null,
+            "errorCode": null,
+            "unsignedXdr": "AAAAAgAAAADgnj/048xlCkcNcKdTwwbC3f5fIYEC6DVJ2STm5HkTBwAAAHgAOP7iAAAABAAAAAEAAAAAAAAAAAAAAABqYON6AAAAAAAAAAEAAAAAAAAAAQAAAAAIq62Yx0LGOGhreh0IKSMP+KasXzgpLXpqwZAsU1+KugAAAAFVU0RDAAAAAEI+fQXy7K+/7BkrIVo/G+lq7bjY5wJUq+NBPgIH3layAAAAAABMS0AAAAAAAAAAAA==",
+            "signedXdr": null,
+            "contractId": null,
+            "contractMethod": null,
+            "contractError": null,
+            "details": {
+              "asset": "USDC:G…REDACTED",
+              "amount": "0.5000000",
+              "summary": "Payment 0.5000000 USDC:G…REDACTED -> G…REDACTED",
+              "destination": "G…REDACTED"
+            },
+            "publicKey": "G…REDACTED",
+            "walletSource": "INTERNAL",
+            "walletNetwork": "STELLAR",
+            "sdkUser": {
+              "id": "cmrvjy3w7000q0imm6bv3mnwa",
+              "email": "…@REDACTED",
+              "firstName": null,
+              "lastName": null,
+              "avatar": null
+            },
+            "createdAt": "2026-07-22T15:31:26.656Z",
+            "timestamps": {
+              "building": "2026-07-22T15:31:26.652Z",
+              "built": "2026-07-22T15:31:26.688Z",
+              "signing": "2026-07-22T15:31:27.274Z",
+              "signed": null,
+              "submitting": null,
+              "submitted": null,
+              "confirmed": "2026-07-22T15:31:32.366Z",
+              "failed": null
+            }
+          },
+          {
+            "id": "cmrw8f49o00160immv34bs7ie",
+            "hash": "7c83db7c70ebd199d24c9da0cf91b871df4cdc53430e6195c7203650538b3663",
+            "network": "testnet",
+            "phase": "SUCCESS",
+            "failedPhase": null,
+            "status": "SUCCESS",
+            "operation": "change_trust",
+            "summary": "Add trustline: EURC:G…REDACTED (sponsored)",
+            "feeXlm": null,
+            "resultCode": null,
+            "errorMessage": null,
+            "errorCode": null,
+            "unsignedXdr": null,
+            "signedXdr": null,
+            "contractId": null,
+            "contractMethod": null,
+            "contractError": null,
+            "details": {
+              "asset": "EURC:G…REDACTED",
+              "summary": "Add trustline: EURC:G…REDACTED (sponsored)",
+              "sponsored": true
+            },
+            "publicKey": "G…REDACTED",
+            "walletSource": "INTERNAL",
+            "walletNetwork": "STELLAR",
+            "sdkUser": {
+              "id": "cmrw8e74p000m0ilsjx0jgoo6",
+              "email": "…@REDACTED",
+              "firstName": "kaleel",
+              "lastName": null,
+              "avatar": "https://…/REDACTED"
+            },
+            "createdAt": "2026-07-22T15:23:13.116Z",
+            "timestamps": {
+              "building": "2026-07-22T15:23:13.113Z",
+              "built": "2026-07-22T15:23:18.390Z",
+              "signing": null,
+              "signed": null,
+              "submitting": null,
+              "submitted": null,
+              "confirmed": "2026-07-22T15:23:18.431Z",
+              "failed": null
+            }
+          }
+        ],
+        "total": 14,
+        "limit": 5,
+        "offset": 0
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 10
+  }
+}

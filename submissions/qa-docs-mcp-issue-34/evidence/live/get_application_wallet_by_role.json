@@ -1,0 +1,23 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"role\\\": \\\"GLOBAL\\\",\\n  \\\"network\\\": \\\"testnet\\\",\\n  \\\"found\\\": false,\\n  \\\"hint\\\": \\\"This app has been split \u2014 its GLOBAL wallet was promoted to FUNDING. Ask for role FUNDING/GAS/DISTRIBUTION.\\\"\\n}\"}],\"structuredContent\":{\"role\":\"GLOBAL\",\"network\":\"testnet\",\"found\":false,\"hint\":\"This app has been split \u2014 its GLOBAL wallet was promoted to FUNDING. Ask for role FUNDING/GAS/DISTRIBUTION.\"}},\"jsonrpc\":\"2.0\",\"id\":8}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"role\": \"GLOBAL\",\n  \"network\": \"testnet\",\n  \"found\": false,\n  \"hint\": \"This app has been split \u2014 its GLOBAL wallet was promoted to FUNDING. Ask for role FUNDING/GAS/DISTRIBUTION.\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "role": "GLOBAL",
+        "network": "testnet",
+        "found": false,
+        "hint": "This app has been split \u2014 its GLOBAL wallet was promoted to FUNDING. Ask for role FUNDING/GAS/DISTRIBUTION."
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 8
+  }
+}

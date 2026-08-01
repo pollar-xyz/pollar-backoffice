@@ -1,0 +1,15 @@
+{
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{}"
+        }
+      ],
+      "structuredContent": {}
+    },
+    "jsonrpc": "2.0",
+    "id": 11
+  }
+}

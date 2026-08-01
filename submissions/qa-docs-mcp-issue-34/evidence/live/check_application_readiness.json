@@ -1,0 +1,54 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"applicationId\\\": \\\"cmrvjgoa…REDACTED\\\",\\n  \\\"network\\\": \\\"testnet\\\",\\n  \\\"ready\\\": true,\\n  \\\"completedRequired\\\": 3,\\n  \\\"totalRequired\\\": 3,\\n  \\\"steps\\\": [\\n    {\\n      \\\"key\\\": \\\"api_keys\\\",\\n      \\\"label\\\": \\\"Configure API keys\\\",\\n      \\\"required\\\": true,\\n      \\\"done\\\": true,\\n      \\\"detail\\\": \\\"has a publishable key\\\"\\n    },\\n    {\\n      \\\"key\\\": \\\"domains\\\",\\n      \\\"label\\\": \\\"Configure allowed domains\\\",\\n      \\\"required\\\": true,\\n      \\\"done\\\": true,\\n      \\\"detail\\\": \\\"2 origin(s)\\\"\\n    },\\n    {\\n      \\\"key\\\": \\\"fund_wallet\\\",\\n      \\\"label\\\": \\\"Fund app wallet\\\",\\n      \\\"required\\\": true,\\n      \\\"done\\\": true,\\n      \\\"detail\\\": \\\"G…REDACTED (funded)\\\"\\n    },\\n    {\\n      \\\"key\\\": \\\"trustlines\\\",\\n      \\\"label\\\": \\\"Enable trustlines\\\",\\n      \\\"required\\\": false,\\n      \\\"done\\\": true,\\n      \\\"detail\\\": \\\"at least one asset enabled\\\"\\n    }\\n  ]\\n}\"}],\"structuredContent\":{\"applicationId\":\"cmrvjgoa…REDACTED\",\"network\":\"testnet\",\"ready\":true,\"completedRequired\":3,\"totalRequired\":3,\"steps\":[{\"key\":\"api_keys\",\"label\":\"Configure API keys\",\"required\":true,\"done\":true,\"detail\":\"has a publishable key\"},{\"key\":\"domains\",\"label\":\"Configure allowed domains\",\"required\":true,\"done\":true,\"detail\":\"2 origin(s)\"},{\"key\":\"fund_wallet\",\"label\":\"Fund app wallet\",\"required\":true,\"done\":true,\"detail\":\"G…REDACTED (funded)\"},{\"key\":\"trustlines\",\"label\":\"Enable trustlines\",\"required\":false,\"done\":true,\"detail\":\"at least one asset enabled\"}]}},\"jsonrpc\":\"2.0\",\"id\":6}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"applicationId\": \"cmrvjgoa…REDACTED\",\n  \"network\": \"testnet\",\n  \"ready\": true,\n  \"completedRequired\": 3,\n  \"totalRequired\": 3,\n  \"steps\": [\n    {\n      \"key\": \"api_keys\",\n      \"label\": \"Configure API keys\",\n      \"required\": true,\n      \"done\": true,\n      \"detail\": \"has a publishable key\"\n    },\n    {\n      \"key\": \"domains\",\n      \"label\": \"Configure allowed domains\",\n      \"required\": true,\n      \"done\": true,\n      \"detail\": \"2 origin(s)\"\n    },\n    {\n      \"key\": \"fund_wallet\",\n      \"label\": \"Fund app wallet\",\n      \"required\": true,\n      \"done\": true,\n      \"detail\": \"G…REDACTED (funded)\"\n    },\n    {\n      \"key\": \"trustlines\",\n      \"label\": \"Enable trustlines\",\n      \"required\": false,\n      \"done\": true,\n      \"detail\": \"at least one asset enabled\"\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "applicationId": "cmrvjgoa…REDACTED",
+        "network": "testnet",
+        "ready": true,
+        "completedRequired": 3,
+        "totalRequired": 3,
+        "steps": [
+          {
+            "key": "api_keys",
+            "label": "Configure API keys",
+            "required": true,
+            "done": true,
+            "detail": "has a publishable key"
+          },
+          {
+            "key": "domains",
+            "label": "Configure allowed domains",
+            "required": true,
+            "done": true,
+            "detail": "2 origin(s)"
+          },
+          {
+            "key": "fund_wallet",
+            "label": "Fund app wallet",
+            "required": true,
+            "done": true,
+            "detail": "G…REDACTED (funded)"
+          },
+          {
+            "key": "trustlines",
+            "label": "Enable trustlines",
+            "required": false,
+            "done": true,
+            "detail": "at least one asset enabled"
+          }
+        ]
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 6
+  }
+}

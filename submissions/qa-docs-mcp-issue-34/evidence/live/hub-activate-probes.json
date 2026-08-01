@@ -1,0 +1,93 @@
+[
+  {
+    "label": "hub /v1/wallets/activate",
+    "url": "https://hub.api.pollar.xyz/v1/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /v1/wallets/activate",
+    "url": "https://hub.api.pollar.xyz/v1/wallets/activate",
+    "auth": "Authorization",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /v1/wallets/activate",
+    "url": "https://hub.api.pollar.xyz/v1/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /wallets/activate",
+    "url": "https://hub.api.pollar.xyz/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /wallets/activate",
+    "url": "https://hub.api.pollar.xyz/wallets/activate",
+    "auth": "Authorization",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /wallets/activate",
+    "url": "https://hub.api.pollar.xyz/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /v1/server/wallets/activate",
+    "url": "https://hub.api.pollar.xyz/v1/server/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /v1/server/wallets/activate",
+    "url": "https://hub.api.pollar.xyz/v1/server/wallets/activate",
+    "auth": "Authorization",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /v1/server/wallets/activate",
+    "url": "https://hub.api.pollar.xyz/v1/server/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "hub /v1/apps/...",
+    "url": "https://hub.api.pollar.xyz/v1/applications/cmrvjgoa…REDACTED/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 401,
+    "body": "{\"code\":\"HUB_AUTH_INVALID_TOKEN\",\"success\":false}"
+  },
+  {
+    "label": "sdk activate",
+    "url": "https://sdk.api.pollar.xyz/v1/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "sdk activate",
+    "url": "https://sdk.api.pollar.xyz/v1/wallets/activate",
+    "auth": "Authorization",
+    "status": 404,
+    "body": "404 Not Found"
+  },
+  {
+    "label": "sdk activate",
+    "url": "https://sdk.api.pollar.xyz/v1/wallets/activate",
+    "auth": "x-pollar-api-key",
+    "status": 404,
+    "body": "404 Not Found"
+  }
+]

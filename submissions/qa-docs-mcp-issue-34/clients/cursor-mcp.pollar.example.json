@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "pollar": {
+      "type": "http",
+      "url": "https://mcp.api.pollar.xyz/mcp",
+      "headers": {
+        "Authorization": "Bearer pat_REPLACE_ME"
+      }
+    }
+  }
+}

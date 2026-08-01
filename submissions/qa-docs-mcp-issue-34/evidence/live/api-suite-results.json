@@ -1,0 +1,44 @@
+[
+  {
+    "item": "GET /v1/applications/config (publishable)",
+    "result": "fail",
+    "notes": "http=401 body={\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}",
+    "evidence": "evidence/live/sdk-applications-config.json"
+  },
+  {
+    "item": "POST https://sdk.api.pollar.xyz/v1/wallets/activate (secret auth probe)",
+    "result": "blocked",
+    "notes": "http=404 body=404 Not Found",
+    "evidence": "evidence/live/activate-sdk.api.pollar.xyz_v1.json"
+  },
+  {
+    "item": "POST https://api.pollar.xyz/v1/wallets/activate (secret auth probe)",
+    "result": "blocked",
+    "notes": "http=404 body=404 page not found\n",
+    "evidence": "evidence/live/activate-api.pollar.xyz_v1.json"
+  },
+  {
+    "item": "POST https://hub.api.pollar.xyz/v1/wallets/activate (secret auth probe)",
+    "result": "blocked",
+    "notes": "http=404 body=404 Not Found",
+    "evidence": "evidence/live/activate-hub.api.pollar.xyz_v1.json"
+  },
+  {
+    "item": "GET https://sdk.api.pollar.xyz/v1/tx/history",
+    "result": "fail",
+    "notes": "http=401 body={\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}",
+    "evidence": "evidence/live/tx-history-sdk.api.pollar.xyz_v1.json"
+  },
+  {
+    "item": "POST /v1/wallets/activate with publishable key",
+    "result": "fail",
+    "notes": "http=404 \u2014 publishable must not activate wallets; body=404 Not Found",
+    "evidence": "evidence/live/activate-with-publishable.json"
+  },
+  {
+    "item": "Invalid publishable key rejected",
+    "result": "pass",
+    "notes": "http=401 body={\"code\":\"API_KEY_NOT_FOUND\",\"success\":false}",
+    "evidence": ""
+  }
+]

@@ -1,0 +1,132 @@
+docs_section,what_doc_claims,test_performed,result,severity_if_fail,evidence,notes,ab_arm
+MCP Gateway,`list_applications` (read) args=— → Applications the token can access,Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,`get_application` (read) args=id → App detail,Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,`get_application_wallets` (read) args=id → App + end-user wallets,Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`get_wallet_balances` (read) args=id, publicKey → On-chain balances",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`get_application_transactions` (read) args=id, limit?, offset? → Transaction history",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`get_application_users` (read) args=id, limit?, offset? → SDK end-users",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,`create_application` (write) args=name → Create app,Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`create_api_key` (write) args=id, name, type?, allow_native_clients?, expires_at? → Create API key",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`enable_asset` (write) args=id, code, issuer, name → Enable trustline",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`create_distribution_rule` (write) args=id, assetId, name, amountPerUser, maxClaims, period, … → Create distribution rule",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`fund_testnet_wallet` (write) args=id, publicKey → Friendbot top-up",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`update_application_domains` (edit) args=id, allowed_origins → Replace CORS list",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`get_application_wallet_by_role` (helper) args=id, role? → Resolve wallet by role + funded?",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,"`ensure_wallet_funded` (helper) args=id, role? → Fund only if not funded (idempotent)",Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,`check_application_readiness` (helper) args=id → Get started readiness,Invoke tool via MCP client with PAT; verify args/scopes/behavior,,,,,B
+MCP Gateway,Tool fails with 403 if token lacks required scope,Call write tool with read-only PAT,,,,,B
+MCP Gateway,`update_application_domains` prompts for confirmation and replaces full list,Call with partial vs full list; observe confirmation,,,,,B
+MCP Gateway,`ensure_wallet_funded` is idempotent,Call twice; second call should not fail / no double harmful action,,,,,B
+MCP Gateway / Example prompts,List my Pollar apps and tell me which ones are ready to use.,Run prompt verbatim in MCP-connected client,,,,,B
+MCP Gateway / Example prompts,Fund the testnet global wallet for app … if it isn’t funded yet.,Run prompt verbatim in MCP-connected client,,,,,B
+MCP Gateway / Example prompts,Add http://localhost:3000 to app …’s allowed domains.,Run prompt verbatim in MCP-connected client,,,,,B
+MCP Gateway / Example prompts,Create a publishable API key for app ….,Run prompt verbatim in MCP-connected client,,,,,B
+MCP Gateway / Connect,Cursor mcp.json http transport works,Add pollar server to ~/.cursor/mcp.json and list tools,,,,,B-client-cursor
+MCP Gateway / Connect,Second MCP client (Claude Code / VS Code / Desktop) connects via docs,Configure second client following only docs,,,,,B-client-2
+Quickstart,npm install @pollar/react (includes @pollar/core peer),Execute quickstart step: 1. Install,,,,,A+B
+Quickstart,Wrap root with PollarProvider client={{ apiKey }},Execute quickstart step: 2. Add PollarProvider,,,,,A+B
+Quickstart,"login({ provider: 'google' }) creates G-address, KMS encrypt, trustlines, funding",Execute quickstart step: 3. Login and create wallet,,,,,A+B
+Quickstart,"runTx('payment', { destination, amount, asset })",Execute quickstart step: 4. Send USDC,,,,,A+B
+Quickstart,txHistory state + getClient().fetchTxHistory; openTxHistoryModal(),Execute quickstart step: 5. Transaction history,,,,,A+B
+@pollar/core,Documented version `0.10.1`,Compare to npm latest @pollar/core version,,,,,A
+@pollar/core,`pollar.beginEmailLogin()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.buildTx()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.cancelLogin()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.claimDistributionRule()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.createOffRamp()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.createOnRamp()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.createSmartWallet()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.earnDeposit()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.earnWithdraw()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.fetchSessions()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.fetchTxHistory()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getAppConfig()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getAuthState()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getEarnOpportunities()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getEarnPosition()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getEarnProviders()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getEnabledAssetsState()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getKycProviders()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getKycStatus()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getNetwork()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getRampTransaction()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getRampsQuote()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getSessionsState()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getSwapConfig()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getSwapQuote()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getSwapTokens()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getTransactionState()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getTxHistoryState()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getWalletBalance()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.getWalletBalanceState()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.listDistributionRules()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.listSessions()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.login()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.loginSmartWallet()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.logout()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.logoutEverywhere()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.onAuthStateChange()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.onEnabledAssetsStateChange()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.onNetworkStateChange()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.onSessionsStateChange()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.onTransactionStateChange()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.onTxHistoryStateChange()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.onWalletBalanceStateChange()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.pollKycStatus()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.pollRampTransaction()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.refreshAssets()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.refreshBalance()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.resolveKyc()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.revokeSession()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.runTx()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.sendEmailCode()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.setNetwork()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.setTrustline()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.signAndSubmitTx()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.startKyc()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.swap()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.verifyEmailCode()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/core,`pollar.xyz()` documented,Check export/type presence on installed @pollar/core and smoke-call if safe,,,,,A
+@pollar/react / usePollar(),`buildTx` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`enabledAssets` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`getClient` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`isAuthenticated` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`login` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`logout` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`openEnabledAssetsModal` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`openTxHistoryModal` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`runTx` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`setTrustline` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`signAndSubmitTx` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`txHistory` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`verified` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+@pollar/react / usePollar(),`wallet` claimed/used in docs,Inspect usePollar() return type/runtime keys in @pollar/react,,,,,A
+Passkeys Guide,Marked coming soon / upcoming in llms-full.txt,Confirm still unavailable; mark not testable or fail if docs elsewhere claim available,,,,Documented as unavailable,A
+Webhooks,Marked coming soon / upcoming in llms-full.txt,Confirm still unavailable; mark not testable or fail if docs elsewhere claim available,,,,Documented as unavailable,A
+KYC,Marked coming soon / upcoming in llms-full.txt,Confirm still unavailable; mark not testable or fail if docs elsewhere claim available,,,,Documented as unavailable,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/:address/trustlines/default,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/:address/trustlines,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,DELETE /v1/wallets/:address/trustlines/:asset,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/users,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/users/with-wallet,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/tokens/verify,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Pollar Server API,POST /v1/wallets/activate,HTTP request on testnet with appropriate key; compare status/shape to docs,,,,,A
+Dashboard flows,Account → Personal Access Tokens create token,Follow docs-only path in dashboard UI on testnet,,,,,A+B
+Dashboard flows,Configuration → API Keys → Generate,Follow docs-only path in dashboard UI on testnet,,,,,A+B
+Dashboard flows,"Get started readiness steps (API keys, domains, wallet funding, trustlines)",Follow docs-only path in dashboard UI on testnet,,,,,A+B
+Dashboard flows,Enable asset / trustlines in dashboard,Follow docs-only path in dashboard UI on testnet,,,,,A+B
+Dashboard flows,Allowed domains configuration,Follow docs-only path in dashboard UI on testnet,,,,,A+B
+Vibecoding E2E,"Docs-only agent (llms-full.txt, no MCP): create app, keys, domains, fund, enable asset, generate code, run, send payment",Full agent build with minimal intervention; log stalls/hallucinations,,,,,A
+Vibecoding E2E,"MCP Gateway + llms-full.txt agent: create app, keys, domains, fund, enable asset, generate code, run, send payment",Full agent build with minimal intervention; log stalls/hallucinations,,,,,B

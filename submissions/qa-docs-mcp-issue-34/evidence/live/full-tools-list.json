@@ -1,0 +1,783 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"tools\":[{\"name\":\"whoami\",\"description\":\"Identify the developer behind the calling Personal Access Token and list the applications it can reach. Call this first to learn who you are acting as and which apps are in scope. Note: granular per-resource scopes are enforced by hub-api on each call, not reported here \u2014 a 403 PAT_INSUFFICIENT_SCOPE means the token lacks the required `<resource>:<action>` scope.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{},\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"identity\":{\"type\":\"object\",\"description\":\"The developer account the PAT belongs to (id, email, role, ...)\"},\"accessibleApplications\":{\"type\":\"array\",\"description\":\"Applications this PAT can access (id, name, network)\"},\"accessibleCount\":{\"type\":\"number\"},\"applicationsError\":{\"type\":\"string\",\"description\":\"Present only if the app list could not be read (e.g. the PAT lacks `applications:read`).\"},\"note\":{\"type\":\"string\"}},\"additionalProperties\":true},\"annotations\":{\"title\":\"Who am I\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"list_applications\",\"description\":\"List the Pollar applications the calling PAT can access (read-only).\",\"inputSchema\":{\"type\":\"object\",\"properties\":{},\"additionalProperties\":false},\"annotations\":{\"title\":\"List applications\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"get_application\",\"description\":\"Get details for one Pollar application by id (network, auth settings, wallets summary).\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Get application\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"get_application_wallets\",\"description\":\"List the wallets (app + end-user) of a Pollar application.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Get application wallets\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"get_wallet_balances\",\"description\":\"Get on-chain balances for a specific wallet public key within an application.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"publicKey\":{\"type\":\"string\",\"description\":\"Stellar wallet public key (G...)\"}},\"required\":[\"id\",\"publicKey\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Get wallet balances\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"get_application_transactions\",\"description\":\"List transactions for a Pollar application (paginated).\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"limit\":{\"type\":\"number\",\"description\":\"Max rows to return\"},\"offset\":{\"type\":\"number\",\"description\":\"Rows to skip\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Get application transactions\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"get_application_users\",\"description\":\"List the SDK end-users of a Pollar application (paginated).\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"limit\":{\"type\":\"number\",\"description\":\"Max rows to return\"},\"offset\":{\"type\":\"number\",\"description\":\"Rows to skip\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Get application users\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"get_application_metrics\",\"description\":\"Get activity metrics for a Pollar application: transaction counts and related time-series over a range. Defaults to the last 14 days in UTC. Pass `tz` (IANA name, e.g. \\\"America/Mexico_City\\\") to bucket by the developer's local day.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"range\":{\"type\":\"string\",\"enum\":[\"7d\",\"14d\",\"30d\"],\"description\":\"Look-back window (default 14d)\"},\"network\":{\"type\":\"string\",\"enum\":[\"testnet\",\"mainnet\"],\"description\":\"Filter to one network (optional)\"},\"tz\":{\"type\":\"string\",\"description\":\"IANA timezone for day bucketing (default UTC)\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Get application metrics\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"list_api_keys\",\"description\":\"List the API keys of an application (metadata only \u2014 id, name, type, key prefix, status, timestamps). The plaintext secret is never returned; it is shown only once at creation. Requires `api_keys:read`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"List API keys\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"list_distribution_rules\",\"description\":\"List the token distribution (airdrop) rules configured on an application. Requires `distribution:read`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"List distribution rules\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"list_application_assets\",\"description\":\"List the Stellar assets (trustlines) enabled on an application, derived from its detail record. Requires `applications:read`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"applicationId\":{\"type\":\"string\"},\"network\":{\"type\":\"string\"},\"count\":{\"type\":\"number\"},\"assets\":{\"type\":\"array\",\"description\":\"Enabled asset records for the application\"}},\"additionalProperties\":true},\"annotations\":{\"title\":\"List application assets\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"create_application\",\"description\":\"Create a new Pollar application. Requires the PAT to hold the `applications:write` scope.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"Application name (3-100 chars)\"}},\"required\":[\"name\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Create application\",\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":false}},{\"name\":\"create_api_key\",\"description\":\"Create an API key for an application (the credential SDK clients use). Returns the plaintext key ONCE. Requires `api_keys:write`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"name\":{\"type\":\"string\",\"description\":\"Key name (1-100 chars)\"},\"type\":{\"type\":\"string\",\"enum\":[\"PUBLISHABLE\",\"SECRET\"],\"description\":\"Key type (default PUBLISHABLE)\"},\"allow_native_clients\":{\"type\":\"boolean\",\"description\":\"Allow RN/Expo origin-less clients (publishable only)\"},\"expires_at\":{\"type\":\"string\",\"description\":\"ISO date when the key expires (optional)\"}},\"required\":[\"id\",\"name\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Create API key\",\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":false}},{\"name\":\"enable_asset\",\"description\":\"Enable a Stellar asset (trustline) on an application. Requires `assets:write`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"code\":{\"type\":\"string\",\"description\":\"Asset code (1-12 chars), e.g. USDC\"},\"issuer\":{\"type\":\"string\",\"description\":\"Asset issuer public key (G..., 56 chars)\"},\"name\":{\"type\":\"string\",\"description\":\"Display name for the asset\"}},\"required\":[\"id\",\"code\",\"issuer\",\"name\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Enable asset\",\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":false}},{\"name\":\"create_distribution_rule\",\"description\":\"Create a token distribution (airdrop) rule on an application. Requires `distribution:write`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"assetId\":{\"type\":\"string\",\"description\":\"Enabled asset id to distribute\"},\"name\":{\"type\":\"string\",\"description\":\"Rule name (1-120 chars)\"},\"amountPerUser\":{\"type\":\"string\",\"description\":\"Amount per claim, decimal string > 0 (e.g. \\\"1.5\\\")\"},\"maxClaims\":{\"type\":\"number\",\"description\":\"Max claims per user in the period\"},\"period\":{\"type\":\"string\",\"enum\":[\"DAY\",\"DAY_CALENDAR\",\"WEEK\",\"MONTH\",\"MONTH_CALENDAR\",\"LIFETIME\"],\"description\":\"Claim period\"},\"globalCap\":{\"type\":\"number\",\"description\":\"Optional total cap across all users\"},\"validFrom\":{\"type\":\"string\",\"description\":\"Optional ISO start date\"},\"validUntil\":{\"type\":\"string\",\"description\":\"Optional ISO end date\"},\"enabled\":{\"type\":\"boolean\",\"description\":\"Enabled on creation (default true)\"}},\"required\":[\"id\",\"assetId\",\"name\",\"amountPerUser\",\"maxClaims\",\"period\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Create distribution rule\",\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":false}},{\"name\":\"fund_testnet_wallet\",\"description\":\"Fund a wallet on the Stellar testnet via friendbot \u2014 typically to top up an application's GLOBAL wallet. Pass the wallet public key (get it from `get_application_wallets`). Testnet only; no effect on mainnet apps. Requires `wallets:write`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"publicKey\":{\"type\":\"string\",\"description\":\"Stellar wallet public key to fund (G..., 56 chars) \u2014 e.g. the app's GLOBAL wallet\"}},\"required\":[\"id\",\"publicKey\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Fund testnet wallet\",\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":false}},{\"name\":\"update_application_domains\",\"description\":\"Replace an application's allowed origins \u2014 the domains permitted to use its API keys (CORS allowlist). This REPLACES the entire list, so pass the full set of origins you want to keep, not just additions. Requires `applications:write`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"allowed_origins\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"description\":\"Full list of allowed origins, e.g. [\\\"https://app.example.com\\\", \\\"http://localhost:3000\\\"]. Replaces the existing list.\"}},\"required\":[\"id\",\"allowed_origins\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Update application domains\",\"readOnlyHint\":false,\"destructiveHint\":true,\"openWorldHint\":false}},{\"name\":\"revoke_api_key\",\"description\":\"Revoke (soft-delete) an API key so SDK clients using it stop working. Irreversible \u2014 the key cannot be un-revoked; issue a new one with `create_api_key` instead. Get the key id from `list_api_keys`. Requires `api_keys:write`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"keyId\":{\"type\":\"string\",\"description\":\"API key id to revoke (from list_api_keys)\"}},\"required\":[\"id\",\"keyId\"],\"additionalProperties\":false},\"annotations\":{\"title\":\"Revoke API key\",\"readOnlyHint\":false,\"destructiveHint\":true,\"openWorldHint\":false}},{\"name\":\"get_application_wallet_by_role\",\"description\":\"Resolve one of an application's wallets by role (GLOBAL / FUNDING / GAS / DISTRIBUTION) and report whether it is funded. `funded` means the account is activated on Stellar (`existsOnStellar`). For exact XLM amounts, call `get_wallet_balances` with the returned public key. Requires `applications:read`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"role\":{\"type\":\"string\",\"enum\":[\"GLOBAL\",\"FUNDING\",\"GAS\",\"DISTRIBUTION\"],\"description\":\"Wallet role (default GLOBAL). Use FUNDING/GAS/DISTRIBUTION once the app is split.\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"role\":{\"type\":\"string\",\"enum\":[\"GLOBAL\",\"FUNDING\",\"GAS\",\"DISTRIBUTION\"]},\"network\":{\"type\":\"string\"},\"found\":{\"type\":\"boolean\"},\"publicKey\":{\"type\":\"string\"},\"existsOnStellar\":{\"type\":\"boolean\"},\"funded\":{\"type\":\"boolean\"},\"hint\":{\"type\":\"string\"}},\"additionalProperties\":true},\"annotations\":{\"title\":\"Get application wallet by role\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}},{\"name\":\"ensure_wallet_funded\",\"description\":\"Fund an application's wallet (by role, default GLOBAL) on testnet only if it isn't funded yet. Reads the wallet, and if it is not yet activated on Stellar, tops it up via the testnet friendbot; if it is already funded this is a no-op. Mainnet wallets cannot be auto-funded (no friendbot) \u2014 the tool reports that instead. Requires `applications:read` + `wallets:write`.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"},\"role\":{\"type\":\"string\",\"enum\":[\"GLOBAL\",\"FUNDING\",\"GAS\",\"DISTRIBUTION\"],\"description\":\"Wallet role (default GLOBAL). Use FUNDING/GAS/DISTRIBUTION once the app is split.\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"role\":{\"type\":\"string\",\"enum\":[\"GLOBAL\",\"FUNDING\",\"GAS\",\"DISTRIBUTION\"]},\"network\":{\"type\":\"string\"},\"publicKey\":{\"type\":\"string\"},\"funded\":{\"type\":\"boolean\"},\"action\":{\"type\":\"string\",\"enum\":[\"funded\",\"already_funded\",\"skipped\",\"none\"]},\"hint\":{\"type\":\"string\"}},\"additionalProperties\":true},\"annotations\":{\"title\":\"Ensure wallet funded (testnet)\",\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":false,\"idempotentHint\":true}},{\"name\":\"check_application_readiness\",\"description\":\"Check whether an application is ready to use by evaluating the dashboard \\\"Get started\\\" config steps: API keys, allowed domains, app-wallet funding (required), plus enabled trustlines (recommended). Returns each step with a done flag and `ready` = all REQUIRED steps done. (Creating the first end-user wallet is the developer's own SDK call, not app config, so it is not evaluated here.) Reads across applications/api_keys scopes; a step shows `done: null` if its scope is missing.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Application id\"}},\"required\":[\"id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"applicationId\":{\"type\":\"string\"},\"network\":{\"type\":\"string\"},\"ready\":{\"type\":\"boolean\"},\"completedRequired\":{\"type\":\"number\"},\"totalRequired\":{\"type\":\"number\"},\"steps\":{\"type\":\"array\",\"description\":\"Per-step results with { key, label, required, done, detail }\"}},\"additionalProperties\":true},\"annotations\":{\"title\":\"Check application readiness\",\"readOnlyHint\":true,\"idempotentHint\":true,\"openWorldHint\":false}}]},\"jsonrpc\":\"2.0\",\"id\":2}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "tools": [
+        {
+          "name": "whoami",
+          "description": "Identify the developer behind the calling Personal Access Token and list the applications it can reach. Call this first to learn who you are acting as and which apps are in scope. Note: granular per-resource scopes are enforced by hub-api on each call, not reported here \u2014 a 403 PAT_INSUFFICIENT_SCOPE means the token lacks the required `<resource>:<action>` scope.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "properties": {
+              "identity": {
+                "type": "object",
+                "description": "The developer account the PAT belongs to (id, email, role, ...)"
+              },
+              "accessibleApplications": {
+                "type": "array",
+                "description": "Applications this PAT can access (id, name, network)"
+              },
+              "accessibleCount": {
+                "type": "number"
+              },
+              "applicationsError": {
+                "type": "string",
+                "description": "Present only if the app list could not be read (e.g. the PAT lacks `applications:read`)."
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "annotations": {
+            "title": "Who am I",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "list_applications",
+          "description": "List the Pollar applications the calling PAT can access (read-only).",
+          "inputSchema": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "List applications",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "get_application",
+          "description": "Get details for one Pollar application by id (network, auth settings, wallets summary).",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Get application",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "get_application_wallets",
+          "description": "List the wallets (app + end-user) of a Pollar application.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Get application wallets",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "get_wallet_balances",
+          "description": "Get on-chain balances for a specific wallet public key within an application.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "publicKey": {
+                "type": "string",
+                "description": "Stellar wallet public key (G...)"
+              }
+            },
+            "required": [
+              "id",
+              "publicKey"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Get wallet balances",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "get_application_transactions",
+          "description": "List transactions for a Pollar application (paginated).",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "limit": {
+                "type": "number",
+                "description": "Max rows to return"
+              },
+              "offset": {
+                "type": "number",
+                "description": "Rows to skip"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Get application transactions",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "get_application_users",
+          "description": "List the SDK end-users of a Pollar application (paginated).",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "limit": {
+                "type": "number",
+                "description": "Max rows to return"
+              },
+              "offset": {
+                "type": "number",
+                "description": "Rows to skip"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Get application users",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "get_application_metrics",
+          "description": "Get activity metrics for a Pollar application: transaction counts and related time-series over a range. Defaults to the last 14 days in UTC. Pass `tz` (IANA name, e.g. \"America/Mexico_City\") to bucket by the developer's local day.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "range": {
+                "type": "string",
+                "enum": [
+                  "7d",
+                  "14d",
+                  "30d"
+                ],
+                "description": "Look-back window (default 14d)"
+              },
+              "network": {
+                "type": "string",
+                "enum": [
+                  "testnet",
+                  "mainnet"
+                ],
+                "description": "Filter to one network (optional)"
+              },
+              "tz": {
+                "type": "string",
+                "description": "IANA timezone for day bucketing (default UTC)"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Get application metrics",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "list_api_keys",
+          "description": "List the API keys of an application (metadata only \u2014 id, name, type, key prefix, status, timestamps). The plaintext secret is never returned; it is shown only once at creation. Requires `api_keys:read`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "List API keys",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "list_distribution_rules",
+          "description": "List the token distribution (airdrop) rules configured on an application. Requires `distribution:read`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "List distribution rules",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "list_application_assets",
+          "description": "List the Stellar assets (trustlines) enabled on an application, derived from its detail record. Requires `applications:read`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "properties": {
+              "applicationId": {
+                "type": "string"
+              },
+              "network": {
+                "type": "string"
+              },
+              "count": {
+                "type": "number"
+              },
+              "assets": {
+                "type": "array",
+                "description": "Enabled asset records for the application"
+              }
+            },
+            "additionalProperties": true
+          },
+          "annotations": {
+            "title": "List application assets",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "create_application",
+          "description": "Create a new Pollar application. Requires the PAT to hold the `applications:write` scope.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Application name (3-100 chars)"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Create application",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "create_api_key",
+          "description": "Create an API key for an application (the credential SDK clients use). Returns the plaintext key ONCE. Requires `api_keys:write`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "name": {
+                "type": "string",
+                "description": "Key name (1-100 chars)"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "PUBLISHABLE",
+                  "SECRET"
+                ],
+                "description": "Key type (default PUBLISHABLE)"
+              },
+              "allow_native_clients": {
+                "type": "boolean",
+                "description": "Allow RN/Expo origin-less clients (publishable only)"
+              },
+              "expires_at": {
+                "type": "string",
+                "description": "ISO date when the key expires (optional)"
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Create API key",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "enable_asset",
+          "description": "Enable a Stellar asset (trustline) on an application. Requires `assets:write`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "code": {
+                "type": "string",
+                "description": "Asset code (1-12 chars), e.g. USDC"
+              },
+              "issuer": {
+                "type": "string",
+                "description": "Asset issuer public key (G..., 56 chars)"
+              },
+              "name": {
+                "type": "string",
+                "description": "Display name for the asset"
+              }
+            },
+            "required": [
+              "id",
+              "code",
+              "issuer",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Enable asset",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "create_distribution_rule",
+          "description": "Create a token distribution (airdrop) rule on an application. Requires `distribution:write`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "assetId": {
+                "type": "string",
+                "description": "Enabled asset id to distribute"
+              },
+              "name": {
+                "type": "string",
+                "description": "Rule name (1-120 chars)"
+              },
+              "amountPerUser": {
+                "type": "string",
+                "description": "Amount per claim, decimal string > 0 (e.g. \"1.5\")"
+              },
+              "maxClaims": {
+                "type": "number",
+                "description": "Max claims per user in the period"
+              },
+              "period": {
+                "type": "string",
+                "enum": [
+                  "DAY",
+                  "DAY_CALENDAR",
+                  "WEEK",
+                  "MONTH",
+                  "MONTH_CALENDAR",
+                  "LIFETIME"
+                ],
+                "description": "Claim period"
+              },
+              "globalCap": {
+                "type": "number",
+                "description": "Optional total cap across all users"
+              },
+              "validFrom": {
+                "type": "string",
+                "description": "Optional ISO start date"
+              },
+              "validUntil": {
+                "type": "string",
+                "description": "Optional ISO end date"
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Enabled on creation (default true)"
+              }
+            },
+            "required": [
+              "id",
+              "assetId",
+              "name",
+              "amountPerUser",
+              "maxClaims",
+              "period"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Create distribution rule",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "fund_testnet_wallet",
+          "description": "Fund a wallet on the Stellar testnet via friendbot \u2014 typically to top up an application's GLOBAL wallet. Pass the wallet public key (get it from `get_application_wallets`). Testnet only; no effect on mainnet apps. Requires `wallets:write`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "publicKey": {
+                "type": "string",
+                "description": "Stellar wallet public key to fund (G..., 56 chars) \u2014 e.g. the app's GLOBAL wallet"
+              }
+            },
+            "required": [
+              "id",
+              "publicKey"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Fund testnet wallet",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "update_application_domains",
+          "description": "Replace an application's allowed origins \u2014 the domains permitted to use its API keys (CORS allowlist). This REPLACES the entire list, so pass the full set of origins you want to keep, not just additions. Requires `applications:write`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "allowed_origins": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Full list of allowed origins, e.g. [\"https://app.example.com\", \"http://localhost:3000\"]. Replaces the existing list."
+              }
+            },
+            "required": [
+              "id",
+              "allowed_origins"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Update application domains",
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "revoke_api_key",
+          "description": "Revoke (soft-delete) an API key so SDK clients using it stop working. Irreversible \u2014 the key cannot be un-revoked; issue a new one with `create_api_key` instead. Get the key id from `list_api_keys`. Requires `api_keys:write`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "keyId": {
+                "type": "string",
+                "description": "API key id to revoke (from list_api_keys)"
+              }
+            },
+            "required": [
+              "id",
+              "keyId"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "title": "Revoke API key",
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "get_application_wallet_by_role",
+          "description": "Resolve one of an application's wallets by role (GLOBAL / FUNDING / GAS / DISTRIBUTION) and report whether it is funded. `funded` means the account is activated on Stellar (`existsOnStellar`). For exact XLM amounts, call `get_wallet_balances` with the returned public key. Requires `applications:read`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "GLOBAL",
+                  "FUNDING",
+                  "GAS",
+                  "DISTRIBUTION"
+                ],
+                "description": "Wallet role (default GLOBAL). Use FUNDING/GAS/DISTRIBUTION once the app is split."
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "type": "string",
+                "enum": [
+                  "GLOBAL",
+                  "FUNDING",
+                  "GAS",
+                  "DISTRIBUTION"
+                ]
+              },
+              "network": {
+                "type": "string"
+              },
+              "found": {
+                "type": "boolean"
+              },
+              "publicKey": {
+                "type": "string"
+              },
+              "existsOnStellar": {
+                "type": "boolean"
+              },
+              "funded": {
+                "type": "boolean"
+              },
+              "hint": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "annotations": {
+            "title": "Get application wallet by role",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        },
+        {
+          "name": "ensure_wallet_funded",
+          "description": "Fund an application's wallet (by role, default GLOBAL) on testnet only if it isn't funded yet. Reads the wallet, and if it is not yet activated on Stellar, tops it up via the testnet friendbot; if it is already funded this is a no-op. Mainnet wallets cannot be auto-funded (no friendbot) \u2014 the tool reports that instead. Requires `applications:read` + `wallets:write`.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "GLOBAL",
+                  "FUNDING",
+                  "GAS",
+                  "DISTRIBUTION"
+                ],
+                "description": "Wallet role (default GLOBAL). Use FUNDING/GAS/DISTRIBUTION once the app is split."
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "type": "string",
+                "enum": [
+                  "GLOBAL",
+                  "FUNDING",
+                  "GAS",
+                  "DISTRIBUTION"
+                ]
+              },
+              "network": {
+                "type": "string"
+              },
+              "publicKey": {
+                "type": "string"
+              },
+              "funded": {
+                "type": "boolean"
+              },
+              "action": {
+                "type": "string",
+                "enum": [
+                  "funded",
+                  "already_funded",
+                  "skipped",
+                  "none"
+                ]
+              },
+              "hint": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "annotations": {
+            "title": "Ensure wallet funded (testnet)",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false,
+            "idempotentHint": true
+          }
+        },
+        {
+          "name": "check_application_readiness",
+          "description": "Check whether an application is ready to use by evaluating the dashboard \"Get started\" config steps: API keys, allowed domains, app-wallet funding (required), plus enabled trustlines (recommended). Returns each step with a done flag and `ready` = all REQUIRED steps done. (Creating the first end-user wallet is the developer's own SDK call, not app config, so it is not evaluated here.) Reads across applications/api_keys scopes; a step shows `done: null` if its scope is missing.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Application id"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "properties": {
+              "applicationId": {
+                "type": "string"
+              },
+              "network": {
+                "type": "string"
+              },
+              "ready": {
+                "type": "boolean"
+              },
+              "completedRequired": {
+                "type": "number"
+              },
+              "totalRequired": {
+                "type": "number"
+              },
+              "steps": {
+                "type": "array",
+                "description": "Per-step results with { key, label, required, done, detail }"
+              }
+            },
+            "additionalProperties": true
+          },
+          "annotations": {
+            "title": "Check application readiness",
+            "readOnlyHint": true,
+            "idempotentHint": true,
+            "openWorldHint": false
+          }
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  }
+}

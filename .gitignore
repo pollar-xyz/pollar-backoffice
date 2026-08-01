@@ -40,3 +40,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Issue 34 local secrets
+submissions/qa-docs-mcp-issue-34/.secrets.env
+
+# Local MCP PAT config
+.vscode/mcp.json
+node_modules/
+**/tsconfig.tsbuildinfo
+submissions/qa-docs-mcp-issue-34/vibecoding/**/.next/
+submissions/qa-docs-mcp-issue-34/recordings/

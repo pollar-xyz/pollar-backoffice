@@ -1,0 +1,20 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"[]\"}],\"structuredContent\":{\"items\":[]}},\"jsonrpc\":\"2.0\",\"id\":15}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[]"
+        }
+      ],
+      "structuredContent": {
+        "items": []
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 15
+  }
+}

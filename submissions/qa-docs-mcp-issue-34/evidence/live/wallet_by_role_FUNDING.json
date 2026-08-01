@@ -1,0 +1,22 @@
+{
+  "parsed": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"role\": \"FUNDING\",\n  \"network\": \"testnet\",\n  \"found\": true,\n  \"publicKey\": \"G…REDACTED\",\n  \"existsOnStellar\": true,\n  \"funded\": true\n}"
+        }
+      ],
+      "structuredContent": {
+        "role": "FUNDING",
+        "network": "testnet",
+        "found": true,
+        "publicKey": "G…REDACTED",
+        "existsOnStellar": true,
+        "funded": true
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 5
+  }
+}

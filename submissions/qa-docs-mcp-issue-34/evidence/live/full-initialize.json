@@ -1,0 +1,22 @@
+{
+  "http_status": 200,
+  "raw": "event: message\ndata: {\"result\":{\"protocolVersion\":\"2024-11-05\",\"capabilities\":{\"tools\":{},\"resources\":{},\"prompts\":{}},\"serverInfo\":{\"name\":\"pollar\",\"version\":\"0.1.0\"},\"instructions\":\"Pollar is a Stellar wallet-as-a-service platform. This server is a read/write gateway over a\\ndeveloper's own hub-api account, authenticated by the Personal Access Token (PAT) the client sends.\\n\\nGetting oriented: call `whoami` first to see the developer identity and the applications in scope,\\nor `list_applications`. Then use `get_application` / `check_application_readiness` for one app.\\n\\nScopes: every tool needs a scope on the PAT \u2014 reads need `<resource>:read`, writes need `<resource>:write`\\n(resources: applications, api_keys, wallets, assets, transactions, users, distribution). A 403\\nPAT_INSUFFICIENT_SCOPE means the token lacks that scope; the error message names the exact scope to grant.\\n\\nWallet roles: a new app has one GLOBAL wallet. Once \\\"split\\\", the former global becomes FUNDING and there are\\nalso GAS and DISTRIBUTION wallets; GLOBAL no longer resolves. Ask for a role with `get_application_wallet_by_role`.\\n\\nNetworks: testnet wallets can be funded automatically via friendbot (`fund_testnet_wallet` / `ensure_wallet_funded`).\\nMainnet has no friendbot \u2014 fund those by transferring XLM to the wallet public key.\"},\"jsonrpc\":\"2.0\",\"id\":1}\n\n",
+  "error": false,
+  "parsed": {
+    "result": {
+      "protocolVersion": "2024-11-05",
+      "capabilities": {
+        "tools": {},
+        "resources": {},
+        "prompts": {}
+      },
+      "serverInfo": {
+        "name": "pollar",
+        "version": "0.1.0"
+      },
+      "instructions": "Pollar is a Stellar wallet-as-a-service platform. This server is a read/write gateway over a\ndeveloper's own hub-api account, authenticated by the Personal Access Token (PAT) the client sends.\n\nGetting oriented: call `whoami` first to see the developer identity and the applications in scope,\nor `list_applications`. Then use `get_application` / `check_application_readiness` for one app.\n\nScopes: every tool needs a scope on the PAT \u2014 reads need `<resource>:read`, writes need `<resource>:write`\n(resources: applications, api_keys, wallets, assets, transactions, users, distribution). A 403\nPAT_INSUFFICIENT_SCOPE means the token lacks that scope; the error message names the exact scope to grant.\n\nWallet roles: a new app has one GLOBAL wallet. Once \"split\", the former global becomes FUNDING and there are\nalso GAS and DISTRIBUTION wallets; GLOBAL no longer resolves. Ask for a role with `get_application_wallet_by_role`.\n\nNetworks: testnet wallets can be funded automatically via friendbot (`fund_testnet_wallet` / `ensure_wallet_funded`).\nMainnet has no friendbot \u2014 fund those by transferring XLM to the wallet public key."
+    },
+    "jsonrpc": "2.0",
+    "id": 1
+  }
+}

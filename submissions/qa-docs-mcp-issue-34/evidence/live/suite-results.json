@@ -1,0 +1,299 @@
+{
+  "results": [
+    {
+      "item": "MCP initialize (full PAT)",
+      "claim": "Valid PAT authenticates gateway",
+      "result": "pass",
+      "severity": "blocker",
+      "notes": "http=200 session=False",
+      "evidence": "evidence/live/full-initialize.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "MCP tools/list",
+      "claim": "Gateway exposes documented tools",
+      "result": "pass",
+      "severity": "major",
+      "notes": "count=21 names=['whoami', 'list_applications', 'get_application', 'get_application_wallets', 'get_wallet_balances', 'get_application_transactions', 'get_application_users', 'get_application_metrics', 'list_api_keys', 'list_distribution_rules', 'list_application_assets', 'create_application', 'create_api_key', 'enable_asset', 'create_distribution_rule', 'fund_testnet_wallet', 'update_application_domains', 'revoke_api_key', 'get_application_wallet_by_role', 'ensure_wallet_funded', 'check_application_readiness']",
+      "evidence": "evidence/live/full-tool-names.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "whoami",
+      "claim": "Undocumented helper identifies developer",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"identity\": {\n    \"id\": \"cmrvjf0mr00000hqhlm9epdko\",\n    \"email\": \"…@REDACTED\",\n    \"first_name\": \"kaleel\",\n    \"last_name\": null,\n    \"avatar\": \"https://…/REDACTED\",\n    \"role\": \"DEVELOPER\",\n    \"identities\": [\n      {\n        \"id\": \"cmrvjf0mx00010hqhpvusutpa\",\n        \"provider\": \"GOOGLE\",\n        \"provider_id\": \"110308564163083843275\"\n      }\n    ]\n  },\n  \"accessibleApplications\": [\n    {\n      \"id",
+      "evidence": "evidence/live/whoami.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "list_applications",
+      "claim": "Lists applications token can access",
+      "result": "pass",
+      "severity": "blocker",
+      "notes": "[\n  {\n    \"id\": \"cmrvjgoa…REDACTED\",\n    \"name\": \"Telegram Bot\",\n    \"network\": \"testnet\",\n    \"funding_mode\": \"IMMEDIATE\",\n    \"funding_starting_balance_xlm\": \"100\",\n    \"sponsor_trustlines\": true,\n    \"sponsor_trustline_external\": true,\n    \"chains\": [\n      \"STELLAR\"\n    ],\n    \"allowed_origins\": [\n      \"http://localhost:3000\",\n      \"https://pollar-telegram-shop-template-nyuiela.vercel.app\"\n    ],\n    \"swap_venues\": [],\n    \"sponsor_swap_venues\": [],\n    \"sponsor_swap_external\": fal",
+      "evidence": "evidence/live/list_applications.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "get_application",
+      "claim": "Returns app detail",
+      "result": "pass",
+      "severity": "blocker",
+      "notes": "{\n  \"id\": \"cmrvjgoa…REDACTED\",\n  \"name\": \"Telegram Bot\",\n  \"network\": \"testnet\",\n  \"funding_mode\": \"IMMEDIATE\",\n  \"funding_starting_balance_xlm\": \"100\",\n  \"sponsor_trustlines\": true,\n  \"sponsor_trustline_external\": true,\n  \"chains\": [\n    \"STELLAR\"\n  ],\n  \"allowed_origins\": [\n    \"http://localhost:3000\",\n    \"https://pollar-telegram-shop-template-nyuiela.vercel.app\"\n  ],\n  \"swap_venues\": [],\n  \"sponsor_swap_venues\": [],\n  \"sponsor_swap_external\": false,\n  \"sponsor_transfer_external\": fal",
+      "evidence": "evidence/live/get_application.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "check_application_readiness",
+      "claim": "Evaluates get-started steps",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"applicationId\": \"cmrvjgoa…REDACTED\",\n  \"network\": \"testnet\",\n  \"ready\": true,\n  \"completedRequired\": 3,\n  \"totalRequired\": 3,\n  \"steps\": [\n    {\n      \"key\": \"api_keys\",\n      \"label\": \"Configure API keys\",\n      \"required\": true,\n      \"done\": true,\n      \"detail\": \"has a publishable key\"\n    },\n    {\n      \"key\": \"domains\",\n      \"label\": \"Configure allowed domains\",\n      \"required\": true,\n      \"done\": true,\n      \"detail\": \"2 origin(s)\"\n    },\n    {\n      \"key\": \"fund_wallet\",\n      \"label\": \"Fund app wallet\",\n      \"required\": true,\n      \"done\": true,\n      \"detail\": \"G…REDACTED (funded)\"\n    },\n    {\n      \"key\": \"trustlines\",\n      \"label\": \"Enable trustlines\",\n      \"required\": false,\n      \"done\": true,\n      \"detail\": \"",
+      "evidence": "evidence/live/check_application_readiness.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "get_application_wallets",
+      "claim": "Returns app + end-user wallets",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"items\": [\n    {\n      \"id\": \"cmrwd5wah000e0imw0fw9lkgw\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T17:36:00.953Z\",\n      \"type\": \"application\",\n      \"role\": \"DISTRIBUTION\",\n      \"api_key_name\": null,\n      \"api_key_id\": null,\n      \"auth_type\": null,\n      \"last_login_at\": null,\n      \"source\": \"INTERNAL\",\n      \"walletInfo\": {\n        \"existsOnStellar\": true\n      },\n      \"nativeInfo\": null\n    },\n    {\n      \"id\": \"cmrwd5w9p000d0imwnd11cjnx\",\n      \"public_key\": \"G…REDACTED\",\n      \"network\": \"STELLAR\",\n      \"created_at\": \"2026-07-22T17:36:00.925Z\",\n      \"type\": \"application\",\n      \"role\": \"GAS\",\n      \"api_key_name\": null,\n      \"api_",
+      "evidence": "evidence/live/get_application_wallets.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "get_application_wallet_by_role",
+      "claim": "Resolve GLOBAL wallet + funded?",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"role\": \"GLOBAL\",\n  \"network\": \"testnet\",\n  \"found\": false,\n  \"hint\": \"This app has been split \u2014 its GLOBAL wallet was promoted to FUNDING. Ask for role FUNDING/GAS/DISTRIBUTION.\"\n}",
+      "evidence": "evidence/live/get_application_wallet_by_role.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "get_wallet_balances",
+      "claim": "On-chain balances for wallet",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"publicKey\": \"G…REDACTED\",\n  \"network\": \"testnet\",\n  \"exists\": true,\n  \"balances\": [\n    {\n      \"type\": \"native\",\n      \"code\": \"XLM\",\n      \"balance\": \"10000.0000000\",\n      \"available\": \"9999.0000000\",\n      \"enabledInApp\": false,\n      \"trustlineRemoved\": false\n    }\n  ]\n}",
+      "evidence": "evidence/live/get_wallet_balances.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "get_application_transactions",
+      "claim": "Paginated tx history",
+      "result": "pass",
+      "severity": "minor",
+      "notes": "{\n  \"records\": [\n    {\n      \"id\": \"cmrw9t1l0001a0ip0kz5hda5z\",\n      \"hash\": \"228bbec59bcdc8d682234c8261d600914533a7302309e0ca2ab082e8155f4c47\",\n      \"network\": \"testnet\",\n      \"phase\": \"SUCCESS\",\n      \"failedPhase\": null,\n      \"status\": \"SUCCESS\",\n      \"operation\": \"change_trust\",\n      \"summary\": \"Add trustline: EURC:G…REDACTED (sponsored)\",\n      \"feeXlm\": null,\n      \"resultCode\": null,\n      \"errorMessage\": null,\n      \"errorCode\": null,\n ",
+      "evidence": "evidence/live/get_application_transactions.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "get_application_users",
+      "claim": "Paginated SDK end-users",
+      "result": "pass",
+      "severity": "minor",
+      "notes": "{\n  \"items\": [\n    {\n      \"id\": \"cmrw9sykf00160ip0bilkmkre\",\n      \"first_name\": \"Oscar Gauss\",\n      \"last_name\": \"Carvajal Yucra\",\n      \"email\": \"…@REDACTED\",\n      \"avatar\": \"https://…/REDACTED\",\n      \"providers\": [\n        \"GOOGLE\"\n      ],\n      \"wallet_public_key\": \"G…REDACTED\",\n      \"wallets\": [\n        {\n          \"network\": \"STELLAR\",\n       ",
+      "evidence": "evidence/live/get_application_users.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "get_application_metrics",
+      "claim": "Undocumented tool `get_application_metrics` works",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"range\": \"14d\",\n  \"timezone\": \"UTC\",\n  \"totalCount\": 14,\n  \"todayCount\": 0,\n  \"perAsset\": [\n    {\n      \"code\": \"USDC\",\n      \"rangeCount\": 8,\n      \"todayCount\": 0\n    },\n    {\n      \"code\": \"EURC\",\n      \"rangeCount\": 3,\n      \"todayCount\": 0\n    }\n  ],\n  \"countSeries\": [\n    {\n      \"date\": \"2026-07-18\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-19\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-20\",\n      \"count\": 0\n    },\n    {\n      \"date\": \"2026-07-21\",\n      \"count\"",
+      "evidence": "evidence/live/get_application_metrics.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "list_api_keys",
+      "claim": "Undocumented tool `list_api_keys` works",
+      "result": "pass",
+      "severity": "major",
+      "notes": "[\n  {\n    \"id\": \"cms8w3g9x000x0iunn16ohl8n\",\n    \"key_prefix\": \"sec_testnet_…REDACTED\",\n    \"name\": \"secret key\",\n    \"type\": \"SECRET\",\n    \"allow_native_clients\": false,\n    \"application_id\": \"cmrvjgoa…REDACTED\",\n    \"expires_at\": \"2027-01-01T00:00:00.000Z\",\n    \"created_at\": \"2026-07-31T11:59:13.701Z\",\n    \"updated_at\": \"2026-07-31T11:59:13.701Z\"\n  },\n  {\n    \"id\": \"cms8vxj8r00190ipdedtwt096\",\n    \"key_prefix\": \"pub_testnet_…REDACTED\",\n    \"name\": \"test key\",\n    \"type\": \"PUBLISHABLE\",\n    \"allo",
+      "evidence": "evidence/live/list_api_keys.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "list_application_assets",
+      "claim": "Undocumented tool `list_application_assets` works",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"applicationId\": \"cmrvjgoa…REDACTED\",\n  \"network\": \"testnet\",\n  \"count\": 2,\n  \"assets\": [\n    {\n      \"application_id\": \"cmrvjgoa…REDACTED\",\n      \"asset_id\": \"cmq42vkht0001y2idh1lpjezf\",\n      \"enabled\": true,\n      \"name\": \"EURC\",\n      \"sponsor_transfer\": true,\n      \"created_at\": \"2026-07-22T05:07:46.045Z\",\n      \"updated_at\": \"2026-07-22T17:36:24.856Z\",\n      \"asset\": {\n        \"id\": \"cmq42vkht0001y2idh1lpjezf\",\n        \"chain\": \"STELLAR\",\n        \"code\": \"EURC\",\n       ",
+      "evidence": "evidence/live/list_application_assets.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "list_distribution_rules",
+      "claim": "Undocumented tool `list_distribution_rules` works",
+      "result": "pass",
+      "severity": "major",
+      "notes": "[]",
+      "evidence": "evidence/live/list_distribution_rules.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "ensure_wallet_funded idempotent",
+      "claim": "Fund only if not funded; safe to repeat",
+      "result": "pass",
+      "severity": "major",
+      "notes": "call1_err=False call2_err=False t1={\n  \"role\": \"GLOBAL\",\n  \"network\": \"testnet\",\n  \"funded\": false,\n  \"action\": \"none\",\n  \"hint\": \"This app has been split \u2014 ask for role FUNDING/GAS/DISTRIBUTION.\"\n} t2={\n  \"role\": \"GLOBAL\",\n  \"network\": \"testnet\",\n  \"funded\": false,\n  \"action\": \"none\",\n  \"hint\": \"This app has been split \u2014 ask for role FUNDING/GAS/DISTRIBUTION.\"\n}",
+      "evidence": "evidence/live/ensure_wallet_funded_1.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "fund_testnet_wallet idempotent",
+      "claim": "Tops up via friendbot; repeat is harmless",
+      "result": "fail",
+      "severity": "major",
+      "notes": "c1_err=True c2_err=True t1=Error: FUND_XLM_FAILED (hub-api 502). t2=Error: FUND_XLM_FAILED (hub-api 502).",
+      "evidence": "evidence/live/fund_testnet_wallet_1.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "update_application_domains",
+      "claim": "Replaces entire allowed-origins list",
+      "result": "pass",
+      "severity": "major",
+      "notes": "sent=['http://localhost:3000', 'https://pollar-telegram-shop-template-nyuiela.vercel.app'] resp={\n  \"id\": \"cmrvjgoa…REDACTED\",\n  \"name\": \"Telegram Bot\",\n  \"network\": \"testnet\",\n  \"funding_mode\": \"IMMEDIATE\",\n  \"funding_starting_balance_xlm\": \"100\",\n  \"sponsor_trustlines\": true,\n  \"sponsor_trustline_external\": true,\n  \"chains\": [\n    \"STELLAR\"\n  ],\n  \"allowed_origins\": [\n    \"http://localhost:3000\",\n    \"https://pollar-telegram-shop-template-nyuiela.vercel.app\"\n  ],\n  \"swap_venues\": [ (confirmation is client-annotation behavior; raw HTTP call executes immediately)",
+      "evidence": "evidence/live/update_application_domains.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "create_api_key",
+      "claim": "Creates publishable/secret key",
+      "result": "fail",
+      "severity": "major",
+      "notes": "Error: VALIDATION_ERROR (hub-api 400).",
+      "evidence": "evidence/live/create_api_key.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "enable_asset",
+      "claim": "Enable trustline/asset on app",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"application_id\": \"cmrvjgoa…REDACTED\",\n  \"asset_id\": \"cmm6fdw4a0001eaidrbu9rvc1\",\n  \"enabled\": true,\n  \"name\": \"USD Coin\",\n  \"sponsor_transfer\": true,\n  \"created_at\": \"2026-07-22T05:07:32.741Z\",\n  \"updated_at\": \"2026-07-31T12:10:04.923Z\"\n}",
+      "evidence": "evidence/live/enable_asset.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "create_distribution_rule",
+      "claim": "Create token-distribution rule",
+      "result": "blocked",
+      "severity": "minor",
+      "notes": "No assetId from list_application_assets: {\n  \"applicationId\": \"cmrvjgoa…REDACTED\",\n  \"network\": \"testnet\",\n  \"count\": 2,\n  \"assets\": [\n    {\n      \"application_id\": \"cmrvjgoa…REDACTED\",\n      \"asset_id\": \"cmq42vkht0001y2idh1l",
+      "evidence": "evidence/live/list_application_assets.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "create_application",
+      "claim": "Create app",
+      "result": "pass",
+      "severity": "blocker",
+      "notes": "{\n  \"id\": \"cms8whk6b001b0ipdmm6r24p7\",\n  \"name\": \"qa-ab-arm-b-7b7706\",\n  \"network\": \"testnet\",\n  \"funding_mode\": \"IMMEDIATE\",\n  \"funding_starting_balance_xlm\": \"0\",\n  \"sponsor_trustlines\": true,\n  \"sponsor_trustline_external\": true,\n  \"chains\": [\n    \"STELLAR\"\n  ],\n  \"allowed_origins\": [],\n  \"swap_venues\": [],\n  \"sponsor_swap_venues\": [],\n  \"sponsor_swap_external\": false,\n  \"sponsor_transfer_external\": false,\n  \"sponsor_contract_external\": false,\n  \"sponsor_all_contracts\": false,\n  \"styles\": {\n ",
+      "evidence": "evidence/live/create_application.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "revoke_api_key",
+      "claim": "Undocumented revoke works",
+      "result": "blocked",
+      "severity": "major",
+      "notes": "No keyId from create_api_key: Error: VALIDATION_ERROR (hub-api 400).",
+      "evidence": "evidence/live/create_api_key.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "readonly whoami/list",
+      "claim": "Read scopes work on readonly PAT",
+      "result": "pass",
+      "severity": "major",
+      "notes": "{\n  \"identity\": {\n    \"id\": \"cmrvjf0mr00000hqhlm9epdko\",\n    \"email\": \"…@REDACTED\",\n    \"first_name\": \"kaleel\",\n    \"last_name\": null,\n    \"avatar\": \"https://…/REDACTED\",\n    \"role\": \"DEVELOPER\",\n    \"identities\": [\n      {\n        \"id\": \"cmrvjf0mx00010hqhpvusutpa\",\n        \"provider\": \"GOOGLE\",\n        \"pr",
+      "evidence": "evidence/live/readonly-whoami.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "403 insufficient scope",
+      "claim": "Write tool fails with 403 when PAT lacks scope",
+      "result": "pass",
+      "severity": "blocker",
+      "notes": "expect_error=True got_error=True text=Error: Your Personal Access Token is missing the `applications:write` scope. Grant it to the token in the Pollar dashboard (Settings -> Personal Access Tokens), then retry.",
+      "evidence": "evidence/live/readonly-create_application.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "403 update_application_domains readonly",
+      "claim": "Edit fails without applications:write",
+      "result": "pass",
+      "severity": "major",
+      "notes": "Error: Your Personal Access Token is missing the `applications:write` scope. Grant it to the token in the Pollar dashboard (Settings -> Personal Access Tokens), then retry.",
+      "evidence": "evidence/live/readonly-update_domains.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "Example prompt: list apps + readiness",
+      "claim": "Docs example maps to list_applications + check_application_readiness",
+      "result": "pass",
+      "severity": "minor",
+      "notes": "Executed tool chain successfully",
+      "evidence": "evidence/live/list_applications.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "Example prompt: ensure_wallet_funded",
+      "claim": "Fund testnet global wallet if needed",
+      "result": "pass",
+      "severity": "minor",
+      "notes": "{\n  \"role\": \"GLOBAL\",\n  \"network\": \"testnet\",\n  \"funded\": false,\n  \"action\": \"none\",\n  \"hint\": \"This app has been split \u2014 ask for role FUNDING/GAS/DISTRIBUTION.\"\n}",
+      "evidence": "evidence/live/ensure_wallet_funded_2.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "Example prompt: update domains localhost",
+      "claim": "Add http://localhost:3000 to allowed domains",
+      "result": "pass",
+      "severity": "minor",
+      "notes": "{\n  \"id\": \"cmrvjgoa…REDACTED\",\n  \"name\": \"Telegram Bot\",\n  \"network\": \"testnet\",\n  \"funding_mode\": \"IMMEDIATE\",\n  \"funding_starting_balance_xlm\": \"100\",\n  \"sponsor_trustlines\": true,\n  \"sponso",
+      "evidence": "evidence/live/update_application_domains.json",
+      "ab_arm": "B"
+    },
+    {
+      "item": "Example prompt: create publishable key",
+      "claim": "Create a publishable API key",
+      "result": "fail",
+      "severity": "minor",
+      "notes": "Error: VALIDATION_ERROR (hub-api 400).",
+      "evidence": "evidence/live/create_api_key.json",
+      "ab_arm": "B"
+    }
+  ],
+  "tool_names": [
+    "whoami",
+    "list_applications",
+    "get_application",
+    "get_application_wallets",
+    "get_wallet_balances",
+    "get_application_transactions",
+    "get_application_users",
+    "get_application_metrics",
+    "list_api_keys",
+    "list_distribution_rules",
+    "list_application_assets",
+    "create_application",
+    "create_api_key",
+    "enable_asset",
+    "create_distribution_rule",
+    "fund_testnet_wallet",
+    "update_application_domains",
+    "revoke_api_key",
+    "get_application_wallet_by_role",
+    "ensure_wallet_funded",
+    "check_application_readiness"
+  ],
+  "new_app_id": "cms8whk6b001b0ipdmm6r24p7",
+  "public_key_found": true
+}
