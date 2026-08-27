@@ -31,7 +31,12 @@ const clientConfig: PollarClientConfig = {
 
 let sharedClient: PollarClient | null = null;
 
-function getSharedPollarClient(): PollarClient {
+/**
+ * Exposed for pages that call ramp/quote/etc. endpoints directly on the
+ * client (bypassing the built-in modals) — same singleton the provider uses,
+ * so it shares auth/session state instead of spinning up a second client.
+ */
+export function getSharedPollarClient(): PollarClient {
   if (!sharedClient) {
     sharedClient = new PollarClient(clientConfig);
   }
